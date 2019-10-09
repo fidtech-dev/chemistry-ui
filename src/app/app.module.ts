@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FiuCheckBoxModule } from './atomos/check-box/fiu-checkbox.module';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +14,8 @@ import { FiuCheckBoxModule } from './atomos/check-box/fiu-checkbox.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FiuCheckBoxModule
+    FiuCheckBoxModule,
+    FormsModule
   
   ],
   providers: [],

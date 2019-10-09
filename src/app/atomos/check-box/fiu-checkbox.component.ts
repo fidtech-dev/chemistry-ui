@@ -19,6 +19,7 @@ const noop = () => {
 })
 
 export class FiuCheckboxComponent  implements ControlValueAccessor {
+  @Input() color;
 
   //The internal data model
   private innerValue: any = '';
