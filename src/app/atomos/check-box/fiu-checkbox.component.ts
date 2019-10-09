@@ -19,8 +19,11 @@ const noop = () => {
 })
 
 export class FiuCheckboxComponent  implements ControlValueAccessor {
-  @Input() color;
+ @Input() color = '';
+ @Input() label = '';
+ @Input() disabled;
 
+    public pepe = "lele";
   //The internal data model
   private innerValue: any = '';
 
@@ -45,6 +48,10 @@ export class FiuCheckboxComponent  implements ControlValueAccessor {
   //Set touched on blur
   onBlur() {
       this.onTouchedCallback();
+  }
+
+  prueba(){
+      console.log(this.color)
   }
 
   //From ControlValueAccessor interface

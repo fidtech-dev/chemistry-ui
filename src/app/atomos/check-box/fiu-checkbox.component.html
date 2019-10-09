@@ -1,4 +1,3 @@
 
-
-<mat-checkbox class="primary" [(ngModel)]="value" color='primary' (blur)="onBlur()">Check me!</mat-checkbox>
+<mat-checkbox  [(ngModel)]="value" [color]="color" [disabled]="disabled"  (blur)="onBlur()">{{label}}</mat-checkbox>
 

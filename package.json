@@ -13,7 +13,7 @@
     "build-local": "npm run packagr && npm run cp-mylib-assets && cd dist && npm pack",
     "build-mylib": "npm run packagr && npm run cp-mylib-assets && cd dist && npm pack && npm publish",
     "build-mylib-styles": "cpx \"./projects/mylib/src/lib/style/**/*\" \"./dist/mylib/style\" && scss-bundle -e ./projects/mylib/src/lib/style/_style.scss -d ./dist/mylib/style/_styles.scss",
-    "cp-mylib-assets": "cpx \"./src/_theme.scss\" \"./dist\""
+    "cp-mylib-assets": "cpx \"./src/styles.scss\" \"./dist\""
   },
   
   "private": false,
