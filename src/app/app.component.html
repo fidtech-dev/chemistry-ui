@@ -1,5 +1,15 @@
-<p>Checkbox </p>
-<fiu-checkbox [(ngModel)]='checkbox'  color="primary" label='esto es un label por dos' ></fiu-checkbox>
+<h4>Checkbox </h4>
+<fiu-checkbox [(ngModel)]='checkbox' color="primary" label='esto es un label por dos' ></fiu-checkbox> <br>
+<h4>Button </h4>
+<fiu-button color='primary' label="textoBtn"></fiu-button>
+<fiu-button color='danger' class="ml-4" [outline]="true" label="outline"></fiu-button>
+<fiu-button color='success'  class="ml-4"  size="lg" label="size lg"></fiu-button>
+<fiu-button color='warning' size="block" [outline]="true" label="size block"></fiu-button>
 
+<h4 class="mb-4" >input borderless </h4>
+<fiu-input [color]=color name="input1" [(ngModel)]="input1" label="Nombre" desing="borderless" required="true"></fiu-input>
+{{color}}
+<h4>input w border </h4>
+<fiu-input color='danger' name="input2"  [(ngModel)]="input2" label="Nombre" desing="border" placeholder="input con bordes" required="true"></fiu-input>
 
 <router-outlet></router-outlet>

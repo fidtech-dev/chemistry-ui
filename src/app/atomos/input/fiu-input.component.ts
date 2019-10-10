@@ -1,28 +1,28 @@
-import {Component, OnInit, Input, forwardRef} from '@angular/core';
-import {NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel} from '@angular/forms';
-
-
-const noop = () => {
-};
+import {Component, ContentChild, forwardRef, Input, OnInit} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
+import {noop} from 'rxjs';
 
 @Component({
-    selector: 'fiu-checkbox',
-    templateUrl: './fiu-checkbox.component.html',
-    styleUrls: ['./fiu-checkbox.component.scss'],
+    selector: 'fiu-input',
+    templateUrl: './fiu-input.component.html',
+    styleUrls: ['./fiu-input.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => FiuCheckboxComponent),
+            useExisting: forwardRef(() => FiuInputComponent),
             multi: true
         }
     ],
 })
-
-export class FiuCheckboxComponent implements ControlValueAccessor {
-    @Input() color = '';
-    @Input() label = '';
+export class FiuInputComponent implements ControlValueAccessor {
+    @Input() color = 'primary';
+    @Input() label;
+    @Input() desing;
+    @Input() size;
     @Input() disabled;
-
+    @Input() placeholder;
+    @Input() required = false;
+    @ContentChild(NgControl, {static: false}) public control: any;
     /**
      * @description The internal data model
      */
@@ -59,6 +59,7 @@ export class FiuCheckboxComponent implements ControlValueAccessor {
     onBlur() {
         this.onTouchedCallback();
     }
+
     /**
      * @description From ControlValueAccessor interface
      */
@@ -80,4 +81,7 @@ export class FiuCheckboxComponent implements ControlValueAccessor {
         this.onTouchedCallback = fn;
     }
 
+    hasDanger() {
+        return (this.control as any).name && (this.control.dirty || this.control.touched) && !this.control.valid;
+    }
 }

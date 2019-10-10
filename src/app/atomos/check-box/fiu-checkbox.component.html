@@ -1,3 +1,6 @@
-
-<mat-checkbox  [(ngModel)]="value" [color]="color" [disabled]="disabled"  (blur)="onBlur()">{{label}}</mat-checkbox>
-
+<label class="pure-material-checkbox">
+    <input [(ngModel)]="value"  type="checkbox" class="bg-{{color}} "  (blur)="onBlur()" [disabled]="disabled">
+    <span>{{label}}</span>
+</label>
+<!--<mat-checkbox  [(ngModel)]="value" [color]="color" [disabled]="disabled"  (blur)="onBlur()">{{label}}</mat-checkbox>
+-->
