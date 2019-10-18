@@ -1,15 +1,94 @@
-<h4>Checkbox </h4>
-<fiu-checkbox [(ngModel)]='checkbox' color="primary" label='esto es un label por dos' ></fiu-checkbox> <br>
-<h4>Button </h4>
-<fiu-button color='primary' label="textoBtn"></fiu-button>
-<fiu-button color='danger' class="ml-4" [outline]="true" label="outline"></fiu-button>
-<fiu-button color='success'  class="ml-4"  size="lg" label="size lg"></fiu-button>
-<fiu-button color='warning' size="block" [outline]="true" label="size block"></fiu-button>
 
-<h4 class="mb-4" >input borderless </h4>
-<fiu-input [color]=color name="input1" [(ngModel)]="input1" label="Nombre" desing="borderless" required="true"></fiu-input>
-{{color}}
-<h4>input w border </h4>
-<fiu-input color='danger' name="input2"  [(ngModel)]="input2" label="Nombre" desing="border" placeholder="input con bordes" required="true"></fiu-input>
+<nav class="navbar navbar-light fixed-top bg-light flex-md-nowrap p-0 " style="height: 70px">
+<h3 class="pl-2">Chemistry UI</h3>
+    <ul class="navbar-nav px-3 -nav ml-auto">
 
-<router-outlet></router-outlet>
+
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+                <span class="mr-2 d-none d-lg-inline text-gray-600							 ">v0.0.0</span>
+        </li>
+
+
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+            <div class="sidebar-sticky pb-5">
+                <ul class="nav flex-column ">
+                    <li class="nav-item ">
+                        <a class="nav-link active text-light" href="#">
+                            <span data-feather="home"></span>
+                            Button <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            <span data-feather="file"></span>
+                            <span> Input</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            <span data-feather="shopping-cart"></span>
+                            Checkbox
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            <span data-feather="users"></span>
+                            Configuración
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto mr-sm-auto ml-0 col-lg-10 main-bg px-4">
+            <div class="ml-0">
+                <router-outlet></router-outlet>
+
+            </div>
+
+
+        </main>
+    </div>
+</div>
+
+
+<!--
+   <h4>Checkbox </h4>
+            <fiu-checkbox [(ngModel)]='checkbox' color="danger"  label='esto es un label por dos' ></fiu-checkbox> <br>
+
+
+            <h4 class="mb-4" >input borderless </h4>
+            <fiu-input [color]=color   [(ngModel)]="input1" name="ejemplo" #ejemplo='ngModel'  minlength="10"  label="Nombre" desing="borderless" required="true"></fiu-input>
+            <fiu-validation-message  messege="Valor requerido" *ngIf="ejemplo.touched && ejemplo.errors && ejemplo.errors.required"></fiu-validation-message>
+            <fiu-validation-message  messege="Debe ingresar un mínimo de {{ ejemplo.errors.minlength.requiredLength}} caracteres" *ngIf="ejemplo.errors && ejemplo.errors.minlength"></fiu-validation-message>
+            <fiu-validation-message  messege="No puede contener numeros" *ngIf=" ejemplo.errors && ejemplo.errors.pattern"></fiu-validation-message>
+
+
+            <h4>input w border </h4>
+            <fiu-input color='danger' name="input2"  [(ngModel)]="input2" label="Nombre" desing="border" placeholder="input con bordes" required="true"></fiu-input>
+
+
+            <form [formGroup]="userForm" (submit)="saveUser()">
+                <label for="name">Name</label>
+
+                <fiu-input [color]=color formControlName="name" id="name"   label="Nombre" desing="borderless" ></fiu-input>
+                <fiu-validation-message  messege="Valor requerido" *ngIf="userForm.get('name').touched && userForm.get('name').errors && userForm.get('name').errors.required"></fiu-validation-message>
+                <fiu-validation-message  messege="Debe ingresar un mínimo de {{ userForm.get('name').errors.minlength.requiredLength}} caracteres" *ngIf=" userForm.get('name').errors && userForm.get('name').errors.minlength"></fiu-validation-message>
+                <fiu-validation-message  messege="No puede contener numeros" *ngIf=" userForm.get('name').errors && userForm.get('name').errors.pattern"></fiu-validation-message>
+
+
+
+                <button type="submit" [disabled]="!userForm.valid">Submit</button>
+            </form>
+
+-->
+
+

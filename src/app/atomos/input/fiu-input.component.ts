@@ -14,7 +14,7 @@ import {noop} from 'rxjs';
         }
     ],
 })
-export class FiuInputComponent implements ControlValueAccessor {
+export class FiuInputComponent implements ControlValueAccessor, OnInit {
     @Input() color = 'primary';
     @Input() label;
     @Input() desing;
@@ -22,7 +22,20 @@ export class FiuInputComponent implements ControlValueAccessor {
     @Input() disabled;
     @Input() placeholder;
     @Input() required = false;
+    @Input() readonly = false;
     @ContentChild(NgControl, {static: false}) public control: any;
+
+
+    constructor() {
+
+    }
+
+    ngOnInit() {
+        if(this.readonly){
+            this.color = "transparent";
+
+        }
+    }
     /**
      * @description The internal data model
      */
@@ -82,6 +95,6 @@ export class FiuInputComponent implements ControlValueAccessor {
     }
 
     hasDanger() {
-        return (this.control as any).name && (this.control.dirty || this.control.touched) && !this.control.valid;
+        return this.control && (this.control as any).name && (this.control.dirty || this.control.touched) && !this.control.valid;
     }
 }
