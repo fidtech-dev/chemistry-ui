@@ -14,6 +14,8 @@ import {HighlightModule} from 'ngx-highlightjs';
 import xml from 'highlight.js/lib/languages/xml';
 import scss from 'highlight.js/lib/languages/scss';
 import typescript from 'highlight.js/lib/languages/typescript';
+import { DocumentationComponent } from './demo/documentation/documentation.component';
+import { InputComponent } from './demo/input/input.component';
 
 export function hljsLanguages() {
     return [
@@ -27,6 +29,8 @@ export function hljsLanguages() {
     declarations: [
         AppComponent,
         ButtonDemoComponent,
+        DocumentationComponent,
+        InputComponent,
     ],
     imports: [
         BrowserModule,

@@ -17,19 +17,6 @@
 
         <br>
 
-        <!--    <pre><code highlight='
-    <che-button color="primary" label="Primary"></che-button>
-    <che-button color="secondary" label="Secondary"></che-button>
-    <che-button color="success" label="Success"></che-button>
-    <che-button color="warning" label="Warning"></che-button>
-    <che-button color="danger" label="Danger"></che-button>
-    <che-button color="info" label="Info"></che-button>
-    <che-button color="dark" label="Dark"></che-button>
-    <che-button color="ligth" label="Ligth"></che-button>'>
-            </code>
-            </pre>
-    -->
-
         <h5 class="mt-3">Severity Buttons Outline</h5>
         <che-button color='primary' [outline]="true" label="Primary"></che-button>
         <che-button color='secondary' [outline]="true" label="Secondary"></che-button>
@@ -48,64 +35,13 @@
         <che-button color='secondary' label="Secondary" [outline]="true" disabled="true"></che-button>
     </div>
     <div class="col-12 sideRight mt-5">
-        <span class="documentationBtn" [ngClass]="{'text-primary': this.documentation}" (click)="changeTab(true)">Documentation </span> <span> | </span> <span
-            class="sourceBtn" [ngClass]="{'text-primary': !this.documentation}" (click)="changeTab(false)">Source</span>
-        <hr>
-        <ng-container *ngIf="documentation">
-            <h5>Imports</h5>
-            <pre><code highlight="import {CheButtonModule} from '@fidtech-sa/chemistry-ui'"></code></pre>
-            <h5>Getting Started</h5>
-            <pre><code highlight='<che-button color="primary" label="Primary"></che-button>'></code></pre>
-
-            <h5>Attribute</h5>
-            <ul>
-                <li>
-                    <strong>Color: </strong> determine the color of the button
-                </li>
-                <li>
-                    <strong>Label:</strong> determine the text of the button
-                </li>
-                <li>
-                    <strong>Outline:</strong>
-                </li>
-                <li>
-                    <strong>Size:</strong> determine the text of the button, accept "lg,sm,block"
-                </li>
-                <li>
-                    <strong>Icon:</strong>  "in coming"
-                </li>
-                <li>
-                    <strong>Disabled: </strong>disable the button
-                </li>
-            </ul>
-        </ng-container>
-
-
-
-        <ng-container *ngIf="!documentation">
-            <div class="row text-center ml-0 mr-0">
-                <div class="col-4 btnLenguage" (click)="changeTabLenguage('html')" [ngClass]="{'buttonSelectLenguage': lenguage === 'html'}" >
-                    <h6>HTML</h6>
-                </div>
-                <div class="col-4 btnLenguage" (click)="changeTabLenguage('ts')" [ngClass]="{'buttonSelectLenguage': lenguage === 'ts'}">
-                    <h6>TS</h6>
-                </div>
-                <div class="col-4 btnLenguage" (click)="changeTabLenguage('scss')" [ngClass]="{'buttonSelectLenguage': lenguage === 'scss'}">
-                    <h6>SCSS</h6>
-                </div>
-            </div>
-           <ng-container *ngIf="lenguage === 'html'">
-               <pre><code [highlight]='buttons'></code></pre>
-           </ng-container>
-            <ng-container *ngIf="lenguage === 'ts'">
-                <pre><code [highlight]="'<!-- This component has no extra functions in typescript -->'"></code></pre>
-            </ng-container>
-            <ng-container *ngIf="lenguage === 'scss'">
-                <pre><code [highlight]="'<!-- This component has no extra functions in scss -->'"></code></pre>
-            </ng-container>
-        </ng-container>
-
-
+        <app-documentation [import]="textImport"
+                           [gettingStarter]="gettingStarter"
+                           [attribute]="attribute"
+                           [codeHtml]="codeHtml"
+                           [codeTs]="codeTs"
+                           [codeScss]="codeScss"
+        ></app-documentation>
     </div>
 </div>
 

@@ -1,0 +1,36 @@
+<div class="headerAtom">
+    <h3>Inputs </h3>
+    <hr>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h5>Input borderless </h5>
+        <fiu-input color='primary' [(ngModel)]="input1" name="ejemplo" #ejemplo='ngModel' minlength="10" label="Nombre"
+                   desing="borderless" required="true"></fiu-input>
+        <fiu-validation-message messege="Valor requerido"
+                                *ngIf="ejemplo.touched && ejemplo.errors && ejemplo.errors.required"></fiu-validation-message>
+        <fiu-validation-message
+                messege="Debe ingresar un mínimo de {{ ejemplo.errors.minlength.requiredLength}} caracteres"
+                *ngIf="ejemplo.errors && ejemplo.errors.minlength"></fiu-validation-message>
+        <fiu-validation-message messege="No puede contener numeros"
+                                *ngIf=" ejemplo.errors && ejemplo.errors.pattern"></fiu-validation-message>
+
+
+        <br>
+
+        <h5 class="mt-3">Input with border</h5>
+        <fiu-input color='primary' [(ngModel)]="input2" name="ejemplo2" #ejemplo2='ngModel' minlength="10" label="Nombre"
+                   desing="border" required="true"></fiu-input>
+
+    </div>
+    <div class="col-12 sideRight mt-5">
+        <app-documentation [import]="textImport"
+                           [gettingStarter]="gettingStarter"
+                           [attribute]="attribute"
+                           [codeHtml]="codeHtml"
+                           [codeTs]="codeTs"
+                           [codeScss]="codeScss"
+        ></app-documentation>
+    </div>
+</div>

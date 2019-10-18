@@ -1,25 +1,21 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'app-button',
-    templateUrl: './button.component.html',
-    styleUrls: ['./button.component.scss']
+    selector: 'app-documentation',
+    templateUrl: './documentation.component.html',
+    styleUrls: ['./documentation.component.scss']
 })
-export class ButtonDemoComponent implements OnInit {
+export class DocumentationComponent implements OnInit {
+    @Input() import;
+    @Input() gettingStarter;
+    @Input() attribute;
+    @Input() codeHtml;
+    @Input() codeTs;
+    @Input() codeScss;
     severityButtons = false;
     documentation = true;
     lenguage = 'html';
-    textImport = 'import {CheButtonModule} from \'@fidtech-sa/chemistry-ui\'';
-    gettingStarter = '<che-button color="primary" label="Primary"></che-button>';
-    attribute = [
-        {tittle: 'Color:', description: 'determine the color of the button'},
-        {tittle: 'Label:', description: 'determine the text of the button'},
-        {tittle: 'Outline:', description: ''},
-        {tittle: 'Size:', description: 'determine the text of the button, accept "lg,sm,block"'},
-        {tittle: 'Icon:', description: 'In Coming'},
-        {tittle: 'Disabled:', description: 'disable the button'}
-    ];
-    codeHtml = '<!-- Severity Buttons -->\n' +
+    buttons = '<!-- Severity Buttons -->\n' +
         '<che-button color=\'primary\' label="Primary"></che-button>\n' +
         '<che-button color=\'secondary\' label="Secondary"></che-button>\n' +
         '<che-button color=\'success\' label="Success"></che-button>\n' +
@@ -46,8 +42,6 @@ export class ButtonDemoComponent implements OnInit {
         '<!-- Buttons Disabled-->\n' +
         '<che-button color=\'primary\' label="Primary" disabled="true"></che-button>\n' +
         '<che-button color=\'secondary\' label="Secondary" [outline]="true" disabled="true"></che-button>';
-    codeTs = '<!-- This component has no extra functions in typescript -->';
-    codeScss = '<!-- This component has no extra functions in scss -->';
 
     constructor() {
     }
@@ -71,6 +65,20 @@ export class ButtonDemoComponent implements OnInit {
 
     changeTabLenguage(param) {
         this.lenguage = param;
+    }
+
+    copyText(val: string){
+        let selBox = document.createElement('textarea');
+        selBox.style.position = 'fixed';
+        selBox.style.left = '0';
+        selBox.style.top = '0';
+        selBox.style.opacity = '0';
+        selBox.value = val;
+        document.body.appendChild(selBox);
+        selBox.focus();
+        selBox.select();
+        document.execCommand('copy');
+        document.body.removeChild(selBox);
     }
 
 }
