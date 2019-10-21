@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fidtechUI';
+
+  color = 'primary'
+  checkbox = true;
+  input1;
+  input2;
 }
