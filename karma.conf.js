@@ -5,6 +5,10 @@ module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    files:[
+        "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+        "src/styles.scss",
+    ],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),

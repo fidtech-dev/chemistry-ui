@@ -5,19 +5,13 @@
         <span class="bar bg-{{color}}"></span>
         <label class="labelMaterial">{{label}}</label>
     </div>
-
 </ng-container>
 
 <ng-container *ngIf="desing === 'border'">
-
     <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
        <label>{{label}}</label>
         <input type="text" [(ngModel)]="value"  (blur)="onBlur()" class="form-control" [placeholder]="placeholder">
     </div>
-
-
-
-
 </ng-container>
 
 
