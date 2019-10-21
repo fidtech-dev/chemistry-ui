@@ -3,24 +3,24 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms
 import {noop} from 'rxjs';
 
 @Component({
-    selector: 'fiu-input',
-    templateUrl: './fiu-input.component.html',
-    styleUrls: ['./fiu-input.component.scss'],
+    selector: 'che-input',
+    templateUrl: './che-input.component.html',
+    styleUrls: ['./che-input.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => FiuInputComponent),
+            useExisting: forwardRef(() => CheInputComponent),
             multi: true
         }
     ],
 })
-export class FiuInputComponent implements ControlValueAccessor, OnInit {
+export class CheInputComponent implements ControlValueAccessor, OnInit {
     @Input() color = 'primary';
     @Input() label;
-    @Input() desing;
+    @Input() desing = 'borderless';
     @Input() size;
     @Input() disabled;
-    @Input() placeholder;
+    @Input() placeholder = '';
     @Input() required = false;
     @Input() readonly = false;
     @ContentChild(NgControl, {static: false}) public control: any;

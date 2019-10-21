@@ -6,19 +6,19 @@ const noop = () => {
 };
 
 @Component({
-    selector: 'fiu-checkbox',
-    templateUrl: './fiu-checkbox.component.html',
-    styleUrls: ['./fiu-checkbox.component.scss'],
+    selector: 'che-checkbox',
+    templateUrl: './che-checkbox.component.html',
+    styleUrls: ['./che-checkbox.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => FiuCheckboxComponent),
+            useExisting: forwardRef(() => CheCheckboxComponent),
             multi: true
         }
     ],
 })
 
-export class FiuCheckboxComponent implements ControlValueAccessor {
+export class CheCheckboxComponent implements ControlValueAccessor {
     @Input() color = '';
     @Input() label = '';
     @Input() disabled;

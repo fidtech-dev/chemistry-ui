@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FiuInputComponent } from './fiu-input.component';
+import { CheInputComponent } from './che-input.component';
 
 describe('FiuInputComponent', () => {
-  let component: FiuInputComponent;
-  let fixture: ComponentFixture<FiuInputComponent>;
+  let component: CheInputComponent;
+  let fixture: ComponentFixture<CheInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FiuInputComponent ]
+      declarations: [ CheInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FiuInputComponent);
+    fixture = TestBed.createComponent(CheInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

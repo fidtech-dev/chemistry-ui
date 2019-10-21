@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FiuValidationMessagesComponent } from './fiu-validation-messages.component';
+import { CheValidationMessagesComponent } from './che-validation-messages.component';
 
 describe('FiuValidationMessagesComponent', () => {
-  let component: FiuValidationMessagesComponent;
-  let fixture: ComponentFixture<FiuValidationMessagesComponent>;
+  let component: CheValidationMessagesComponent;
+  let fixture: ComponentFixture<CheValidationMessagesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FiuValidationMessagesComponent ]
+      declarations: [ CheValidationMessagesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FiuValidationMessagesComponent);
+    fixture = TestBed.createComponent(CheValidationMessagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

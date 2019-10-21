@@ -3,11 +3,14 @@ import {Routes, RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
 import {ButtonDemoComponent} from './demo/button/button.component';
 import {InputComponent} from './demo/input/input.component';
+import {CheckboxComponent} from './demo/checkbox/checkbox.component';
 
 
 const routes: Routes = [
     {path: 'buttons', component: ButtonDemoComponent},
     {path: 'input', component: InputComponent},
+    {path: 'checkbox', component: CheckboxComponent},
+
     {path: '', redirectTo: 'buttons', pathMatch: 'full'}
 ];
 

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
 @import '~highlight.js/styles/dracula.css';
+
 :root {
 
   --white: #fff;
@@ -11,7 +12,7 @@
   --info: #E897B2;
   --warning: #F0B323;
   --danger: #E56A54;
-  --light:  #fff;
+  --light: #fff;
   --dark: #303030;
 }
 
@@ -19,13 +20,13 @@
   color: #702182;
 }
 
-.bg-light{
+.bg-light {
   background: #481759 !important;
   color: white !important;
-  box-shadow:2px 3px 6px #0000005e;
+  box-shadow: 2px 3px 6px #0000005e;
 }
 
-.bg-dark{
+.bg-dark {
   background: #25282c !important;
 }
 
@@ -38,23 +39,28 @@ body {
 h1 {
   font-size: 2.5rem;
 }
+
 h2 {
   font-size: 2rem;
 }
+
 h3 {
   font-size: 1.75rem;
 }
-h4{
+
+h4 {
   font-size: 1.5rem;
 }
-h5{
+
+h5 {
   font-size: 1.25rem;
 }
+
 h6 {
   font-size: 1rem;
 }
 
-h1,h2,h3,h4,h5,h6,p {
+h1, h2, h3, h4, h5, h6, p {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -97,7 +103,7 @@ a {
 
 
 .sidebar {
- // position: fixed;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -107,7 +113,8 @@ a {
 }
 
 .sidebar-sticky {
-  position: relative;
+
+  // position: relative;
   top: 0;
   height: calc(100vh - 48px);
   padding-top: .5rem;
@@ -198,13 +205,34 @@ a {
 .img-profile.rounded-circle {
   width: 60px;
   height: 60px;
-  border-color:#702182!important;
+  border-color: #702182 !important;
   border: 3px solid;
   margin-right: 2rem;
 }
 
 .panel {
   background-color: white;
-  border-radius:5px;
+  border-radius: 5px;
   padding: 1rem;
+}
+
+.main-bg {
+  padding-left: 12% !important;
+}
+
+
+svg {
+  margin-right: -6px;
+  margin-left: 5px;
+  width: 4%;
+
+  path, circle {
+    fill: white;
+  }
+}
+
+.navbar {
+  h3 {
+    margin-top: 7px;
+  }
 }

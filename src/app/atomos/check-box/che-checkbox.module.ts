@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FiuCheckboxComponent } from './fiu-checkbox.component';
+import { CheCheckboxComponent } from './che-checkbox.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -9,10 +9,10 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   declarations: [
-    FiuCheckboxComponent
+    CheCheckboxComponent
   ],
   exports: [
-    FiuCheckboxComponent,
+    CheCheckboxComponent,
   ]
 })
-export class FiuCheckBoxModule { }
+export class CheCheckboxModule { }
