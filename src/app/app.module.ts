@@ -14,11 +14,12 @@ import {HighlightModule} from 'ngx-highlightjs';
 import xml from 'highlight.js/lib/languages/xml';
 import scss from 'highlight.js/lib/languages/scss';
 import typescript from 'highlight.js/lib/languages/typescript';
-import { DocumentationComponent } from './demo/documentation/documentation.component';
-import { InputComponent } from './demo/input/input.component';
-import { CheckboxComponent } from './demo/checkbox/checkbox.component';
+import {DocumentationComponent} from './demo/documentation/documentation.component';
+import {InputComponent} from './demo/input/input.component';
+import {CheckboxComponent} from './demo/checkbox/checkbox.component';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { GetStartedComponent } from './demo/get-started/get-started.component';
 
 export function hljsLanguages() {
     return [
@@ -35,6 +36,7 @@ export function hljsLanguages() {
         DocumentationComponent,
         InputComponent,
         CheckboxComponent,
+        GetStartedComponent,
     ],
     imports: [
         BrowserModule,
@@ -42,7 +44,6 @@ export function hljsLanguages() {
         AppRoutingModule,
         CheCheckboxModule,
         ReactiveFormsModule,
-        CodeHighlighterModule,
         FormsModule,
         CheButtonModule,
         CheInputModule,
@@ -50,10 +51,11 @@ export function hljsLanguages() {
         HighlightModule.forRoot({
             languages: hljsLanguages
         }),
-        ToastrModule.forRoot() // ToastrModule added
+        ToastrModule.forRoot()
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    exports: [ToastrModule]
 })
 export class AppModule {
 }

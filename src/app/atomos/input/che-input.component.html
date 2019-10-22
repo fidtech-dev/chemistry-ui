@@ -1,20 +1,10 @@
 <ng-container *ngIf="desing === 'borderless'">
-    <div class="group" [ngClass]="{'has-danger': hasDanger() }" >
-        <input type="text" [(ngModel)]="value" [readOnly]="readonly"  (blur)="onBlur()"  class="inputMaterial" [required]="true">
+    <div class="group" [ngClass]="{'has-danger': hasDanger() }">
+        <input [type]='type' [(ngModel)]="value" [readOnly]="readonly" (blur)="onBlur()" class="inputMaterial"
+               [required]="true">
         <span class="highlight"></span>
         <span class="bar bg-{{color}}"></span>
         <label class="labelMaterial">{{label}}</label>
-
-
-   <!--     <div class="form-control-feedback" *ngIf="control.errors && control.errors.required">
-            <span>Valor requerido</span>
-        </div>
-        <div class="form-control-feedback" *ngIf="control.errors && control.errors.minlength">
-            <span>Debe ingresar un mínimo de {{control.errors.minlength.requiredLength}} caracteres</span>
-        </div>
-        <div class="form-control-feedback" *ngIf="control.errors && control.errors.pattern">
-            <span>che, le pifiaste</span>
-        </div>-->
     </div>
 
 </ng-container>
@@ -22,11 +12,10 @@
 <ng-container *ngIf="desing === 'border'">
 
     <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
-       <label>{{label}}</label>
-        <input type="text" [(ngModel)]="value"  (blur)="onBlur()" class="form-control" [required]="true" [placeholder]="placeholder">
+        <label>{{label}}</label>
+        <input type="text" [(ngModel)]="value" (blur)="onBlur()" class="form-control" [required]="true"
+               [placeholder]="placeholder">
     </div>
-
-
 
 
 </ng-container>

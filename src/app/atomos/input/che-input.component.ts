@@ -23,6 +23,7 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     @Input() placeholder = '';
     @Input() required = false;
     @Input() readonly = false;
+    @Input() type = 'text';
     @ContentChild(NgControl, {static: false}) public control: any;
 
 
@@ -94,6 +95,9 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
         this.onTouchedCallback = fn;
     }
 
+    /**
+     * @description Function that returns if the input is invalid
+     */
     hasDanger() {
         return this.control && (this.control as any).name && (this.control.dirty || this.control.touched) && !this.control.valid;
     }

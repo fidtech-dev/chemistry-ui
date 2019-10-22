@@ -1,0 +1,36 @@
+<div class="headerAtom">
+    <h3>Get Started </h3>
+    <hr>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h5><strong>Step 1</strong> - Install</h5>
+        <div class="containerBtnCopy">
+            <button (click)="copyText(codeInstall)" class="btn btn-outline-info" >Copy
+            </button>
+        </div>
+        <pre><code class="paddingCode" [highlight]="codeInstall"></code></pre>
+
+
+        <h5><strong>Step 2</strong> - Styles Config</h5>
+        <p>in angular.json add in "styles" the nexts lines</p>
+        <div class="containerBtnCopy">
+            <button (click)="copyText(codeAngularJson)" class="btn btn-outline-info" >Copy
+            </button>
+        </div>
+        <pre><code class="paddingCode" [highlight]="codeAngularJson"></code></pre>
+
+        <h5><strong>Step 3</strong> - Config Variable of colors</h5>
+        <p>In styles.scss add the next code. in this code you can set color palet of your system</p>
+        <div class="containerBtnCopy">
+            <button (click)="copyText(codeVariables)" class="btn btn-outline-info" >Copy
+            </button>
+        </div>
+        <pre><code class="paddingCode" [highlight]="codeVariables"></code></pre>
+    </div>
+
+
+</div>
+
+

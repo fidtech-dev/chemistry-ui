@@ -19,7 +19,7 @@ const noop = () => {
 })
 
 export class CheCheckboxComponent implements ControlValueAccessor {
-    @Input() color = '';
+    @Input() color = 'primary';
     @Input() label = '';
     @Input() disabled;
 

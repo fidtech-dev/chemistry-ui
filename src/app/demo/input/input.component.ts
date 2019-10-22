@@ -12,7 +12,7 @@ export class InputComponent implements OnInit {
     input2;
     userForm;
     textImport = 'import {CheInputModule} from \'@fidtech-sa/chemistry-ui\';\n';
-    gettingStarter = '<che-input color=\'primary\' [(ngModel)]="input1" name="example" #example=\'ngModel\' minlength="10"\n' +
+    gettingStarter = '<che-input color=\'primary\' [(ngModel)]="input1" name="example" #example=\'ngModel\' \n' +
         ' label="name" desing="borderless" required="true"></che-input>';
     attribute = [
         {tittle: 'Color:', description: 'Determine the color of the button'},
@@ -21,7 +21,8 @@ export class InputComponent implements OnInit {
         {tittle: 'required:', description: 'Determine if input is require'},
         {tittle: 'Desing:', description: 'Determine desing of input, "borderless or border"'},
         {tittle: 'Disabled:', description: 'Disable the Input'},
-        {tittle: 'readonly:', description: 'Input readonly'}
+        {tittle: 'readonly:', description: 'Input readonly'},
+        {tittle: 'type:', description: 'type of input, "text,number"'}
 
     ];
 

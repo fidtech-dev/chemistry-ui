@@ -4,14 +4,16 @@ import {AppComponent} from './app.component';
 import {ButtonDemoComponent} from './demo/button/button.component';
 import {InputComponent} from './demo/input/input.component';
 import {CheckboxComponent} from './demo/checkbox/checkbox.component';
+import {GetStartedComponent} from './demo/get-started/get-started.component';
 
 
 const routes: Routes = [
+    {path: 'getStarted', component: GetStartedComponent},
     {path: 'buttons', component: ButtonDemoComponent},
     {path: 'input', component: InputComponent},
     {path: 'checkbox', component: CheckboxComponent},
 
-    {path: '', redirectTo: 'buttons', pathMatch: 'full'}
+    {path: '', redirectTo: 'getStarted', pathMatch: 'full'}
 ];
 
 

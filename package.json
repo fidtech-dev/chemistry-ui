@@ -11,18 +11,14 @@
     "packagr": "ng-packagr -p ng-package.json",
     "postbuild": "ts-node ./css-bundle.ts",
     "build-local": "npm run packagr && npm run cp-mylib-assets && cd dist && npm pack",
-    "build-mylib": "npm run packagr && npm run cp-mylib-assets && cd dist && npm pack && npm publish",
+    "build-toNpm": "npm run packagr && npm run cp-mylib-assets && cd dist && npm pack && npm publish",
     "build-mylib-styles": "cpx \"./projects/mylib/src/lib/style/**/*\" \"./dist/mylib/style\" && scss-bundle -e ./projects/mylib/src/lib/style/_style.scss -d ./dist/mylib/style/_styles.scss",
     "cp-mylib-assets": "cpx \"./src/styles.scss\" \"./dist\""
   },
   "private": false,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "highlight.js": "^9.15.10",
-    "ngx-highlightjs": "^3.0.3",
-    "ngx-toastr": "^11.1.2",
-    "primeng": "^8.0.4",
-    "prismjs": "^1.17.1"
+    "ngx-toastr": "^11.1.2"
   },
   "devDependencies": {
     "@angular/animations": "~8.1.2",
@@ -63,11 +59,14 @@
     "rxjs": "~6.4.0",
     "scss-bundle": "^3.0.1",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "highlight.js": "^9.15.10",
+    "ngx-highlightjs": "^3.0.3"
   },
   "ngPackage": {
     "whitelistedNonPeerDependencies": [
-      "bootstrap"
+      "bootstrap",
+      "ngx-toastr"
     ]
   }
 }

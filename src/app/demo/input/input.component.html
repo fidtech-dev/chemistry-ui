@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-12">
         <h5>Input borderless </h5>
-        <che-input color='primary' [(ngModel)]="input1" name="example" #example='ngModel' label="name"
+        <che-input color='primary' type="number" [(ngModel)]="input1" name="example" #example='ngModel' label="name"
                    desing="borderless" required="true"></che-input>
         <che-validation-message messege="Value Required"
                                 *ngIf="example.touched && example.errors && example.errors.required"></che-validation-message>
