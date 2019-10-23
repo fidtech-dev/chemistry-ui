@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-12">
         <h5>Input borderless </h5>
-        <che-input color='primary' type="number" [(ngModel)]="input1" name="example" #example='ngModel' label="name"
+        <che-input color='primary' type="number"  [(ngModel)]="input1" name="example" #example='ngModel' label="name"
                    desing="borderless" required="true"></che-input>
         <che-validation-message messege="Value Required"
                                 *ngIf="example.touched && example.errors && example.errors.required"></che-validation-message>
@@ -16,7 +16,7 @@
         <form [formGroup]="userForm">
             <h5 class="mt-3">Input with border</h5>
             <che-input color='primary' name="ejemplo2" formControlName="name" minlength="10" label="Name"
-                       desing="border" required="true"></che-input>
+                       desing="border" ></che-input>
             <che-validation-message messege="Value Required"
                                     *ngIf="userForm.get('name').touched && userForm.get('name').errors && userForm.get('name').errors.required"></che-validation-message>
             <che-validation-message

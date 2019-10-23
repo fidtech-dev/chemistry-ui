@@ -1,4 +1,4 @@
-import {Component, ContentChild, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
 import {noop} from 'rxjs';
 
@@ -18,12 +18,14 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     @Input() color = 'primary';
     @Input() label;
     @Input() desing = 'borderless';
-    @Input() size;
     @Input() disabled;
     @Input() placeholder = '';
     @Input() required = false;
     @Input() readonly = false;
     @Input() type = 'text';
+    @Output() focus = new EventEmitter();
+    @Output() focusout = new EventEmitter();
+    @Output() blur = new EventEmitter();
     @ContentChild(NgControl, {static: false}) public control: any;
 
 
@@ -32,11 +34,12 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     }
 
     ngOnInit() {
-        if(this.readonly){
-            this.color = "transparent";
+        if (this.readonly) {
+            this.color = 'transparent';
 
         }
     }
+
     /**
      * @description The internal data model
      */
@@ -72,6 +75,15 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
      */
     onBlur() {
         this.onTouchedCallback();
+        this.blur.emit();
+    }
+
+    public onFocus() {
+        this.focus.emit();
+    }
+
+    public onFocusout() {
+        this.focusout.emit();
     }
 
     /**

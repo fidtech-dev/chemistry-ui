@@ -22,7 +22,7 @@ export class InputComponent implements OnInit {
         {tittle: 'Desing:', description: 'Determine desing of input, "borderless or border"'},
         {tittle: 'Disabled:', description: 'Disable the Input'},
         {tittle: 'readonly:', description: 'Input readonly'},
-        {tittle: 'type:', description: 'type of input, "text,number"'}
+        {tittle: 'type:', description: 'type of input, "text,number,password"'}
 
     ];
 
@@ -46,5 +46,16 @@ export class InputComponent implements OnInit {
         });
     }
 
+    pruebaFocus(){
+        console.log('focus')
+    }
+
+    prueba(){
+        console.log('blur')
+    }
+
+    pruebaChange(){
+        console.log("change");
+    }
 
 }
