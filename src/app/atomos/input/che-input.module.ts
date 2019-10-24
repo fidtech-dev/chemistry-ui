@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FiuInputComponent } from './fiu-input.component';
+import { CheInputComponent } from './che-input.component';
 import {FormsModule} from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [FiuInputComponent],
+  declarations: [CheInputComponent],
   imports: [
     CommonModule,
     FormsModule
   ],
-  exports:[FiuInputComponent]
+  exports:[CheInputComponent]
 })
-export class FiuInputModule { }
+export class CheInputModule { }

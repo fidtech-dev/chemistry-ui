@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'fiu-button',
-  templateUrl: './fiu-button.component.html',
-  styleUrls: ['./fiu-button.component.scss']
+  selector: 'che-button',
+  templateUrl: './che-button.component.html',
+  styleUrls: ['./che-button.component.scss']
 })
-export class FiuButtonComponent implements OnInit {
+export class CheButtonComponent implements OnInit {
 
   @Input() color = 'primary';
   @Input() label;

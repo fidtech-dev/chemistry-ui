@@ -1,28 +1,45 @@
-import {Component, ContentChild, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
 import {noop} from 'rxjs';
 
 @Component({
-    selector: 'fiu-input',
-    templateUrl: './fiu-input.component.html',
-    styleUrls: ['./fiu-input.component.scss'],
+    selector: 'che-input',
+    templateUrl: './che-input.component.html',
+    styleUrls: ['./che-input.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => FiuInputComponent),
+            useExisting: forwardRef(() => CheInputComponent),
             multi: true
         }
     ],
 })
-export class FiuInputComponent implements ControlValueAccessor {
+export class CheInputComponent implements ControlValueAccessor, OnInit {
     @Input() color = 'primary';
     @Input() label;
-    @Input() desing;
-    @Input() size;
+    @Input() desing = 'borderless';
     @Input() disabled;
-    @Input() placeholder;
+    @Input() placeholder = '';
     @Input() required = false;
+    @Input() readonly = false;
+    @Input() type = 'text';
+    @Output() focus = new EventEmitter();
+    @Output() focusout = new EventEmitter();
+    @Output() blur = new EventEmitter();
     @ContentChild(NgControl, {static: false}) public control: any;
+
+
+    constructor() {
+
+    }
+
+    ngOnInit() {
+        if (this.readonly) {
+            this.color = 'transparent';
+
+        }
+    }
+
     /**
      * @description The internal data model
      */
@@ -58,6 +75,15 @@ export class FiuInputComponent implements ControlValueAccessor {
      */
     onBlur() {
         this.onTouchedCallback();
+        this.blur.emit();
+    }
+
+    public onFocus() {
+        this.focus.emit();
+    }
+
+    public onFocusout() {
+        this.focusout.emit();
     }
 
     /**
@@ -81,7 +107,10 @@ export class FiuInputComponent implements ControlValueAccessor {
         this.onTouchedCallback = fn;
     }
 
+    /**
+     * @description Function that returns if the input is invalid
+     */
     hasDanger() {
-        return (this.control as any).name && (this.control.dirty || this.control.touched) && !this.control.valid;
+        return this.control && (this.control as any).name && (this.control.dirty || this.control.touched) && !this.control.valid;
     }
 }

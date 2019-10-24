@@ -2,7 +2,6 @@
 /* form starting stylings ------------------------------- */
 .group 			  {
   position:relative;
-  margin-bottom:45px;
 }
 .inputMaterial 				{
   font-size:18px;
@@ -12,7 +11,7 @@
   border:none;
   border-bottom:1px solid #757575;
 }
-.inputMaterial:focus 		{ outline:none;   border-bottom:  1px solid transparent}
+.inputMaterial:focus 		{ outline:none;   }
 
 /* LABEL ======================================= */
 .labelMaterial 	{
@@ -33,6 +32,10 @@ input:focus ~ label, input:valid ~ label 		{
   top:-20px;
   font-size:14px;
 }
+
+
+
+
 
 /* BOTTOM BARS ================================= */
 .bar 	{ position:relative; display:block; width:300px; }
@@ -138,3 +141,24 @@ input:focus ~ .bg-success:before, input:focus ~ .bg-success:after {
     color:var(--danger);
   }
 }
+
+
+input:read-only ~ label {
+  top:-20px;
+  font-size:14px;
+}
+
+
+.form-control-feedback{
+  font-size: 0.8rem;
+  margin-top: 3px;
+  color: var(--danger);
+  margin-left: 0.3rem;
+}
+
+
+
+
+
+
+

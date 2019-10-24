@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed, fakeAsync} from '@angular/core/testing';
-import { FiuInputComponent } from './fiu-input.component';
+import { CheInputComponent } from './che-input.component';
 import { FormsModule } from '@angular/forms';
 import {By} from '@angular/platform-browser';
 import {Component, inject, Provider, Type} from '@angular/core';
@@ -10,7 +10,6 @@ describe('FiuInput as a individual compoenent', () => {
   // Error: Si el elemento es no tiene definido un design debe mostrarse ByDefault
   // Si el componente no tiene un model definido, no me deja utilizar
   describe('Default desing', () => {
-
 
 
   });
@@ -114,7 +113,7 @@ function createComponent<T>(component: Type<T>,
       FormsModule,
       ...imports
     ],
-    declarations: [FiuInputComponent, component, ...declarations],
+    declarations: [CheInputComponent, component, ...declarations],
     providers,
   }).compileComponents();
 

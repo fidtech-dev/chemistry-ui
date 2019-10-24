@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
+@import '~highlight.js/styles/dracula.css';
+
+:root {
+
+  --white: #fff;
+  --gray: #858796;
+  --gray-dark: #5a5c69;
+  --primary: #702182;
+  --secondary: #B51B4F;
+  --success: #78BE20;
+  --info: #E897B2;
+  --warning: #F0B323;
+  --danger: #E56A54;
+  --light: #fff;
+  --dark: #303030;
+}
+
+.color-primary {
+  color: #702182;
+}
+
+.bg-light {
+  background: #481759 !important;
+  color: white !important;
+  box-shadow: 2px 3px 6px #0000005e;
+}
+
+.bg-dark {
+  background: #25282c !important;
+}
+
+body {
+  color: #343A40;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+
+.logo_light {
+  width: 119px;
+}
+
+.brand {
+  display: inline-block;
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  text-align: center;
+  padding-right: 1.8rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+.sidebar-icon {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 100px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+
+  // position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+
+.sidebar .nav-link {
+  padding: 1.25rem;
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Content
+ */
+
+[role="main"] {
+  padding-top: 133px; /* Space for fixed navbar */
+}
+
+@media (min-width: 768px) {
+  [role="main"] {
+    padding-top: 100px; /* Space for fixed navbar */
+  }
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+
+.img-profile.rounded-circle {
+  width: 60px;
+  height: 60px;
+  border-color: #702182 !important;
+  border: 3px solid;
+  margin-right: 2rem;
+}
+
+.panel {
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.main-bg {
+  padding-left: 12% !important;
+}
+
+
+svg {
+  margin-right: -6px;
+  margin-left: 5px;
+  width: 4%;
+
+  path, circle {
+    fill: white;
+  }
+}
+
+.navbar {
+  h3 {
+    margin-top: 7px;
+  }
+}
+
+li{
+  cursor: pointer;
+  outline: transparent;
+}

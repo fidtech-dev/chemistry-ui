@@ -1,24 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { FiuCheckboxComponent } from './fiu-checkbox.component';
 import { FormsModule } from '@angular/forms';
 import {Component} from '@angular/core';
-
+import { CheCheckboxComponent } from './che-checkbox.component';
 
 describe('CheckBoxComponent', () => {
-  let component: FiuCheckboxComponent;
-  let fixture: ComponentFixture<any>;
+  let component: CheCheckboxComponent;
+  let fixture: ComponentFixture<CheCheckboxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatCheckboxModule, FormsModule],
-      declarations: [ FiuCheckboxComponent, FiuInputTextRequiredTestComponent ]
+      imports: [MatCheckboxModule],
+      declarations: [ CheCheckboxComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FiuInputTextRequiredTestComponent);
+    fixture = TestBed.createComponent(CheCheckboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
