@@ -9,7 +9,6 @@ import {CheButtonModule} from './atomos/button/che-button.module';
 import {CheInputModule} from './atomos/input/che-input.module';
 import {CheValidationMessagesModule} from './atomos/validation-messages/che-validation-messages.module';
 import {ButtonDemoComponent} from './demo/button/button.component';
-import {CodeHighlighterModule} from 'primeng/codehighlighter';
 import {HighlightModule} from 'ngx-highlightjs';
 import xml from 'highlight.js/lib/languages/xml';
 import scss from 'highlight.js/lib/languages/scss';
@@ -20,6 +19,9 @@ import {CheckboxComponent} from './demo/checkbox/checkbox.component';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { GetStartedComponent } from './demo/get-started/get-started.component';
+import { CheIconComponent } from './atomos/icon/che-icon.component';
+import {CheIconModule} from './atomos/icon/che-icon.module';
+import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
 
 export function hljsLanguages() {
     return [
@@ -37,12 +39,15 @@ export function hljsLanguages() {
         InputComponent,
         CheckboxComponent,
         GetStartedComponent,
+        IconComponent,
+        MyFilterPipe
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
         CheCheckboxModule,
+        CheIconModule,
         ReactiveFormsModule,
         FormsModule,
         CheButtonModule,

@@ -17,7 +17,7 @@ import {noop} from 'rxjs';
 export class CheInputComponent implements ControlValueAccessor, OnInit {
     @Input() color = 'primary';
     @Input() label;
-    @Input() desing = 'borderless';
+    @Input() desing = 'border';
     @Input() disabled;
     @Input() placeholder = '';
     @Input() required = false;

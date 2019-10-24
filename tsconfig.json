@@ -18,9 +18,13 @@
       "es2018",
       "dom"
     ]
+
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "files": [
+    "node_modules/@fidtech-sa/ft-icons/icons.ts"
+  ]
 }

@@ -1,0 +1,42 @@
+.containerBtnCopy {
+  text-align: right;
+  margin-bottom: -29px;
+
+  button{
+    margin-bottom: -15px !important;margin-right: 5px;
+  }
+}
+
+code {
+  font-size: 0.8rem;
+}
+
+
+.paddingCode {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+che-icon{
+  font-size: 60px;
+}
+
+
+.divCopy{
+opacity: 0;
+  background-color: var(--info);
+  color:white;
+  border-radius: 0px 0px 5px 5px;
+
+}
+.icon{
+  cursor: pointer;
+}
+.icon:hover{
+  .divCopy{
+    opacity: 1 !important;
+    transition:opacity 0.5s;
+  }
+
+}
