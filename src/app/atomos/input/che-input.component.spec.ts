@@ -120,14 +120,16 @@ function createComponent<T>(component: Type<T>,
   return TestBed.createComponent<T>(component);
 }
 
-
+// fixture 1
 @Component({
-  template: `<fiu-input></fiu-input>`
+  template: `<che-input desing="borderless" color="primary"
+              label="The Label" ></che-input>`
+
 })
-class FiuInputTextByDefaultTestComponent {}
+class CheInputF1Component {}
 
 @Component({
-  template: `<fiu-input label="Label" desing="borderless" ></fiu-input>`
+  template: `<che-input label="Label" desing="borderless" ></che-input>`
 })
 class FiuInputBorderlessLabelAttrTestComponent {
   text: string = 'valor posible';
@@ -135,7 +137,7 @@ class FiuInputBorderlessLabelAttrTestComponent {
 }
 
 @Component({
-  template: `<fiu-input color='primary' name="input1" [(ngModel)]="input1" label="Nombre" desing="borderless" required="true"></fiu-input>`
+  template: `<che-input color='primary' name="input1" [(ngModel)]="input1" label="Nombre" desing="borderless" required="true"></che-input>`
 })
 class FiuInputTextRequiredTestComponent {
   color = 'primary';

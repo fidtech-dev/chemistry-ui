@@ -35,7 +35,7 @@ describe('CheckBoxComponent', () => {
 
 
 @Component({
-  template: `<fiu-checkbox [(ngModel)]='checkbox' color="primary" label='esto es un label por dos' ></fiu-checkbox>`
+  template: `<che-checkbox [(ngModel)]='checkbox' color="primary" label='esto es un label por dos' ></che-checkbox>`
 })
 class FiuInputTextRequiredTestComponent {
   color = 'primary';
