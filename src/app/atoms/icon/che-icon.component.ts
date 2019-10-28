@@ -13,7 +13,7 @@ export class CheIconComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this.type === 'ligth') {
+        if (this.type === 'light') {
             this.type = 'ftl';
         }
     }

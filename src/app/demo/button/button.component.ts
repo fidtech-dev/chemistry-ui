@@ -16,7 +16,6 @@ export class ButtonDemoComponent implements OnInit {
         {tittle: 'Label:', description: 'determine the text of the button'},
         {tittle: 'Outline:', description: ''},
         {tittle: 'Size:', description: 'determine the text of the button, accept "lg,sm,block"'},
-        {tittle: 'Icon:', description: 'In Coming'},
         {tittle: 'Disabled:', description: 'disable the button'}
     ];
     codeHtml = '<!-- Severity Buttons -->\n' +
@@ -28,6 +27,31 @@ export class ButtonDemoComponent implements OnInit {
         '<che-button color=\'info\' label="Info"></che-button>\n' +
         '<che-button color=\'dark\' label="Dark"></che-button>\n' +
         '<che-button color=\'ligth\' label="Ligth"></che-button>\n' +
+        '\n' +
+        '<che-button color=\'primary\' label="Primary">\n' +
+        '     <che-icon type="ligth" icon="user"></che-icon>\n' +
+        '</che-button>\n' +
+        '<che-button color=\'secondary\' label="Secondary">\n' +
+        '     <che-icon type="ligth" icon="user"></che-icon>\n' +
+        '</che-button>\n' +
+        '<che-button color=\'success\' label="Success">\n' +
+        '     <che-icon type="ligth" icon="user"></che-icon>\n' +
+        '</che-button>\n' +
+        '<che-button color=\'warning\' label="Warning">\n' +
+        '     <che-icon type="ligth" icon="user"></che-icon>\n' +
+        '</che-button>\n' +
+        '<che-button color=\'danger\' label="Danger">\n' +
+        '     <che-icon type="ligth" icon="user"></che-icon>\n' +
+        '</che-button>\n' +
+        '<che-button color=\'info\' label="Info">\n' +
+        '     <che-icon type="ligth" icon="user"></che-icon>\n' +
+        '</che-button>\n' +
+        '<che-button color=\'dark\' label="Dark">\n' +
+        '     <che-icon type="ligth" icon="user"></che-icon>\n' +
+        '</che-button>\n' +
+        '<che-button color=\'ligth\' label="Ligth">\n' +
+        '     <che-icon type="ligth" icon="user"></che-icon>\n' +
+        '</che-button>' +
         '\n' +
         '<!-- Severity Buttons Outline-->\n' +
         '<che-button color=\'primary\' [outline]="true" label="Primary"></che-button>\n' +
