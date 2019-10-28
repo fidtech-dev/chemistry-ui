@@ -34,34 +34,44 @@ describe('che-Input as a Atomic component', () => {
       it('Should be to have a floating label', () => {
         // Act
         let label = fixture.debugElement.query(By.css('label'))!;
+        let input = fixture.debugElement.query(By.css('input'))!;
+
         // Assert
-        expect(label.nativeElement.classList.contains('labelMaterial')).toBeTruthy('Shold to have the class labelMaterial');
+        expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Shold not to have the class che-input-focus');
+        expect(label.nativeElement.classList.contains('che-label-floating')).toBeFalsy('Shold not to have the class che-label-floating');
+
+        input.triggerEventHandler('focus',null);
+        fixture.detectChanges();
+
+        expect(input.nativeElement.classList.contains('che-input-focus')).toBeTruthy('Shold to have the class che-input-focus');
+        expect(label.nativeElement.classList.contains('che-label-floating')).toBeTruthy('Shold to have the class che-label-floating');
+
       });
 
       // test3
-      it('Should be to the value seted in the input should to have this value', () => {
-         // AAA (Arrange, Act y Assert) Preparar, actuar y afirmar
-        // Act
-        let label = fixture.debugElement.query(By.css('label'))!;
-        let input = fixture.debugElement.query(By.css('input'))!;
-
-        // obtener la class
-
-          expect(input.attributes.value).toBeFalsy();
-
-        console.log(input.nativeElement.classList);
-
-        input.nativeElement.value = 'something';
-        fixture.detectChanges();
-
-        console.log(input.nativeElement.classList);
-
-          // Assert
-        expect(input.attributes.value).toBe('something');
-
-
-
-      });
+      // it('Should be to the value seted in the input should to have this value', () => {
+      //    // AAA (Arrange, Act y Assert) Preparar, actuar y afirmar
+      //   // Act
+      //   let label = fixture.debugElement.query(By.css('label'))!;
+      //   let input = fixture.debugElement.query(By.css('input'))!;
+      //
+      //   // obtener la class
+      //
+      //     expect(input.attributes.value).toBeFalsy();
+      //
+      //   console.log(input.nativeElement.classList);
+      //
+      //   input.nativeElement.value = 'something';
+      //   fixture.detectChanges();
+      //
+      //   console.log(input.nativeElement.classList);
+      //
+      //     // Assert
+      //   expect(input.attributes.value).toBe('something');
+      //
+      //
+      //
+      // });
 
     });
 

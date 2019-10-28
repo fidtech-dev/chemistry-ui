@@ -1,10 +1,10 @@
 <ng-container *ngIf="desing === 'borderless'">
     <div class="group" [ngClass]="{'has-danger': hasDanger() }">
-        <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'pepeFocus': fucused }" [readOnly]="readonly" (focus)="onFocus()" (blur)="onBlur()" class="inputMaterial"
+        <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'che-input-focus': fucused }" [readOnly]="readonly" (focus)="onFocus()" (blur)="onBlur()" class="inputMaterial"
                [required]="true">
         <span class="highlight"></span>
         <span class="bar bg-{{color}}"></span>
-        <label class="labelMaterial">{{label}}</label>
+        <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused }">{{label}}</label>
 
     </div>
 </ng-container>

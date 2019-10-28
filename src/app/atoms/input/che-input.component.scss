@@ -28,7 +28,7 @@
 }
 
 /* active state */
-input:focus ~ label, input:valid ~ label 		{
+.che-label-floating {
   top:-20px;
   font-size:14px;
 }

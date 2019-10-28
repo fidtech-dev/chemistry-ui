@@ -80,6 +80,7 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     }
 
     public onFocus() {
+        console.log('Esta enfocando..');
         this.fucused = true;
         this.focus.emit();
     }
