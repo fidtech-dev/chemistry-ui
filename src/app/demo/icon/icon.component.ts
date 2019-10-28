@@ -27,7 +27,7 @@ export class MyFilterPipe implements PipeTransform {
 export class IconComponent implements OnInit {
     listIcon = icons;
     textFilter = '';
-    import = 'import {CheIconModule} from \'./atomos/icon/che-icon.module\';';
+    import = 'import {CheIconModule} from \'./atoms/icon/che-icon.module\';';
     gettingStarter = '<che-icon type="ligth" icon="user"></che-icon>';
     codeInstall = 'npm i @fidtech-sa/ft-icons';
     codeAngularJson = '  "styles": [\n' +

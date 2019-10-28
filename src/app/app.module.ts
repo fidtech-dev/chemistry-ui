@@ -3,11 +3,11 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {CheCheckboxModule} from './atomos/check-box/che-checkbox.module';
+import {CheCheckboxModule} from './atoms/check-box/che-checkbox.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CheButtonModule} from './atomos/button/che-button.module';
-import {CheInputModule} from './atomos/input/che-input.module';
-import {CheValidationMessagesModule} from './atomos/validation-messages/che-validation-messages.module';
+import {CheButtonModule} from './atoms/button/che-button.module';
+import {CheInputModule} from './atoms/input/che-input.module';
+import {CheValidationMessagesModule} from './atoms/validation-messages/che-validation-messages.module';
 import {ButtonDemoComponent} from './demo/button/button.component';
 import {HighlightModule} from 'ngx-highlightjs';
 import xml from 'highlight.js/lib/languages/xml';
@@ -19,8 +19,8 @@ import {CheckboxComponent} from './demo/checkbox/checkbox.component';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { GetStartedComponent } from './demo/get-started/get-started.component';
-import { CheIconComponent } from './atomos/icon/che-icon.component';
-import {CheIconModule} from './atomos/icon/che-icon.module';
+import { CheIconComponent } from './atoms/icon/che-icon.component';
+import {CheIconModule} from './atoms/icon/che-icon.module';
 import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
 
 export function hljsLanguages() {

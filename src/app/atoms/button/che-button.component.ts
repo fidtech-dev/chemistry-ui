@@ -11,7 +11,6 @@ export class CheButtonComponent implements OnInit {
   @Input() label;
   @Input() outline;
   @Input() size;
-  @Input() icon;
   @Input() disabled;
 
   constructor() { }

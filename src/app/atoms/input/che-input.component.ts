@@ -24,6 +24,7 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     @Input() readonly = false;
     @Input() type = 'text';
     @Output() focus = new EventEmitter();
+    public fucused = false;
     @Output() focusout = new EventEmitter();
     @Output() blur = new EventEmitter();
     @ContentChild(NgControl, {static: false}) public control: any;
@@ -79,6 +80,7 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     }
 
     public onFocus() {
+        this.fucused = true;
         this.focus.emit();
     }
 
