@@ -6,7 +6,7 @@ import {Component, inject, Provider, Type} from '@angular/core';
 // import {FiuInputModule} from './fiu-input.module';
 
 
-describe('che-Input as a Atomic component', () => {
+describe('che-input as a Atomic component', () => {
 
     describe('If not contain a type defined or is of type text', () => {
 
@@ -54,9 +54,9 @@ describe('che-Input as a Atomic component', () => {
                 let input = fixture.debugElement.query(By.css('input'))!;
 
                 // Assert
-                input.nativeElement.ng = 'something';
+                input.nativeElement.value = 'something';
+                input.nativeElement.dispatchEvent(new Event('input'));
                 fixture.detectChanges();
-                console.log(label.nativeElement.classList);
 
                 expect(label.nativeElement.classList.contains('che-label-floating')).toBeTruthy('Shold to have the class che-label-floating');
 
@@ -310,16 +310,6 @@ class CheInputF13Component {
 })
 class CheInputF14Component {
 }
-
-
-// @Component({
-//   template: <che-input color='primary' name="input1" [(ngModel)]="input1" label="Nombre" desing="borderless" required="true"></che-input>
-// })
-// class FiuInputTextRequiredTestComponent {
-//   color = 'primary';
-//   input1 = 'un valor';
-// }
-
 
 
 

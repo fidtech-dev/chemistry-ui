@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CheButtonComponent } from './che-button.component';
 
-describe('ButtonComponent', () => {
+describe('che-button Component', () => {
   let component: CheButtonComponent;
   let fixture: ComponentFixture<CheButtonComponent>;
 
@@ -19,7 +19,4 @@ describe('ButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
 });

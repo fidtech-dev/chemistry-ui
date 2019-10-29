@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {Component} from '@angular/core';
 import { CheCheckboxComponent } from './che-checkbox.component';
 
-describe('CheckBoxComponent', () => {
+describe('che-checkbox Component', () => {
   let component: CheCheckboxComponent;
   let fixture: ComponentFixture<CheCheckboxComponent>;
 
@@ -22,22 +22,4 @@ describe('CheckBoxComponent', () => {
     fixture.detectChanges();
   });
 
-  // describe('Basic behaviors', () => {
-  //   // cuando el ngModule is true debe estar checkeado
-  //   it('should create', () => {
-  //     console.log('asd');
-  //     console.log(component.color);
-  //     expect(component).toBeTruthy();
-  //   });
-  // });
-
 });
-
-
-@Component({
-  template: `<che-checkbox [(ngModel)]='checkbox' color="primary" label='esto es un label por dos' ></che-checkbox>`
-})
-class FiuInputTextRequiredTestComponent {
-  color = 'primary';
-  input1 = 'un valor';
-}
