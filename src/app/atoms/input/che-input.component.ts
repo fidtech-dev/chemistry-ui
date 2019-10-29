@@ -76,6 +76,7 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
      */
     onBlur() {
         this.onTouchedCallback();
+        this.fucused = false;
         this.blur.emit();
     }
 

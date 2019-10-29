@@ -4,7 +4,7 @@
                [required]="true">
         <span class="highlight"></span>
         <span class="bar bg-{{color}}"></span>
-        <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused }">{{label}}</label>
+        <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
 
     </div>
 </ng-container>
