@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
     templateUrl: './button.component.html',
     styleUrls: ['./button.component.scss']
 })
-export class ButtonDemoComponent implements OnInit {
+export class ButtonComponent implements OnInit {
     severityButtons = false;
     documentation = true;
     lenguage = 'html';
