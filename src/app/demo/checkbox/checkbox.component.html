@@ -1,0 +1,23 @@
+<div class="headerAtom">
+    <h3>Checkbox </h3>
+    <hr>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <che-checkbox [(ngModel)]='checkbox' color="primary"  label='this is a checkbox' ></che-checkbox> <br>
+        <che-checkbox [(ngModel)]='checkboxDisabled' color="primary"  label='this is a checkbox disabled' disabled="true" ></che-checkbox> <br>
+
+    </div>
+    <div class="col-12 sideRight mt-5">
+        <app-documentation [import]="textImport"
+                           [gettingStarter]="gettingStarter"
+                           [attribute]="attribute"
+                           [codeHtml]="codeHtml"
+                           [codeTs]="codeTs"
+                           [codeScss]="codeScss"
+        ></app-documentation>
+    </div>
+</div>
+
+

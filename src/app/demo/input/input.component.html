@@ -1,0 +1,42 @@
+<div class="headerAtom">
+    <h3>Inputs </h3>
+    <hr>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h5>Input borderless </h5>
+        <div class="mt-3" >
+            <che-input color='primary'  type="number" [(ngModel)]="input1" name="example" #example='ngModel'
+                       label="name"
+                       desing="borderless" required="true"></che-input>
+            <che-validation-message messege="Value Required"
+                                    *ngIf="example.touched && example.errors && example.errors.required"></che-validation-message>
+
+        </div>
+        <br>
+        <form [formGroup]="userForm">
+            <h5 class="mt-3">Input with border</h5>
+            <che-input color='primary' name="ejemplo2" formControlName="name" minlength="10" label="Name"
+                       desing="border"></che-input>
+            <che-validation-message messege="Value Required"
+                                    *ngIf="userForm.get('name').touched && userForm.get('name').errors && userForm.get('name').errors.required"></che-validation-message>
+            <che-validation-message
+                    messege="Debe ingresar un mínimo de {{ userForm.get('name').errors.minlength.requiredLength}} caracteres"
+                    *ngIf=" userForm.get('name').errors && userForm.get('name').errors.minlength"></che-validation-message>
+            <che-validation-message messege="No puede contener numeros"
+                                    *ngIf=" userForm.get('name').errors && userForm.get('name').errors.pattern"></che-validation-message>
+        </form>
+
+
+    </div>
+    <div class="col-12 sideRight mt-5">
+        <app-documentation [import]="textImport"
+                           [gettingStarter]="gettingStarter"
+                           [attribute]="attribute"
+                           [codeHtml]="codeHtml"
+                           [codeTs]="codeTs"
+                           [codeScss]="codeScss"
+        ></app-documentation>
+    </div>
+</div>

@@ -1,2 +1,3 @@
-# fidtech-ui
-Fidtech's UI-system
+# Chemistry-UI
+Chemistry-UI system
+

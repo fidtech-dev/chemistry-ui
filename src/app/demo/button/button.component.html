@@ -1,0 +1,77 @@
+<div class="headerAtom">
+    <h3>Button </h3>
+    <hr>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h5>Severity Buttons </h5>
+        <che-button color='primary' label="Primary"></che-button>
+        <che-button color='secondary' label="Secondary"></che-button>
+        <che-button color='success' label="Success"></che-button>
+        <che-button color='warning' label="Warning"></che-button>
+        <che-button color='danger' label="Danger"></che-button>
+        <che-button color='info' label="Info"></che-button>
+        <che-button color='dark' label="Dark"></che-button>
+        <che-button color='ligth' label="Ligth"></che-button>
+
+        <br>
+
+        <h5 class="mt-3">Buttons with icons </h5>
+        <che-button color='primary' label="Primary">
+            <che-icon type="light" icon="user"></che-icon>
+        </che-button>
+        <che-button color='secondary' label="Secondary">
+            <che-icon type="light" icon="user"></che-icon>
+        </che-button>
+        <che-button color='success' label="Success">
+            <che-icon type="light" icon="user"></che-icon>
+        </che-button>
+        <che-button color='warning' label="Warning">
+            <che-icon type="light" icon="user"></che-icon>
+        </che-button>
+        <che-button color='danger' label="Danger">
+            <che-icon type="light" icon="user"></che-icon>
+        </che-button>
+        <che-button color='info' label="Info">
+            <che-icon type="light" icon="user"></che-icon>
+        </che-button>
+        <che-button color='dark' label="Dark">
+            <che-icon type="light" icon="user"></che-icon>
+        </che-button>
+        <che-button color='ligth' label="Ligth">
+            <che-icon type="light" icon="user"></che-icon>
+        </che-button>
+
+        <h6 class="mt-2 sizeImportant">
+            <span class="text-info ">Important</span>: to implement "che-icon" you need install '@fidtech-sa/ft-icons' library before, <a routerLink="/icon">click here</a> for more information</h6>
+
+        <h5 class="mt-3">Severity Buttons Outline</h5>
+        <che-button color='primary' [outline]="true" label="Primary"></che-button>
+        <che-button color='secondary' [outline]="true" label="Secondary"></che-button>
+        <che-button color='success' [outline]="true" label="Success"></che-button>
+        <che-button color='warning' [outline]="true" label="Warning"></che-button>
+        <che-button color='danger' [outline]="true" label="Danger"></che-button>
+        <che-button color='info' [outline]="true" label="Info"></che-button>
+        <che-button color='dark' [outline]="true" label="Dark"></che-button>
+        <che-button color='ligth' [outline]="true" label="Ligth"></che-button>
+
+        <h5 class="mt-3">Buttons Sizes</h5>
+        <che-button color='primary' size="sm" label="Size Small"></che-button>
+        <che-button color='secondary' size="lg" label="Size Large"></che-button>
+        <h5 class="mt-3">Buttons Disabled</h5>
+        <che-button color='primary' label="Primary" disabled="true"></che-button>
+        <che-button color='secondary' label="Secondary" [outline]="true" disabled="true"></che-button>
+    </div>
+    <div class="col-12 sideRight mt-5">
+        <app-documentation [import]="textImport"
+                           [gettingStarter]="gettingStarter"
+                           [attribute]="attribute"
+                           [codeHtml]="codeHtml"
+                           [codeTs]="codeTs"
+                           [codeScss]="codeScss"
+        ></app-documentation>
+    </div>
+</div>
+
+

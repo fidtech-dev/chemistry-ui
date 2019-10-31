@@ -1,0 +1,57 @@
+<span class="documentationBtn" [ngClass]="{'text-primary': this.documentation}"
+      (click)="changeTab(true)">Documentation </span> <span> | </span> <span
+        class="sourceBtn" [ngClass]="{'text-primary': !this.documentation}" (click)="changeTab(false)">Source</span>
+<hr>
+<ng-container *ngIf="documentation">
+    <h5>Imports</h5>
+    <div class="containerBtnCopy">
+        <button (click)="copyText(import)" class="btn btn-outline-info" >Copy
+        </button>
+    </div>
+    <pre ><code class="paddingCode" [highlight]="import"></code></pre>
+    <h5>Getting Started</h5>
+    <div class="containerBtnCopy">
+        <button (click)="copyText(gettingStarter)" class="btn btn-outline-info" >Copy
+        </button>
+    </div>
+    <pre><code class="paddingCode" [highlight]='gettingStarter'></code></pre>
+
+    <h5>Attribute</h5>
+    <ul>
+        <li *ngFor="let attr of attribute">
+            <strong>{{attr.tittle}} </strong> {{attr.description}}
+        </li>
+    </ul>
+</ng-container>
+
+
+<ng-container *ngIf="!documentation">
+    <div class="row text-center ml-0 mr-0">
+        <div class="col-4 btnLenguage" (click)="changeTabLenguage('html')"
+             [ngClass]="{'buttonSelectLenguage': lenguage === 'html'}">
+            <h6>HTML</h6>
+        </div>
+        <div class="col-4 btnLenguage" (click)="changeTabLenguage('ts')"
+             [ngClass]="{'buttonSelectLenguage': lenguage === 'ts'}">
+            <h6>TS</h6>
+        </div>
+        <div class="col-4 btnLenguage" (click)="changeTabLenguage('scss')"
+             [ngClass]="{'buttonSelectLenguage': lenguage === 'scss'}">
+            <h6>SCSS</h6>
+        </div>
+    </div>
+    <ng-container *ngIf="lenguage === 'html'">
+        <div style="text-align: right; margin-bottom: -29px;">
+            <button (click)="copyText(codeHtml)" class="btn btn-outline-info" style="margin-bottom: -15px !important;margin-right: 5px;">Copy
+            </button>
+        </div>
+        <pre><code [highlight]='codeHtml'> </code></pre>
+    </ng-container>
+    <ng-container *ngIf="lenguage === 'ts'">
+        <pre><code [highlight]="codeTs"></code></pre>
+    </ng-container>
+    <ng-container *ngIf="lenguage === 'scss'">
+        <pre><code [highlight]="codeScss"></code></pre>
+    </ng-container>
+</ng-container>
+
