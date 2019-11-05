@@ -191,62 +191,32 @@ describe('che-input as a Atomic component', () => {
                 });
 
                 // test 10
-                // it('Should to be invalid when not setting a value', () => { // ver no funciona
-                //     // Arrange
-                //     let input = fixture.debugElement.query(By.css('input'))!;
-                //     let divGroup = fixture.debugElement.query(By.css('.group'))!;
-                //
-                //     // Act
-                //     expect(input.nativeElement.classList.contains('ng-touched'))
-                //         .toBe(false, 'should to be as untouched');
-                //
-                //     // input.nativeElement.dispatchEvent(new Event('click'));
-                //     input.triggerEventHandler('focus', null);
-                //     fixture.detectChanges();
-                //
-                //     // Assert
-                //     expect(divGroup.nativeElement.classList.contains('has-danger'))
-                //         .toBe(false, 'should not to have the class has-danger');
-                //
-                //     // Act
-                //     // input.nativeElement.dispatchEvent(new Event('blur'));
-                //     input.triggerEventHandler('blur', null); // No esta funcionando
-                //     fixture.detectChanges();
-                //
-                //     // Assert
-                //     expect(divGroup.nativeElement.classList.contains('has-danger'))
-                //         .toBe(true, 'should to have the class has-danger');
-                // });
+                it('Should to be invalid when not setting a value', () => {
+                    // Arrange
+                    let input = fixture.debugElement.query(By.css('input'))!;
+                    let divGroup = fixture.debugElement.query(By.css('.group'))!;
 
-                // test 10
-                // it('Should to be invalid when not setting a value', () => { // ver no funciona
-                //
-                //     let input = fixture.debugElement.query(By.css('input'))!;
-                //     let divGroup = fixture.debugElement.query(By.css('.group'))!;
-                //
-                //     // checking previous state
-                //     expect(input.nativeElement.classList.contains('ng-invalid'))
-                //       .toBe(true, 'should to be invalid');
-                //
-                //     expect(input.nativeElement.classList.contains('ng-touched'))
-                //       .toBe(false, 'should to be as untouched');
-                //
-                //     expect(divGroup.nativeElement.classList.contains('has-danger'))
-                //       .toBe(false, 'should be false');
-                //
-                //     // to make focus over the input
-                //     input.triggerEventHandler('focus',null);
-                //     input.triggerEventHandler('blur',null);
-                //
-                //     fixture.detectChanges();
-                //
-                //     expect(input.nativeElement.classList.contains('ng-touched'))
-                //       .toBe(true, 'should to be as touched');
-                //
-                //     console.log(divGroup.classes);
-                //     expect(divGroup.nativeElement.classList.contains('has-danger'))
-                //       .toBe(true, 'should to have the class has-danger');
-                // });
+                    // Act
+                    expect(input.nativeElement.classList.contains('ng-touched'))
+                        .toBe(false, 'should to be as untouched');
+
+                    // input.nativeElement.dispatchEvent(new Event('click'));
+                    input.triggerEventHandler('focus', null);
+                    fixture.detectChanges();
+
+                    // Assert
+                    expect(divGroup.nativeElement.classList.contains('has-danger'))
+                        .toBe(false, 'should not to have the class has-danger');
+
+                    // Act
+                    // input.nativeElement.dispatchEvent(new Event('blur'));
+                    input.triggerEventHandler('blur', null); // No esta funcionando
+                    fixture.detectChanges();
+
+                    // Assert
+                    expect(divGroup.nativeElement.classList.contains('has-danger'))
+                        .toBe(true, 'should to have the class has-danger');
+                });
 
                 // test 11
                 it('Should to be valid when setting a value', () => {
@@ -258,7 +228,8 @@ describe('che-input as a Atomic component', () => {
                     expect(input.nativeElement.classList.contains('ng-touched'))
                         .toBe(false, 'should to be as untouched');
 
-                    fixture.nativeElement.querySelector('input').value = 'a value';
+                    input.nativeElement.value = 'a value';
+                    input.nativeElement.dispatchEvent(new Event('input'));
                     fixture.detectChanges();
 
                     // Assert
@@ -343,25 +314,24 @@ describe('che-input as a Atomic component', () => {
                 });
 
                 // test 15
-                // it('Should not to allow to make focus or click', () => {
-                //     // Arrange
-                //     let input = fixture.debugElement.query(By.css('input'))!;
-                //
-                //     console.log('AAAAAAAAAA');
-                //     // Act
-                //     input.triggerEventHandler('click', null);
-                //     fixture.detectChanges();
-                //
-                //     // Assert
-                //     expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-                //
-                //     // // Act
-                //     // input.triggerEventHandler('focus', null);
-                //     // fixture.detectChanges();
-                //     //
-                //     // //Assert
-                //     // expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-                // });
+                it('Should not to allow to make input or click', () => { // NO pude testear focus
+                    // Arrange
+                    let input = fixture.debugElement.query(By.css('input'))!;
+
+                    // // Act
+                    input.nativeElement.dispatchEvent(new Event('input'));
+                    fixture.detectChanges();
+
+                    // Assert
+                    expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
+
+                    // Act
+                    input.nativeElement.dispatchEvent(new Event('input'));
+                    fixture.detectChanges();
+
+                    //Assert
+                    expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
+                });
             });
 
 
@@ -383,23 +353,29 @@ describe('che-input as a Atomic component', () => {
                 });
 
                 // test 17
-                // it('Should not to allow to make focus or click', () => {// no funciona
-                //     // Arrange
-                //     let input = fixture.debugElement.query(By.css('input'))!;
-                //     // Act
-                //     input.triggerEventHandler('click', null);
-                //     fixture.detectChanges();
-                //
-                //     // Assert
-                //     expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-                //
-                //     // // Act
-                //     // input.triggerEventHandler('focus', null);
-                //     // fixture.detectChanges();
-                //     //
-                //     // //Assert
-                //     // expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-                // });
+                it('Should not to allow to make focus or click', () => {// no funciona
+                    // Arrange
+                    let input = fixture.debugElement.query(By.css('input'))!;
+                    // Act
+                    input.triggerEventHandler('click', null);
+                    fixture.detectChanges();
+
+                    // Assert
+                    expect(input.nativeElement.classList.contains('che-input-focus')).toBeTruthy('Should to have the class che-input-focus a');
+
+                    input.triggerEventHandler('blur', null);
+                    fixture.detectChanges();
+
+                    // Assert
+                    expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus a');
+
+                    // Act
+                    input.triggerEventHandler('focus', null);
+                    fixture.detectChanges();
+
+                    //Assert
+                    expect(input.nativeElement.classList.contains('che-input-focus')).toBeTruthy('Should to have the class che-input-focus');
+                });
             });
 
         });
@@ -459,7 +435,6 @@ describe('che-input as a Atomic component', () => {
                     // Arrange
                     let input = fixture.debugElement.query(By.css('input'))!;
 
-                    console.log(input.nativeElement.classList);
                     let numberOfClass = input.nativeElement.classList.length;
 
                     // Act
@@ -486,11 +461,9 @@ describe('che-input as a Atomic component', () => {
                 it('Should to have the label seted', () => {
                     // Arrange
                     let label = fixture.debugElement.query(By.css('label'))!;
-
                     // Act
                     fixture.componentInstance.label = 'This label';
                     fixture.detectChanges();
-
                     // Assert
                     expect(label.nativeElement.textContent).toBe('This label', 'Should to be "This label"');
                 });
@@ -510,77 +483,38 @@ describe('che-input as a Atomic component', () => {
                     // Arrange
                     let input = fixture.debugElement.query(By.css('input'))!;
                     let divGroup = fixture.debugElement.query(By.css('.form-group'))!;
-
                     // Act
                     expect(input.nativeElement.classList.contains('ng-touched'))
                         .toBe(false, 'should to be as untouched');
-
                     input.triggerEventHandler('click', null);
                     fixture.detectChanges();
-
                     // Assert
                     expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
                         .toBe(false, 'should not to have the class has-danger-wBorder');
 
                 });
 
-                // // test 25
-                // it('Should to be invalid when not setting a value', () => { // ver no funciona
-                //     // Arrange
-                //     let input = fixture.debugElement.query(By.css('input'))!;
-                //     let divGroup = fixture.debugElement.query(By.css('.form-group'))!;
-                //
-                //     // Act
-                //     expect(input.nativeElement.classList.contains('ng-touched'))
-                //         .toBe(false, 'should to be as untouched');
-                //
-                //     // input.nativeElement.dispatchEvent(new Event('click'));
-                //     input.triggerEventHandler('focus', null);
-                //     fixture.detectChanges();
-                //
-                //     // Assert
-                //     expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                //         .toBe(false, 'should not to have the class has-danger-wBorder');
-                //
-                //     // Act
-                //     // input.nativeElement.dispatchEvent(new Event('blur'));
-                //     input.triggerEventHandler('blur', null); // No esta funcionando
-                //     fixture.detectChanges();
-                //
-                //     // Assert
-                //     expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                //         .toBe(true, 'should to have the class has-danger-wBorder');
-                // });
-
-                // // test 26
-                // it('Should to be invalid when not setting a value', () => { // ver no funciona
-                //
-                //     let input = fixture.debugElement.query(By.css('input'))!;
-                //     let divGroup = fixture.debugElement.query(By.css('.form-group'))!;
-                //
-                //     // checking previous state
-                //     expect(input.nativeElement.classList.contains('ng-invalid'))
-                //       .toBe(true, 'should to be invalid');
-                //
-                //     expect(input.nativeElement.classList.contains('ng-touched'))
-                //       .toBe(false, 'should to be as untouched');
-                //
-                //     expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                //       .toBe(false, 'should be false');
-                //
-                //     // to make focus over the input
-                //     input.triggerEventHandler('focus',null);
-                //     input.triggerEventHandler('blur',null);
-                //
-                //     fixture.detectChanges();
-                //
-                //     expect(input.nativeElement.classList.contains('ng-touched'))
-                //       .toBe(true, 'should to be as touched');
-                //
-                //     console.log(divGroup.classes);
-                //     expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                //       .toBe(true, 'should to have the class has-danger-wBorder');
-                // });
+                // test 25
+                it('Should to be invalid when not setting a value', () => {
+                    console.log('test 25');
+                    // Arrange
+                    let input = fixture.debugElement.query(By.css('input'))!;
+                    let divGroup = fixture.debugElement.query(By.css('.form-group'))!;
+                    // Act
+                    expect(input.nativeElement.classList.contains('ng-touched'))
+                        .toBe(false, 'should to be as untouched');
+                    input.triggerEventHandler('click', null);
+                    fixture.detectChanges();
+                    // Assert
+                    expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
+                        .toBe(false, 'should not to have the class has-danger-wBorder');
+                    // Act
+                    input.triggerEventHandler('blur', null);
+                    fixture.detectChanges();
+                    // Assert
+                    expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
+                        .toBeTruthy('should to have the class has-danger-wBorder');
+                });
 
                 // test 27
                 it('Should to be valid when setting a value', () => {
@@ -592,17 +526,16 @@ describe('che-input as a Atomic component', () => {
                     expect(input.nativeElement.classList.contains('ng-touched'))
                         .toBe(false, 'should to be as untouched');
 
-                    fixture.nativeElement.querySelector('input').value = 'a value';
+                    input.nativeElement.value = 'a value';
+                    input.nativeElement.dispatchEvent(new Event('input'));
                     fixture.detectChanges();
 
                     // Assert
                     expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
                         .toBe(false, 'should not to have the class has-danger-wBorder');
-
                     // Act
                     input.triggerEventHandler('blur', null);
                     fixture.detectChanges();
-
                     // Assert
                     expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
                         .toBe(false, 'should not to have the class has-danger-wBorder');
@@ -676,25 +609,22 @@ describe('che-input as a Atomic component', () => {
                 });
 
                 // test 31
-                // it('Should not to allow to make focus or click', () => {
-                //     // Arrange
-                //     let input = fixture.debugElement.query(By.css('input'))!;
-                //
-                //     console.log('AAAAAAAAAA');
-                //     // Act
-                //     input.triggerEventHandler('click', null);
-                //     fixture.detectChanges();
-                //
-                //     // Assert
-                //     expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-                //
-                //     // // Act
-                //     // input.triggerEventHandler('focus', null);
-                //     // fixture.detectChanges();
-                //     //
-                //     // //Assert
-                //     // expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-                // });
+                it('Should not to allow to make focus or click', () => {
+                    // Arrange
+                    let input = fixture.debugElement.query(By.css('input'))!;
+
+                    // Act
+                    input.triggerEventHandler('click', null);
+                    fixture.detectChanges();
+
+                    // Act
+                    let numberClass = input.nativeElement.classList.length;
+                    input.triggerEventHandler('focus', null);
+                    fixture.detectChanges();
+
+                    // Assert
+                    expect(numberClass).toBe(input.nativeElement.classList.length, 'Should not to change the classes in the input');
+                });
             });
 
             describe('If it is readOnly', () => {
@@ -715,23 +645,21 @@ describe('che-input as a Atomic component', () => {
                 });
 
                 // test 33
-                // it('Should not to allow to make focus or click', () => {// no funciona
-                //     // Arrange
-                //     let input = fixture.debugElement.query(By.css('input'))!;
-                //     // Act
-                //     input.triggerEventHandler('click', null);
-                //     fixture.detectChanges();
-                //
-                //     // Assert
-                //     expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-                //
-                //     // // Act
-                //     // input.triggerEventHandler('focus', null);
-                //     // fixture.detectChanges();
-                //     //
-                //     // //Assert
-                //     // expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-                // });
+                it('Should not to allow to make focus or click', () => { // no funciona
+                    // Arrange
+                    let input = fixture.debugElement.query(By.css('input'))!;
+                    // Act
+                    input.triggerEventHandler('click', null);
+                    fixture.detectChanges();
+
+                    // Act
+                    let numberClass = input.nativeElement.classList.length;
+                    input.triggerEventHandler('focus', null);
+                    fixture.detectChanges();
+
+                    // Assert
+                    expect(numberClass).toBe(input.nativeElement.classList.length, 'Should not to change the classes in the input');
+                });
             });
 
 
@@ -775,7 +703,7 @@ describe('che-input as a Atomic component', () => {
             fixture.detectChanges();
 
             // Assert
-            expect(fixture.componentInstance.value).toBe(123);
+            expect(fixture.componentInstance.value).toBe('123');
         });
 
     });
@@ -846,7 +774,7 @@ class CheInputF3Component {
 // fixture 4
 @Component({
     template: `
-        <che-input design="borderless" color="color" label="The label" [required]="true" [(ngModel)]="value"></che-input>`
+        <che-input design="borderless" color="color" label="The label" [required]="true" [(ngModel)]="value" name="name"></che-input>`
 })
 class CheInputF4Component {
     value;
@@ -863,7 +791,7 @@ class CheInputF5Component {
 // fixture 6
 @Component({
     template: `
-        <che-input design="borderless" color="color" label="The label" disabled="true"></che-input>`
+        <che-input design="borderless" color="color" label="The label" [disabled]="true"></che-input>`
 })
 class CheInputF6Component {
     // disabled = true;
@@ -889,11 +817,12 @@ class CheInputF8Component {
 
 // fixture 9
 @Component({
-    template: `
-        <che-input color="color" label="The label" [required]="true" [placeholder]="placeholder"></che-input>`
+    // template: `<che-input type="number" [(ngModel)]="value" color="color" label="The label" [required]="true" [placeholder]="placeholder" name="name"></che-input>`
+    template: `<che-input type="text" [(ngModel)]="value" name="something" label="The label" [required]="true" [placeholder]="placeholder"></che-input>`
 })
 class CheInputF9Component {
     placeholder;
+    value;
 }
 
 // fixture 10

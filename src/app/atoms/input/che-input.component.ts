@@ -88,9 +88,10 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     }
 
     public onClick() {
-        console.log('onClick');
-        this.fucused = true;
-        this.click.emit();
+        if (!this.disabled) {
+            this.fucused = true;
+            this.click.emit();
+        }
     }
 
     /**

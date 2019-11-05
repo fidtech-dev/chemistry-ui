@@ -3,7 +3,7 @@
         <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'che-input-focus': fucused }" [readOnly]="readonly"
                (focus)="onFocus()" (blur)="onBlur()"
                class="inputMaterial" (click)="onClick()"
-               [required]="required" [disabled]="disabled">
+               [required]="required" [disabled]="disabled" >
         <span class="highlight"></span>
         <span class="bar" [ngClass]=" fucused ? 'bg-' + color : ''"></span>
         <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
@@ -14,7 +14,8 @@
 <ng-container *ngIf="design === 'border'">
     <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
         <label>{{label}}</label>
-        <input [type]='type' [(ngModel)]="value" (blur)="onBlur()" (click)="onClick()" (focus)="onFocus()" class="form-control" [required]="true"
+        <input [type]='type' [(ngModel)]="value" (blur)="onBlur()" (click)="onClick()" (focus)="onFocus()"
+               class="form-control" [required]="true"
                [placeholder]="placeholder" [disabled]="disabled" [readOnly]="readonly">
     </div>
 </ng-container>
