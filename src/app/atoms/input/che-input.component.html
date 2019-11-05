@@ -1,23 +1,20 @@
 <ng-container *ngIf="desing === 'borderless'">
     <div class="group" [ngClass]="{'has-danger': hasDanger() }">
-        <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'pepeFocus': fucused }" [readOnly]="readonly" (focus)="onFocus()" (blur)="onBlur()" class="inputMaterial"
+        <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'che-input-focus': fucused }" [readOnly]="readonly" (focus)="onFocus()" (blur)="onBlur()" class="inputMaterial"
                [required]="true">
         <span class="highlight"></span>
         <span class="bar bg-{{color}}"></span>
-        <label class="labelMaterial">{{label}}</label>
-    </div>
+        <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
 
+    </div>
 </ng-container>
 
 <ng-container *ngIf="desing === 'border'">
-
     <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
         <label>{{label}}</label>
         <input type="text" [(ngModel)]="value" (blur)="onBlur()" class="form-control" [required]="true"
                [placeholder]="placeholder">
     </div>
-
-
 </ng-container>
 
 

@@ -76,10 +76,12 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
      */
     onBlur() {
         this.onTouchedCallback();
+        this.fucused = false;
         this.blur.emit();
     }
 
     public onFocus() {
+        console.log('Esta enfocando..');
         this.fucused = true;
         this.focus.emit();
     }

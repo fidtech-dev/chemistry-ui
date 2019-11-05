@@ -8,7 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CheButtonModule} from './atoms/button/che-button.module';
 import {CheInputModule} from './atoms/input/che-input.module';
 import {CheValidationMessagesModule} from './atoms/validation-messages/che-validation-messages.module';
-import {ButtonDemoComponent} from './demo/button/button.component';
+import {ButtonComponent} from './demo/button/button.component';
 import {HighlightModule} from 'ngx-highlightjs';
 import xml from 'highlight.js/lib/languages/xml';
 import scss from 'highlight.js/lib/languages/scss';
@@ -34,7 +34,7 @@ export function hljsLanguages() {
 @NgModule({
     declarations: [
         AppComponent,
-        ButtonDemoComponent,
+        ButtonComponent,
         DocumentationComponent,
         InputComponent,
         CheckboxComponent,
