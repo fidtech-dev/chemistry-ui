@@ -22,6 +22,7 @@ export class CheCheckboxComponent implements ControlValueAccessor {
     @Input() color = 'primary';
     @Input() label = '';
     @Input() disabled;
+    @Input() checked;
     @Output() focus = new EventEmitter();
     public clicked = false;
     public fucused = false;
@@ -99,5 +100,7 @@ export class CheCheckboxComponent implements ControlValueAccessor {
     registerOnTouched(fn: any) {
         this.onTouchedCallback = fn;
     }
+
+
 
 }

@@ -65,30 +65,22 @@
   transform: translate(3px, 4px) rotate(-45deg);
 }
 
-
-
-.pure-material-checkbox > .che-bg-danger:checked  {
-  border-color: var(--danger) !important;
-  background-color: var(--danger) !important;
-}
-
-.che-bg-primary:checked {
-  border-color: var(--primary) !important;
-  background-color: var(--primary) !important;
-}
-
-
-.che-bg-warning:checked {
-  border-color: var(--warning) !important;
-  background-color: var(--warning) !important;
-}
-
-
-  .pure-material-checkbox > .che-bg-danger:checked + span::before,
-  .pure-material-checkbox > .che-bg-danger:indeterminate + span::before {
+.che-bg-danger:checked +span:before{
     border-color: var(--danger) !important;
     background-color: var(--danger) !important;
-  }
+}
+
+span:focus {
+    border-color:yellow;
+}
+
+
+
+
+.pure-material-checkbox > .che-bg-danger:checked {
+    border-color: var(--danger) !important;
+    background-color: var(--danger) !important;
+}
 
   .pure-material-checkbox > .che-bg-primary:checked + span::before,
   .pure-material-checkbox > .che-bg-primary:indeterminate + span::before {
@@ -102,6 +94,36 @@
     background-color: var(--warning) !important;
   }
 
+.pure-material-checkbox > .che-bg-success:checked + span::before,
+.pure-material-checkbox > .che-bg-success:indeterminate + span::before {
+    border-color: var(--success) !important;
+    background-color: var(--success) !important;
+}
+
+.pure-material-checkbox > .che-bg-secondary:checked + span::before,
+.pure-material-checkbox > .che-bg-secondary:indeterminate + span::before {
+    border-color: var(--secondary) !important;
+    background-color: var(--secondary) !important;
+}
+
+.pure-material-checkbox > .che-bg-info:checked + span::before,
+.pure-material-checkbox > .che-bg-info:indeterminate + span::before {
+    border-color: var(--info) !important;
+    background-color: var(--info) !important;
+}
+
+
+.pure-material-checkbox > .che-bg-dark:checked + span::before,
+.pure-material-checkbox > .che-bg-dark:indeterminate + span::before {
+    border-color: var(--dark) !important;
+    background-color: var(--dark) !important;
+}
+
+.pure-material-checkbox > .che-bg-gray:checked + span::before,
+.pure-material-checkbox > .che-bg-gray:indeterminate + span::before {
+    border-color: var(--gray) !important;
+    background-color: var(--gray) !important;
+}
 
 
 .pure-material-checkbox > input:checked + span::after,

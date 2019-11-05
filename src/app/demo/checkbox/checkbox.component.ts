@@ -6,6 +6,7 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent implements OnInit {
+    checkbox = true;
     textImport = 'import {CheCheckboxModule} from \'@fidtech-sa/chemistry-ui\';\n';
     gettingStarter = '<che-checkbox [(ngModel)]=\'checkbox\' color="primary"  label=\'this is a checkbox\' ></che-checkbox>\n';
     attribute = [
