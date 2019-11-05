@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 
 describe('che-button Component', () => {
     // fixture 1
-    describe('If  button is outline', () => {
+    describe('If it is outline', () => {
 
         let component: any;
         let fixture: ComponentFixture<any>;
@@ -33,7 +33,7 @@ describe('che-button Component', () => {
             expect(style.getPropertyValue('background-color')).toEqual('rgba(0, 0, 0, 0)');
         });
         // fixture 1
-        describe('Has color', () => {
+        describe('if it has color', () => {
 
             it('should have attribute color', () => {
                 // Arrange
@@ -50,7 +50,7 @@ describe('che-button Component', () => {
         });
 
         // fixture 3
-        describe('Has no color', () => {
+        describe('if it has no color', () => {
 
             beforeEach(() => {
                 // Arrange
@@ -82,7 +82,7 @@ describe('che-button Component', () => {
 
 
     // fixture 2
-    describe('If a button isnt outline', () => {
+    describe('If it has no outline', () => {
         let component: any;
         let fixture: ComponentFixture<any>;
 
@@ -109,7 +109,7 @@ describe('che-button Component', () => {
         });
 
         // fixture 4
-        describe('Has no color', () => {
+        describe('if it has no color', () => {
             beforeEach(() => {
                 // Arrange
                 fixture.destroy();
@@ -135,7 +135,7 @@ describe('che-button Component', () => {
 
 
     // fixture 5
-    describe('If a button is disabled', () => {
+    describe('If it is disabled', () => {
         let component: any;
         let fixture: ComponentFixture<any>;
 
@@ -155,7 +155,7 @@ describe('che-button Component', () => {
     });
 
     // fixture 6
-    describe('If a button with size', () => {
+    describe('If it has size', () => {
         let component: any;
         let fixture: ComponentFixture<any>;
 
@@ -174,8 +174,33 @@ describe('che-button Component', () => {
 
     });
 
+  // fixture 6
+  describe('If it change the size', () => {
+    let component: any;
+    let fixture: ComponentFixture<any>;
 
-    describe('If is a button without size ', () => {
+    beforeEach(() => {
+      // Arrange
+      fixture = createComponent(CheButtonF6Component);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    });
+    it('should change attribute size from "sm" to "lg"', () => {
+      // Act
+      const button = fixture.debugElement.query(By.css('button'))!;
+      const cheButton = fixture.debugElement.query(By.css('che-button'))!;
+      expect(button.nativeElement.classList.contains('btn-sm')).toBeTruthy('Should to have the class btn-sm');
+      component.size = 'lg';
+      fixture.detectChanges();
+      expect(button.nativeElement.classList.contains('btn-lg')).toBeTruthy('Should to have the class btn-lg');
+
+    });
+
+
+  });
+
+
+    describe('If it has no size ', () => {
 
         let component: any;
         let fixture: ComponentFixture<any>;
@@ -263,9 +288,10 @@ class CheButtonF5Component {
 // fixture 5
 @Component({
     template: `
-        <che-button size="sm"></che-button>`
+        <che-button [size]="size"></che-button>`
 })
 class CheButtonF6Component {
+  public size = 'sm';
 }
 
 
