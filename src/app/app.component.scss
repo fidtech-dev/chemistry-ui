@@ -21,7 +21,6 @@
 }
 
 .bg-light {
-  background: #481759 !important;
   color: white !important;
   box-shadow: 2px 3px 6px #0000005e;
 }
@@ -219,6 +218,7 @@ a {
 .main-bg {
  // padding-left: 12% !important;
   margin-right: 0% !important;
+  background: rgba(226, 226, 226, 0.47);
 }
 
 
@@ -241,4 +241,10 @@ svg {
 li{
   cursor: pointer;
   outline: transparent;
+}
+
+
+.logoClass{
+  width: 17%;
+  margin-left: 0.5rem;
 }
