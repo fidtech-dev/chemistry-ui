@@ -19,7 +19,7 @@ describe('che-checkbox Component', () => {
     });
 
     // test 1
-    it('should have a circle behind the checkbox when is focused', () => {
+    it('should have a circle behind the checkbox when the component is focused', () => {
         // Arrange
         let checkbox = fixture.debugElement.query(By.css('input'))!;
         // Assert
@@ -32,12 +32,12 @@ describe('che-checkbox Component', () => {
     });
 
     // test 2
-    it('should have no a circle behind the checkbox when lose focus', () => {
+    it('should have not a circle behind the checkbox when focus is lose', () => {
 
         // Arrange
         let checkbox = fixture.debugElement.query(By.css('input'))!;
         // Assert
-        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should havent class "che-checkbox-focused"');
+        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should have not class "che-checkbox-focused"');
         // Act
         checkbox.triggerEventHandler('focus', null);
         fixture.detectChanges();
@@ -48,7 +48,7 @@ describe('che-checkbox Component', () => {
         checkbox.triggerEventHandler('blur', null);
         fixture.detectChanges();
         // Assert
-        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should havent class "che-checkbox-focused"');
+        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should have not class "che-checkbox-focused"');
     });
 
     // test 3
@@ -64,13 +64,13 @@ describe('che-checkbox Component', () => {
         });
 
         // test 1
-        it('Should have a bg color set in the attribute', () => {
+        it('Should have a bg color attribute set ', () => {
             // Arrange
             let checkbox = fixture.debugElement.query(By.css('input'))!;
             // Act
 
             // Assert
-            expect(checkbox.nativeElement.classList.contains('che-bg-warning')).toBeTruthy('Should to have the class che-bg-warning');
+            expect(checkbox.nativeElement.classList.contains('che-bg-warning')).toBeTruthy('Should have the class che-bg-warning');
 
         });
 
@@ -78,7 +78,7 @@ describe('che-checkbox Component', () => {
     });
 
     // test 4
-    describe('If it has no color', () => {
+    describe('If it has not color', () => {
 
 
         beforeEach(() => {
@@ -145,7 +145,7 @@ describe('che-checkbox Component', () => {
         });
 
 
-        it('Should have attribute disabled', () => {
+        it('Should have the attribute disabled', () => {
             // Arrange
             let checkbox = fixture.debugElement.query(By.css('che-checkbox'))!;
             // Act
@@ -187,14 +187,14 @@ describe('che-checkbox Component', () => {
         });
 
 
-        it('should change from unchecked to marked and transparent bg to bg color to click.', () => {
+        it('should change from unchecked to marked and from transparent bg to bg color when click it.', () => {
             // Arrange
             let checkbox = fixture.debugElement.query(By.css('input'))!;
             let style = window.getComputedStyle(checkbox.nativeElement, null);
             // Assert
 
             expect(style.getPropertyValue('background-color')).toEqual('rgba(0, 0, 0, 0)');
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeFalsy('Should have not class "che-checkbox-checked"');
+            expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeFalsy('Should have not the class: "che-checkbox-checked"');
             // Act
 
             component.isChecked = true;
@@ -202,7 +202,7 @@ describe('che-checkbox Component', () => {
             checkbox.nativeElement.dispatchEvent(new Event('change'));
             fixture.detectChanges();
             // Assert
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeTruthy('Should have class "che-checkbox-checked"');
+            expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeTruthy('Should have the class: "che-checkbox-checked"');
 
         });
 
@@ -234,7 +234,7 @@ describe('che-checkbox Component', () => {
             fixture.detectChanges();
 
             // Assert
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeTruthy('Should have class "che-checkbox-checked"');
+            expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeTruthy('Should have the class: "che-checkbox-checked"');
             // Act
             component.isChecked = false;
             fixture.detectChanges();
@@ -245,7 +245,7 @@ describe('che-checkbox Component', () => {
             let style = window.getComputedStyle(checkbox.nativeElement, null);
             // Assert
             expect(style.getPropertyValue('background-color')).toEqual('rgba(0, 0, 0, 0)');
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeFalsy('Should have not class "che-checkbox-checked"');
+            expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeFalsy('Should have not the class: "che-checkbox-checked"');
 
         });
 
