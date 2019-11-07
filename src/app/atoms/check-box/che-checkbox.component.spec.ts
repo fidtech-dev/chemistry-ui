@@ -7,13 +7,57 @@ import {By} from '@angular/platform-browser';
 import {CheInputComponent} from '../input/che-input.component';
 
 describe('che-checkbox Component', () => {
-    describe('If it has a color', () => {
 
-        let component: any;
-        let fixture: ComponentFixture<any>;
+    let component: any;
+    let fixture: ComponentFixture<any>;
+
+    beforeEach(() => {
+        // Arrange
+        fixture = createComponent(CheCheckboxF1Component);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    // test 1
+    it('should have a circle behind the checkbox when is focused', () => {
+        // Arrange
+        let checkbox = fixture.debugElement.query(By.css('input'))!;
+        // Assert
+        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should have not class "che-checkbox-focused"');
+        // Act
+        checkbox.triggerEventHandler('focus', null);
+        fixture.detectChanges();
+        // Assert
+        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeTruthy('Should have class "che-checkbox-focused"');
+    });
+
+    // test 2
+    it('should have no a circle behind the checkbox when lose focus', () => {
+
+        // Arrange
+        let checkbox = fixture.debugElement.query(By.css('input'))!;
+        // Assert
+        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should havent class "che-checkbox-focused"');
+        // Act
+        checkbox.triggerEventHandler('focus', null);
+        fixture.detectChanges();
+        // Assert
+        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeTruthy('Should have class "che-checkbox-focused"');
+
+        // Act
+        checkbox.triggerEventHandler('blur', null);
+        fixture.detectChanges();
+        // Assert
+        expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should havent class "che-checkbox-focused"');
+    });
+
+    // test 3
+    describe('If it has a color', () => {
 
         beforeEach(() => {
             // Arrange
+            fixture.destroy();
+            TestBed.resetTestingModule();
             fixture = createComponent(CheCheckboxF1Component);
             component = fixture.componentInstance;
             fixture.detectChanges();
@@ -33,13 +77,14 @@ describe('che-checkbox Component', () => {
 
     });
 
+    // test 4
     describe('If it has no color', () => {
 
-        let component: any;
-        let fixture: ComponentFixture<any>;
 
         beforeEach(() => {
             // Arrange
+            fixture.destroy();
+            TestBed.resetTestingModule();
             fixture = createComponent(CheCheckboxF2Component);
             component = fixture.componentInstance;
             fixture.detectChanges();
@@ -60,14 +105,13 @@ describe('che-checkbox Component', () => {
 
     });
 
-
+    // test 5
     describe('If it has a label', () => {
-
-        let component: any;
-        let fixture: ComponentFixture<any>;
 
         beforeEach(() => {
             // Arrange
+            fixture.destroy();
+            TestBed.resetTestingModule();
             fixture = createComponent(CheCheckboxF1Component);
             component = fixture.componentInstance;
             fixture.detectChanges();
@@ -87,14 +131,14 @@ describe('che-checkbox Component', () => {
 
     });
 
-
+    // test 6
     describe('If it is disabled', () => {
 
-        let component: any;
-        let fixture: ComponentFixture<any>;
 
         beforeEach(() => {
             // Arrange
+            fixture.destroy();
+            TestBed.resetTestingModule();
             fixture = createComponent(CheCheckboxF3Component);
             component = fixture.componentInstance;
             fixture.detectChanges();
@@ -112,16 +156,30 @@ describe('che-checkbox Component', () => {
         });
 
 
+        it('should not change classes by clicking', () => {
+            // Arrange
+            let checkbox = fixture.debugElement.query(By.css('che-checkbox'))!;
+            let classAfterClick = checkbox.nativeElement.classList;
+
+            // Act
+            checkbox.nativeElement.dispatchEvent(new Event('change'));
+
+            // Assert
+            expect(classAfterClick).toEqual(checkbox.nativeElement.classList);
+            expect(checkbox.nativeElement.getAttribute('disabled')).toBeTruthy('Should have attribute attribute disabled');
+
+        });
+
+
     });
 
-    describe('If it is unchecked and clicked', () => {
-
-        let component: any;
-        let fixture: ComponentFixture<any>;
+    // test 7
+    describe('If it is unchecked', () => {
 
         beforeEach(() => {
             // Arrange
-
+            fixture.destroy();
+            TestBed.resetTestingModule();
             fixture = createComponent(CheCheckboxF4Component);
             component = fixture.debugElement.componentInstance;
             fixture.detectChanges();
@@ -129,7 +187,7 @@ describe('che-checkbox Component', () => {
         });
 
 
-        it('should change from unchecked to marked and transparent bg to bg color', () => {
+        it('should change from unchecked to marked and transparent bg to bg color to click.', () => {
             // Arrange
             let checkbox = fixture.debugElement.query(By.css('input'))!;
             let style = window.getComputedStyle(checkbox.nativeElement, null);
@@ -151,20 +209,21 @@ describe('che-checkbox Component', () => {
 
     });
 
-    describe('If it is checked and clicked', () => {
+    // test 8
+    describe('If it is checked ', () => {
 
-        let component: any;
-        let fixture: ComponentFixture<any>;
 
         beforeEach(() => {
             // Arrange
+            fixture.destroy();
+            TestBed.resetTestingModule();
             fixture = createComponent(CheCheckboxF4Component);
             component = fixture.componentInstance;
             fixture.detectChanges();
         });
 
 
-        it('should change from checked to unchecked and  bg color to transparent bg', () => {
+        it('should change from checked to unchecked and  bg color to transparent bg to click.', () => {
             // Arrange
             let checkbox = fixture.debugElement.query(By.css('input'))!;
 
@@ -181,74 +240,13 @@ describe('che-checkbox Component', () => {
             fixture.detectChanges();
             checkbox.nativeElement.dispatchEvent(new Event('change'));
             fixture.detectChanges();
+
+            // Arrange
+            let style = window.getComputedStyle(checkbox.nativeElement, null);
             // Assert
+            expect(style.getPropertyValue('background-color')).toEqual('rgba(0, 0, 0, 0)');
             expect(checkbox.nativeElement.classList.contains('che-checkbox-checked')).toBeFalsy('Should have not class "che-checkbox-checked"');
 
-        });
-
-
-    });
-
-
-    describe('If it is focused', () => {
-
-        let component: any;
-        let fixture: ComponentFixture<any>;
-
-        beforeEach(() => {
-            // Arrange
-            fixture = createComponent(CheCheckboxF4Component);
-            component = fixture.componentInstance;
-            fixture.detectChanges();
-        });
-
-
-        it('should have a circle behind the checkbox when clicking', () => {
-            // Arrange
-            let checkbox = fixture.debugElement.query(By.css('input'))!;
-            // Assert
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should have not class "che-checkbox-focused"');
-            // Act
-            checkbox.triggerEventHandler('focus', null);
-            fixture.detectChanges();
-            // Assert
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeTruthy('Should have class "che-checkbox-focused"');
-        });
-
-
-    });
-
-
-    describe('If it is mouseout', () => {
-
-        let component: any;
-        let fixture: ComponentFixture<any>;
-
-        beforeEach(() => {
-            // Arrange
-            fixture = createComponent(CheCheckboxF4Component);
-            component = fixture.componentInstance;
-            fixture.detectChanges();
-        });
-
-
-        it('should have a circle behind the checkbox when clicking', () => {
-
-            // Arrange
-            let checkbox = fixture.debugElement.query(By.css('input'))!;
-            // Assert
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should havent class "che-checkbox-focused"');
-            // Act
-            checkbox.triggerEventHandler('focus', null);
-            fixture.detectChanges();
-            // Assert
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeTruthy('Should have class "che-checkbox-focused"');
-
-            // Act
-            checkbox.triggerEventHandler('blur', null);
-            fixture.detectChanges();
-            // Assert
-            expect(checkbox.nativeElement.classList.contains('che-checkbox-focused')).toBeFalsy('Should havent class "che-checkbox-focused"');
         });
 
 
