@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, forwardRef} from '@angular/core';
+import {Component, OnInit, Input, forwardRef, Output, EventEmitter} from '@angular/core';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor, NgModel} from '@angular/forms';
 
 
@@ -22,7 +22,10 @@ export class CheCheckboxComponent implements ControlValueAccessor {
     @Input() color = 'primary';
     @Input() label = '';
     @Input() disabled;
-
+    @Input() checked;
+    @Output() focus = new EventEmitter();
+    public clicked = false;
+    public fucused = false;
     /**
      * @description The internal data model
      */
@@ -57,8 +60,25 @@ export class CheCheckboxComponent implements ControlValueAccessor {
      * @description Set touched on blur
      */
     onBlur() {
+        this.fucused = false;
         this.onTouchedCallback();
+
     }
+
+    onClick() {
+        if (this.clicked) {
+            this.clicked = false;
+        } else {
+            this.clicked = true;
+        }
+    }
+
+    public onFocus() {
+        console.log('Esta enfocando..');
+        this.fucused = true;
+        this.focus.emit();
+    }
+
     /**
      * @description From ControlValueAccessor interface
      */
@@ -73,11 +93,14 @@ export class CheCheckboxComponent implements ControlValueAccessor {
      * @description From ControlValueAccessor interface
      */
     registerOnChange(fn: any) {
+
         this.onChangeCallback = fn;
     }
 
     registerOnTouched(fn: any) {
         this.onTouchedCallback = fn;
     }
+
+
 
 }
