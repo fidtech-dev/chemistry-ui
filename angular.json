@@ -34,7 +34,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.css",
             ],
             "scripts": [
-              "node_modules/@fidtech-sa/ft-icons/liga.js"
+              "node_modules/@fidtech-sa/ft-icons/liga.js",
+              "./src/app/scripts/effectButton.js"
             ]
           },
           "configurations": {

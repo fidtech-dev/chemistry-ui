@@ -8,6 +8,7 @@ module.exports = function (config) {
     files:[
         "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
         "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "src/app/scripts/effectButton.js"
         // "src/styles.scss",
     ],
     plugins: [
