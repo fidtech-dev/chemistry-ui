@@ -414,20 +414,6 @@ describe('che-input as a Atomic component', () => {
                 expect(fixture.componentInstance.value).toBe('something', 'Should not to have a design');
             });
 
-            // // test 20
-            // it('Should to be focused when clicked', () => {
-            //     // Arrange
-            //     let input = fixture.debugElement.query(By.css('input'))!;
-            //     expect(input.nativeElement.classList.contains('che-input-focus')).toBeFalsy('Should not to have the class che-input-focus');
-            //
-            //     // Act
-            //     input.triggerEventHandler('click', null);
-            //     fixture.detectChanges();
-            //
-            //     // Assert
-            //     expect(input.nativeElement.classList.contains('che-input-focus')).toBeTruthy('Should to have the class che-input-focus');
-            // });
-
 
             describe('If this have a color', () => {
                 // test 21
@@ -817,7 +803,6 @@ class CheInputF8Component {
 
 // fixture 9
 @Component({
-    // template: `<che-input type="number" [(ngModel)]="value" color="color" label="The label" [required]="true" [placeholder]="placeholder" name="name"></che-input>`
     template: `<che-input type="text" [(ngModel)]="value" name="something" label="The label" [required]="true" [placeholder]="placeholder"></che-input>`
 })
 class CheInputF9Component {
