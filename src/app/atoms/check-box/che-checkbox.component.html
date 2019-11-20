@@ -1,6 +1,10 @@
-<div id="cheCheckbox">
-    <label class="pure-material-checkbox">
-        <input [(ngModel)]="value"  [ngClass]="{ 'che-checkbox-checked':  value , 'che-checkbox-focused': fucused }" type="checkbox" class="che-bg-{{color}} " (click)="onClick()" (focus)='onFocus()' [checked]="checked"  (blur)="onBlur()" [disabled]="disabled">
-        <span>{{label}}</span>
-    </label>
+<div class="cheCheckboxContainer">
+    <div class="cheCheckbox">
+        <label class="pure-material-checkbox">
+            <input [(ngModel)]="value" [ngClass]="{ 'che-checkbox-checked':  value , 'che-checkbox-focused': fucused }"
+                   type="checkbox" class="che-bg-{{color}} " (click)="onClick()" (focus)='onFocus()' [checked]="checked"
+                   (blur)="onBlur()" [disabled]="disabled">
+            <span>{{label}}</span>
+        </label>
+    </div>
 </div>

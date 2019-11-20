@@ -1,181 +1,184 @@
-#cheInput {
+.cheInputContainer {
+  .cheInput {
+    .group {
+      position: relative;
+    }
 
-  .group {
-    position: relative;
-  }
+    .inputMaterial {
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #757575;
+    }
 
-  .inputMaterial {
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #757575;
-  }
-
-  input {
-    background-color: transparent !important;
-    border: 1px solid black;
-
-  }
-
-  .inputMaterial:focus {
-    outline: none;
-    background-color: transparent;
-  }
-
-
-  /* LABEL ======================================= */
-  .labelMaterial {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-  }
-
-  /* active state */
-  .che-label-floating {
-    top: -20px;
-    font-size: 14px;
-  }
-
-
-  /* BOTTOM BARS ================================= */
-  .bar {
-    position: relative;
-    display: block;
-    width: 100%;
-  }
-
-  .bar:before, .bar:after {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 1px;
-    position: absolute;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-  }
-
-  /* PRIMARY */
-  .bg-primary:before {
-    background: var(--primary);
-    left: 50%;
-  }
-
-  .bg-primary:after {
-    background: var(--primary);
-    right: 50%;
-  }
-
-  input:focus ~ .bg-primary:before, input:focus ~ .bg-primary:after {
-    width: 50%;
-  }
-
-
-  /* WARNING */
-  .bg-warning:before {
-    background: var(--warning);
-    left: 50%;
-  }
-
-  .bg-warning:after {
-    background: var(--warning);
-    right: 50%;
-  }
-
-  input:focus ~ .bg-warning:before, input:focus ~ .bg-warning:after {
-    width: 50%;
-  }
-
-  /* DANGER */
-  .bg-danger:before {
-    background: var(--danger);
-    left: 50%;
-  }
-
-  .bg-danger:after {
-    background: var(--danger);
-    right: 50%;
-  }
-
-  input:focus ~ .bg-danger:before, input:focus ~ .bg-danger:after {
-    width: 50%;
-  }
-
-
-  /* SUCCESS */
-  .bg-success:before {
-    background: var(--success);
-    left: 50%;
-  }
-
-  .bg-success:after {
-    background: var(--success);
-    right: 50%;
-  }
-
-  input:focus ~ .bg-success:before, input:focus ~ .bg-success:after {
-    width: 50%;
-  }
-
-
-  .has-danger {
     input {
-      border-bottom: 1px solid var(--danger);
+      background-color: transparent !important;
+      border: 1px solid black;
+
     }
 
-    label {
-      color: var(--danger);
+    .inputMaterial:focus {
+      outline: none;
+      background-color: transparent;
     }
 
-    .bar:before {
+
+    /* LABEL ======================================= */
+    .labelMaterial {
+      color: #999;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    /* active state */
+    .che-label-floating {
+      top: -20px;
+      font-size: 14px;
+    }
+
+
+    /* BOTTOM BARS ================================= */
+    .bar {
+      position: relative;
+      display: block;
+      bottom: -1px;
+      width: 100%;
+    }
+
+    .bar:before, .bar:after {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    /* PRIMARY */
+    .bg-primary:before {
+      background: var(--primary);
+      left: 50%;
+    }
+
+    .bg-primary:after {
+      background: var(--primary);
+      right: 50%;
+    }
+
+    input:focus ~ .bg-primary:before, input:focus ~ .bg-primary:after {
+      width: 50%;
+    }
+
+
+    /* WARNING */
+    .bg-warning:before {
+      background: var(--warning);
+      left: 50%;
+    }
+
+    .bg-warning:after {
+      background: var(--warning);
+      right: 50%;
+    }
+
+    input:focus ~ .bg-warning:before, input:focus ~ .bg-warning:after {
+      width: 50%;
+    }
+
+    /* DANGER */
+    .bg-danger:before {
       background: var(--danger);
       left: 50%;
     }
 
-    .bar:after {
+    .bg-danger:after {
       background: var(--danger);
       right: 50%;
     }
 
-    input:focus ~ .bar:before, input:focus ~ .bar:after {
+    input:focus ~ .bg-danger:before, input:focus ~ .bg-danger:after {
       width: 50%;
     }
 
-  }
 
-  .has-danger-wBorder {
-    input {
-      border: 1px solid var(--danger);
+    /* SUCCESS */
+    .bg-success:before {
+      background: var(--success);
+      left: 50%;
     }
 
-    ::placeholder {
+    .bg-success:after {
+      background: var(--success);
+      right: 50%;
+    }
+
+    input:focus ~ .bg-success:before, input:focus ~ .bg-success:after {
+      width: 50%;
+    }
+
+
+    .has-danger {
+      input {
+        border-bottom: 1px solid var(--danger);
+      }
+
+      label {
+        color: var(--danger);
+      }
+
+      .bar:before {
+        background: var(--danger);
+        left: 50%;
+      }
+
+      .bar:after {
+        background: var(--danger);
+        right: 50%;
+      }
+
+      input:focus ~ .bar:before, input:focus ~ .bar:after {
+        width: 50%;
+      }
+
+    }
+
+    .has-danger-wBorder {
+      input {
+        border: 1px solid var(--danger);
+      }
+
+      ::placeholder {
+        color: var(--danger);
+      }
+    }
+
+
+    input:read-only ~ label {
+      top: -20px;
+      font-size: 14px;
+    }
+
+
+    .form-control-feedback {
+      font-size: 0.8rem;
+      margin-top: 3px;
       color: var(--danger);
+      margin-left: 0.3rem;
     }
-  }
 
 
-  input:read-only ~ label {
-    top: -20px;
-    font-size: 14px;
-  }
-
-
-  .form-control-feedback {
-    font-size: 0.8rem;
-    margin-top: 3px;
-    color: var(--danger);
-    margin-left: 0.3rem;
   }
 
 
 }
-

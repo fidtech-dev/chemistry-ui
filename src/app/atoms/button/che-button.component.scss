@@ -1,16 +1,18 @@
 
-#cheButton {
+.cheButtonContainer{
   display: inline-block;
   display: -moz-inline-stack; /* for firefox 2 */
   *display: inline; /* for ie 6 and 7 */
 
-  button {
-    position: relative;
-    display: block;
+  .cheButton  {
+    button {
+      position: relative;
+      display: block;
 
-    overflow: hidden;
-    user-select: none;
+      overflow: hidden;
+      user-select: none;
 
+    }
   }
 
 
