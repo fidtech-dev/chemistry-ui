@@ -22,6 +22,7 @@ import { GetStartedComponent } from './demo/get-started/get-started.component';
 import { CheIconComponent } from './atoms/icon/che-icon.component';
 import {CheIconModule} from './atoms/icon/che-icon.module';
 import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
+import { CheTextareaComponent } from './atoms/textarea/che-textarea.component';
 
 export function hljsLanguages() {
     return [
@@ -40,7 +41,8 @@ export function hljsLanguages() {
         CheckboxComponent,
         GetStartedComponent,
         IconComponent,
-        MyFilterPipe
+        MyFilterPipe,
+        CheTextareaComponent
     ],
     imports: [
         BrowserModule,

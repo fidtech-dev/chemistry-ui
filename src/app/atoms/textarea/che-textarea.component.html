@@ -1,0 +1,21 @@
+<ng-container *ngIf="desing === 'borderless'">
+    <div class="group" [ngClass]="{'has-danger': hasDanger() }">
+        <textarea [(ngModel)]="value" [ngClass]="{ 'che-textarea-focus': fucused }" [readOnly]="readonly"
+                  (focus)="onFocus()" (blur)="onBlur()" class="che-textarea"
+                  [required]="true" [disabled]="disabled"> </textarea>
+        <span class="highlight"></span>
+        <span class="bar bg-{{color}}"></span>
+        <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }" >{{label}}</label>
+
+    </div>
+</ng-container>
+
+<ng-container *ngIf="desing === 'border'">
+    <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
+        <label>{{label}}</label>
+        <textarea type="text" [(ngModel)]="value" (blur)="onBlur()" class="form-control" [required]="true"
+               [placeholder]="placeholder" [disabled]="disabled" [readOnly]="readonly"></textarea>
+    </div>
+</ng-container>
+
+
