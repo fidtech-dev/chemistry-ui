@@ -20,7 +20,7 @@ export class CheTextareaComponent implements ControlValueAccessor, OnInit {
     @Input() desing = 'border';
     @Input() disabled = false;
     @Input() placeholder = '';
-    @Input() maxlength = 524288;
+    @Input() maxlength ;
     @Input() required = false;
     @Input() readonly = false;
     @Output() focus = new EventEmitter();
