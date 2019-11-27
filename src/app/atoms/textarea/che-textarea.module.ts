@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {CheTextareaComponent} from './che-textarea.component';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+    declarations: [CheTextareaComponent],
+    imports: [
+        CommonModule
+    ],
+    exports: [CheTextareaComponent]
 })
-export class CheTextareaModule { }
+export class CheTextareaModule {
+}

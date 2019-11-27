@@ -23,6 +23,7 @@ import { CheIconComponent } from './atoms/icon/che-icon.component';
 import {CheIconModule} from './atoms/icon/che-icon.module';
 import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
 import { CheTextareaComponent } from './atoms/textarea/che-textarea.component';
+import {CheTextareaModule} from './atoms/textarea/che-textarea.module';
 
 export function hljsLanguages() {
     return [
@@ -41,8 +42,8 @@ export function hljsLanguages() {
         CheckboxComponent,
         GetStartedComponent,
         IconComponent,
-        MyFilterPipe,
-        CheTextareaComponent
+        MyFilterPipe
+
     ],
     imports: [
         BrowserModule,
@@ -58,7 +59,8 @@ export function hljsLanguages() {
         HighlightModule.forRoot({
             languages: hljsLanguages
         }),
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        CheTextareaModule
     ],
     providers: [],
     bootstrap: [AppComponent],
