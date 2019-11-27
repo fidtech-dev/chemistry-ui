@@ -1,19 +1,19 @@
 <div class="cheTextareaContainer">
     <div class="cheTextarea">
         <ng-container *ngIf="desing === 'borderless'">
-            <div class="group" [ngClass]="{'has-danger': hasDanger() }">
+            <div class="group" [ngClass]="{'che-danger': hasDanger() }">
         <textarea  [value]="innerValue" [name]="name"  (input)="onInput($event.target.value)" [ngClass]="{ 'che-focus': fucused }" [readOnly]="readonly"
                   (focus)="onFocus()" (blur)="onBlur()" class="che-textarea-element"
                   [required]="true" [disabled]="disabled" [attr.maxlength]="maxlength"> </textarea>
                 <span class="highlight"></span>
                 <span class="bar bg-{{color}}"></span>
-                <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
+                <label class="che-label-textarea " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
                 <span *ngIf="maxlength" class="messegeMaxlength">{{value ? value.length : 0}}/{{ maxlength}}</span>
             </div>
         </ng-container>
 
         <ng-container *ngIf="desing === 'border'">
-            <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
+            <div class="form-group" [ngClass]="{'che-danger-wBorder': hasDanger() }">
                 <label>{{label}}</label>
                 <textarea type="text" [value]="innerValue" [name]="name"  (input)="onInput($event.target.value)" (blur)="onBlur()" class="form-control" [required]="true"
                           [placeholder]="placeholder" [disabled]="disabled" [readOnly]="readonly" [attr.maxlength]="maxlength"></textarea>

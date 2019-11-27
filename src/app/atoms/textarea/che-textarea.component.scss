@@ -21,7 +21,7 @@
     }
 
     /* LABEL ======================================= */
-    .labelMaterial {
+    .che-label-textarea {
       color: #999;
       font-size: 18px;
       font-weight: normal;
@@ -122,7 +122,7 @@
     }
 
 
-    .has-danger {
+    .che-danger {
       textarea {
         border-bottom: 1px solid var(--danger);
       }
@@ -147,7 +147,7 @@
 
     }
 
-    .has-danger-wBorder {
+    .che-danger-wBorder {
       textarea {
         border: 1px solid var(--danger);
       }

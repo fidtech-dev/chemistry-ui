@@ -163,8 +163,8 @@ describe('che-textarea as a Atomic component', () => {
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger'))
-                    .toBe(false, 'should have not the class has-danger');
+                expect(divGroup.nativeElement.classList.contains('che-danger'))
+                    .toBe(false, 'should have not the class che-danger');
 
             });
             // test 12
@@ -181,16 +181,16 @@ describe('che-textarea as a Atomic component', () => {
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger'))
-                    .toBe(false, 'should have not the class has-danger');
+                expect(divGroup.nativeElement.classList.contains('che-danger'))
+                    .toBe(false, 'should have not the class che-danger');
 
                 // Act
                 // divGroup.triggerEventHandler('click', null);
                 textarea.triggerEventHandler('blur', null); // No esta funcionando
                 fixture.detectChanges();
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger'))
-                    .toBe(true, 'should  have the class has-danger');
+                expect(divGroup.nativeElement.classList.contains('che-danger'))
+                    .toBe(true, 'should  have the class che-danger');
             });
 
             // test 13
@@ -208,16 +208,16 @@ describe('che-textarea as a Atomic component', () => {
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger'))
-                    .toBe(false, 'should have not the class has-danger');
+                expect(divGroup.nativeElement.classList.contains('che-danger'))
+                    .toBe(false, 'should have not the class che-danger');
 
                 // Act
                 textarea.triggerEventHandler('blur', null);
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger'))
-                    .toBe(false, 'should have not the class has-danger');
+                expect(divGroup.nativeElement.classList.contains('che-danger'))
+                    .toBe(false, 'should have not the class che-danger');
 
             });
 
@@ -241,16 +241,16 @@ describe('che-textarea as a Atomic component', () => {
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger'))
-                    .toBe(false, 'should have not the class has-danger');
+                expect(divGroup.nativeElement.classList.contains('che-danger'))
+                    .toBe(false, 'should have not the class che-danger');
 
                 textarea.nativeElement.value = 'a value';
                 textarea.nativeElement.dispatchEvent(new Event('input'));
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger'))
-                    .toBe(false, 'should have not the class has-danger');
+                expect(divGroup.nativeElement.classList.contains('che-danger'))
+                    .toBe(false, 'should have not the class che-danger');
             });
 
         });
@@ -412,8 +412,8 @@ describe('che-textarea as a Atomic component', () => {
                 textarea.triggerEventHandler('click', null);
                 fixture.detectChanges();
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                    .toBe(false, 'should not have the class has-danger-wBorder');
+                expect(divGroup.nativeElement.classList.contains('che-danger-wBorder'))
+                    .toBe(false, 'should not have the class che-danger-wBorder');
 
             });
 
@@ -428,14 +428,14 @@ describe('che-textarea as a Atomic component', () => {
                 textarea.triggerEventHandler('click', null);
                 fixture.detectChanges();
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                    .toBe(false, 'should  have not the class has-danger-wBorder');
+                expect(divGroup.nativeElement.classList.contains('che-danger-wBorder'))
+                    .toBe(false, 'should  have not the class che-danger-wBorder');
                 // Act
                 textarea.triggerEventHandler('blur', null);
                 fixture.detectChanges();
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                    .toBeTruthy('should have the class has-danger-wBorder');
+                expect(divGroup.nativeElement.classList.contains('che-danger-wBorder'))
+                    .toBeTruthy('should have the class che-danger-wBorder');
             });
 
             // test 26
@@ -453,14 +453,14 @@ describe('che-textarea as a Atomic component', () => {
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                    .toBe(false, 'should not to have the class has-danger-wBorder');
+                expect(divGroup.nativeElement.classList.contains('che-danger-wBorder'))
+                    .toBe(false, 'should not to have the class che-danger-wBorder');
                 // Act
                 textarea.triggerEventHandler('blur', null);
                 fixture.detectChanges();
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                    .toBe(false, 'should not to have the class has-danger-wBorder');
+                expect(divGroup.nativeElement.classList.contains('che-danger-wBorder'))
+                    .toBe(false, 'should not to have the class che-danger-wBorder');
 
             });
 
@@ -485,16 +485,16 @@ describe('che-textarea as a Atomic component', () => {
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                    .toBe(false, 'should have not the class has-danger-wBorder');
+                expect(divGroup.nativeElement.classList.contains('che-danger-wBorder'))
+                    .toBe(false, 'should have not the class che-danger-wBorder');
 
                 // Act
                 textarea.triggerEventHandler('blur', null);
                 fixture.detectChanges();
 
                 // Assert
-                expect(divGroup.nativeElement.classList.contains('has-danger-wBorder'))
-                    .toBe(false, 'should have the class has-danger-wBorder');
+                expect(divGroup.nativeElement.classList.contains('che-danger-wBorder'))
+                    .toBe(false, 'should have the class che-danger-wBorder');
             });
         });
 
