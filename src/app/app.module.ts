@@ -22,6 +22,8 @@ import { GetStartedComponent } from './demo/get-started/get-started.component';
 import { CheIconComponent } from './atoms/icon/che-icon.component';
 import {CheIconModule} from './atoms/icon/che-icon.module';
 import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
+import { CheRadioButtonComponent } from './atoms/radio-button/che-radio-button.component';
+import {CheRadioButtonModule} from './atoms/radio-button/che-radio-button.module';
 
 export function hljsLanguages() {
     return [
@@ -52,6 +54,7 @@ export function hljsLanguages() {
         FormsModule,
         CheButtonModule,
         CheInputModule,
+        CheRadioButtonModule,
         CheValidationMessagesModule,
         HighlightModule.forRoot({
             languages: hljsLanguages

@@ -1,0 +1,12 @@
+<!--
+<div class="md-radio">
+    <input [(ngModel)]="value" [checked]="value1" [id]="id"    type="radio" name="g"   [ngClass]="{ 'che-radio-button-checked':  value , 'che-focus': fucused }"  (click)="onClick()" (focus)='onFocus()'   (blur)="onBlur()" [disabled]="disabled" >
+    <label [attr.for]="id" class="che-bg-{{color}}"   >Option 1</label>
+</div>
+-->
+
+
+<label  class="radio">
+    <input type="radio"  [value]="value" [name]="name"  (input)="onInput($event.target.value)" [ngClass]="{ 'che-radio-button-checked':  innerValue , 'che-focus': fucused }"  (click)="onClick()" (focus)='onFocus()'   (blur)="onBlur()" [disabled]="disabled"  class="hidden"/>
+    <span class="label che-bg-{{color}}"></span>{{label}}
+</label>
