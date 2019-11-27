@@ -30,7 +30,7 @@ describe('che-radio-button Component', () => {
     });
 
     // test 2
-    it('should have not a class "che-focus" when is focused', () => {
+    it('should have not a class "che-focus" when is out of focus', () => {
 
         // Arrange
         let radioButton = fixture.debugElement.query(By.css('input'))!;
