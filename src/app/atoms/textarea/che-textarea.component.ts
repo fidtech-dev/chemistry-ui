@@ -20,7 +20,8 @@ export class CheTextareaComponent implements ControlValueAccessor, OnInit {
     @Input() desing = 'border';
     @Input() disabled = false;
     @Input() placeholder = '';
-    @Input() maxlength ;
+    @Input() maxlength;
+    @Input() name;
     @Input() required = false;
     @Input() readonly = false;
     @Output() focus = new EventEmitter();
@@ -66,9 +67,16 @@ export class CheTextareaComponent implements ControlValueAccessor, OnInit {
      */
     set value(v: any) {
         if (v !== this.innerValue) {
+
             this.innerValue = v;
             this.onChangeCallback(v);
         }
+    }
+
+    onInput(value: string) {
+        this.innerValue = value;
+        this.onTouchedCallback();
+        this.onChangeCallback(this.innerValue);
     }
 
     /**
@@ -81,7 +89,6 @@ export class CheTextareaComponent implements ControlValueAccessor, OnInit {
     }
 
     public onFocus() {
-        console.log('Esta enfocando..');
         this.fucused = true;
         this.focus.emit();
     }
@@ -95,7 +102,7 @@ export class CheTextareaComponent implements ControlValueAccessor, OnInit {
      */
     writeValue(value: any) {
         if (value !== this.innerValue) {
-            this.innerValue = value;
+            this.innerValue = value === undefined ? '' : value;
         }
     }
 
