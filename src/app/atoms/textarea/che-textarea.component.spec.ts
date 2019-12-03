@@ -44,39 +44,77 @@ describe('che-textarea as a Atomic component', () => {
         });
     });
 
-    describe('If the design the textarea is borderless', () => {
-        // test 3
-        it('Should be  have a floating label when textarea is focused', () => {
+    describe('If the textarea is disabled', () => {
+        beforeEach(async(() => {
             // Arrange
-            const label = fixture.debugElement.query(By.css('label'))!;
-            const textarea = fixture.debugElement.query(By.css('textarea'))!;
-
-            // Assert
-            expect(textarea.nativeElement.classList.contains('che-focus')).toBeFalsy('Should have not the class che-focus');
-            expect(label.nativeElement.classList.contains('che-label-floating')).toBeFalsy('Should have not the class che-label-floating');
-            // act
-            textarea.triggerEventHandler('focus', null);
+            fixture.destroy();
+            TestBed.resetTestingModule();
+            fixture = createComponent(CheTextareaF7Component);
             fixture.detectChanges();
+        }));
+        // test 3
+        it('Should show as a disabled textarea', () => {
+            // Arrange
+            let textarea = fixture.debugElement.query(By.css('textarea'))!;
+            // Act
             // Assert
-            expect(textarea.nativeElement.classList.contains('che-focus')).toBeTruthy('Should have the class che-focus');
-            expect(label.nativeElement.classList.contains('che-label-floating')).toBeTruthy('Should have the class che-label-floating');
-
+            expect(textarea.nativeElement.disabled).toBeTruthy('should be a disabled textarea');
         });
 
         // test 4
-        it('Should be have a floating label when textarea have a value', () => {
+        it('Should not to allow to make focus or click', () => {
             // Arrange
-            const label = fixture.debugElement.query(By.css('label'))!;
-            const textarea = fixture.debugElement.query(By.css('textarea'))!;
-            // Assert
-            textarea.nativeElement.value = 'something';
-            textarea.nativeElement.dispatchEvent(new Event('input'));
-            fixture.detectChanges();
-            // Assert
-            expect(label.nativeElement.classList.contains('che-label-floating')).toBeTruthy('Should to have the class che-label-floating');
+            let textarea = fixture.debugElement.query(By.css('textarea'))!;
 
+            // Act
+            textarea.triggerEventHandler('click', null);
+            fixture.detectChanges();
+
+            // Act
+            let numberClass = textarea.nativeElement.classList.length;
+            textarea.triggerEventHandler('focus', null);
+            fixture.detectChanges();
+
+            // Assert
+            expect(numberClass).toBe(textarea.nativeElement.classList.length, 'Should not change the classes in the textarea');
+        });
+    });
+    describe('If the textarea is readOnly', () => {
+        beforeEach(async(() => {
+            // Arrange
+            fixture.destroy();
+            TestBed.resetTestingModule();
+            fixture = createComponent(CheTextareaF8Component);
+            fixture.detectChanges();
+        }));
+        // test 5
+        it('Should show as a readOnly textarea', () => {
+            // Arrange
+            let textarea = fixture.debugElement.query(By.css('textarea'))!;
+            // Act
+            // Assert
+            expect(textarea.nativeElement.readOnly).toBeTruthy('should be a readonly textarea');
         });
 
+        // test 6
+        it('Should not to allow to make focus or click', () => { // no funciona
+            // Arrange
+            let textarea = fixture.debugElement.query(By.css('textarea'))!;
+            // Act
+            textarea.triggerEventHandler('click', null);
+            fixture.detectChanges();
+
+            // Act
+            let numberClass = textarea.nativeElement.classList.length;
+            textarea.triggerEventHandler('focus', null);
+            fixture.detectChanges();
+
+            // Assert
+            expect(numberClass).toBe(textarea.nativeElement.classList.length, 'Should not to change the classes in the input');
+        });
+    });
+
+    describe('If the design the textarea is borderless', () => {
 
         describe('If the textarea has a color', () => {
             // test 7
@@ -108,7 +146,7 @@ describe('che-textarea as a Atomic component', () => {
                 fixture.detectChanges();
             }));
             // test 8
-            it('Should have not the color primary by default', () => {
+            it('Should have the color primary by default', () => {
                 // Arrange
                 const span = fixture.debugElement.query(By.css('span.bar'))!;
                 // assert
@@ -117,7 +155,7 @@ describe('che-textarea as a Atomic component', () => {
         });
 
         describe('If the textarea has a label', () => {
-            // test 9
+            // test 10
             it('Should have the label like a placeholder over the textarea', () => {
                 // Arrange
                 const label = fixture.debugElement.query(By.css('label'))!;
@@ -128,7 +166,7 @@ describe('che-textarea as a Atomic component', () => {
                 expect(label.nativeElement.classList.contains('che-label-floating')).toBeFalsy('Should not to have the class che-label-floating');
 
             });
-            // test 10
+            // test 11
             it('Should to float and be placed above on the textarea when is focused', () => {
                 // Arrange
                 const label = fixture.debugElement.query(By.css('label'))!;
@@ -138,6 +176,20 @@ describe('che-textarea as a Atomic component', () => {
                 fixture.detectChanges();
                 // Assert
                 expect(label.nativeElement.classList.contains('che-label-floating')).toBeTruthy('Should not to have the class che-label-floating');
+            });
+
+            // test 12
+            it('Should be have a floating label when textarea have a value', () => {
+                // Arrange
+                const label = fixture.debugElement.query(By.css('label'))!;
+                const textarea = fixture.debugElement.query(By.css('textarea'))!;
+                // Assert
+                textarea.nativeElement.value = 'something';
+                textarea.nativeElement.dispatchEvent(new Event('input'));
+                fixture.detectChanges();
+                // Assert
+                expect(label.nativeElement.classList.contains('che-label-floating')).toBeTruthy('Should to have the class che-label-floating');
+
             });
         });
 
@@ -149,7 +201,7 @@ describe('che-textarea as a Atomic component', () => {
                 fixture = createComponent(CheTextareaF1Component);
                 fixture.detectChanges();
             }));
-            // test 11
+            // test 13
             it('Should to be not invalid to make the first click', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -167,7 +219,7 @@ describe('che-textarea as a Atomic component', () => {
                     .toBe(false, 'should have not the class che-danger');
 
             });
-            // test 12
+            // test 14
             it('Should be invalid when not setting a value', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -193,7 +245,7 @@ describe('che-textarea as a Atomic component', () => {
                     .toBe(true, 'should  have the class che-danger');
             });
 
-            // test 13
+            // test 15
             it('Should  be valid when setting a value', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -231,7 +283,7 @@ describe('che-textarea as a Atomic component', () => {
                 fixture = createComponent(CheTextareaF2Component);
                 fixture.detectChanges();
             }));
-            // test 14
+            // test 16
             it('Should  be not invalid to make click or if have a value', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -254,83 +306,6 @@ describe('che-textarea as a Atomic component', () => {
             });
 
         });
-
-        describe('If the textarea is disabled', () => {
-            beforeEach(async(() => {
-                // Arrange
-                fixture.destroy();
-                TestBed.resetTestingModule();
-                fixture = createComponent(CheTextareaF3Component);
-                fixture.detectChanges();
-            }));
-            // test 15
-            it('Should not show as a disabled textarea', () => {
-                // Arrange
-                let textarea = fixture.debugElement.query(By.css('textarea'))!;
-                // Act
-                // Assert
-                expect(textarea.nativeElement.disabled).toBeTruthy('should be a disabled textarea');
-            });
-
-            // test 16
-            it('Should not to allow to make textarea or click', () => { // NO pude testear focus
-                // Arrange
-                let textarea = fixture.debugElement.query(By.css('textarea'))!;
-
-                // // Act
-                textarea.nativeElement.dispatchEvent(new Event('input'));
-                fixture.detectChanges();
-
-                // Assert
-                expect(textarea.nativeElement.classList.contains('che-focus')).toBeFalsy('Should not to have the class che-focus');
-
-                // Act
-                textarea.nativeElement.dispatchEvent(new Event('input'));
-                fixture.detectChanges();
-
-                //Assert
-                expect(textarea.nativeElement.classList.contains('che-focus')).toBeFalsy('Should not to have the class che-focus');
-            });
-        });
-
-        describe('If the checkbox is readOnly', () => {
-            beforeEach(async(() => {
-                // Arrange
-                fixture.destroy();
-                TestBed.resetTestingModule();
-                fixture = createComponent(CheTextareaF4Component);
-                fixture.detectChanges();
-            }));
-            // test 17
-            it('Should not show as a readOnly textarea', () => {
-                // Arrange
-                let textarea = fixture.debugElement.query(By.css('textarea'))!;
-
-                // Act
-
-                // Assert
-                expect(textarea.nativeElement.readOnly).toBeTruthy('should be a disabled textarea');
-            });
-
-            // test 18
-            it('Should not to allow to make focus', () => {
-                // Arrange
-                let textarea = fixture.debugElement.query(By.css('textarea'))!;
-                // Act
-                textarea.triggerEventHandler('focus', null);
-                fixture.detectChanges();
-
-                // Assert
-                expect(textarea.nativeElement.classList.contains('che-focus')).toBeTruthy('Should have the class che-focus a');
-
-                textarea.triggerEventHandler('blur', null);
-                fixture.detectChanges();
-
-                // Assert
-                expect(textarea.nativeElement.classList.contains('che-focus')).toBeFalsy('Should not to have the class che-focus a');
-
-            });
-        });
     });
 
     describe('If the design is by default or border', () => {
@@ -342,7 +317,7 @@ describe('che-textarea as a Atomic component', () => {
             component = fixture.componentInstance;
             fixture.detectChanges();
         }));
-        // test 20
+        // test 17
         it('Should be design border', () => {
             // Arrange
             let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -353,7 +328,7 @@ describe('che-textarea as a Atomic component', () => {
         });
 
         describe('If the textarea has a color', () => {
-            // test 21
+            // test 18
             it('should not reflect changes', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -371,7 +346,7 @@ describe('che-textarea as a Atomic component', () => {
         });
 
         describe('If the textarea has a label', () => {
-            // test 22
+            // test 19
             it('should be located above of the textarea', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -380,7 +355,7 @@ describe('che-textarea as a Atomic component', () => {
                 expect(textarea.nativeElement.classList.contains('form-control')).toBeTruthy('Should to have the class form-control');
             });
 
-            // test 23
+            // test 20
             it('Should have the label seted', () => {
                 // Arrange
                 let label = fixture.debugElement.query(By.css('label'))!;
@@ -401,7 +376,7 @@ describe('che-textarea as a Atomic component', () => {
                 fixture = createComponent(CheTextareaF5Component);
                 fixture.detectChanges();
             }));
-            // test 24
+            // test 21
             it('Should be valid to make the first click', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -417,7 +392,7 @@ describe('che-textarea as a Atomic component', () => {
 
             });
 
-            // test 25
+            // test 22
             it('Should be invalid when not setting a value', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -438,7 +413,7 @@ describe('che-textarea as a Atomic component', () => {
                     .toBeTruthy('should have the class che-danger-wBorder');
             });
 
-            // test 26
+            // test 23
             it('Should  be valid when setting a value', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -474,7 +449,7 @@ describe('che-textarea as a Atomic component', () => {
                 fixture = createComponent(CheTextareaF6Component);
                 fixture.detectChanges();
             }));
-            // test 27
+            // test 24
             it('Should to be valid when not setting a value', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -506,7 +481,7 @@ describe('che-textarea as a Atomic component', () => {
                 fixture = createComponent(CheTextareaF5Component);
                 fixture.detectChanges();
             }));
-            // test 28
+            // test 25
             it('Should  have the placeholder', () => {
                 // Arrange
                 let textarea = fixture.debugElement.query(By.css('textarea'))!;
@@ -519,75 +494,6 @@ describe('che-textarea as a Atomic component', () => {
             });
         });
 
-        describe('If the textarea is disabled', () => {
-            beforeEach(async(() => {
-                // Arrange
-                fixture.destroy();
-                TestBed.resetTestingModule();
-                fixture = createComponent(CheTextareaF7Component);
-                fixture.detectChanges();
-            }));
-            // test 29
-            it('Should show as a disabled textarea', () => {
-                // Arrange
-                let textarea = fixture.debugElement.query(By.css('textarea'))!;
-                // Act
-                // Assert
-                expect(textarea.nativeElement.disabled).toBeTruthy('should be a disabled textarea');
-            });
-
-            // test 30
-            it('Should not to allow to make focus or click', () => {
-                // Arrange
-                let textarea = fixture.debugElement.query(By.css('textarea'))!;
-
-                // Act
-                textarea.triggerEventHandler('click', null);
-                fixture.detectChanges();
-
-                // Act
-                let numberClass = textarea.nativeElement.classList.length;
-                textarea.triggerEventHandler('focus', null);
-                fixture.detectChanges();
-
-                // Assert
-                expect(numberClass).toBe(textarea.nativeElement.classList.length, 'Should not change the classes in the textarea');
-            });
-        });
-        describe('If the textarea is readOnly', () => {
-            beforeEach(async(() => {
-                // Arrange
-                fixture.destroy();
-                TestBed.resetTestingModule();
-                fixture = createComponent(CheTextareaF8Component);
-                fixture.detectChanges();
-            }));
-            // test 31
-            it('Should not show as a readOnly textarea', () => {
-                // Arrange
-                let textarea = fixture.debugElement.query(By.css('textarea'))!;
-                // Act
-                // Assert
-                expect(textarea.nativeElement.readOnly).toBeTruthy('should be a readonly textarea');
-            });
-
-            // test 32
-            it('Should not to allow to make focus or click', () => { // no funciona
-                // Arrange
-                let textarea = fixture.debugElement.query(By.css('textarea'))!;
-                // Act
-                textarea.triggerEventHandler('click', null);
-                fixture.detectChanges();
-
-                // Act
-                let numberClass = textarea.nativeElement.classList.length;
-                textarea.triggerEventHandler('focus', null);
-                fixture.detectChanges();
-
-                // Assert
-                expect(numberClass).toBe(textarea.nativeElement.classList.length, 'Should not to change the classes in the input');
-            });
-        });
 
     });
 
