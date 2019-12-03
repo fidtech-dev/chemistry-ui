@@ -1,0 +1,14 @@
+<div class="cheSelectContainer">
+    <label *ngIf="appearance !== 'underline'">{{label}}</label>
+    <ng-select [(ngModel)]="value" (input)="onInput($event.target.value)"  [items]="items"
+               bindLabel="name"
+               placeholder="{{appearance === 'underline' ? label : ''}}"
+               [multiple]="multiple"
+               [appearance]="appearance"
+               [searchable]="searchable"
+               [loading]="loading"
+    [disabled]="disabled" [required]="true">
+
+    </ng-select>
+</div>
+

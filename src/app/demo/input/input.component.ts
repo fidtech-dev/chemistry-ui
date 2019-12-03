@@ -10,7 +10,30 @@ import {FormBuilder} from '@angular/forms';
 export class InputComponent implements OnInit {
     input1;
     input2;
+    value;
     userForm;
+    items = [{
+        age: 23,
+        company: 'ZOLAR',
+        email: 'karynwright@zolar.com',
+        gender: 'female',
+        id: '5a15b13c36e7a7f00cf0d7cb',
+        index: 2,
+        isActive: true,
+        name: 'Karyn Wright',
+        phone: '+1 (851) 583-2547',
+        picture: 'http://placehold.it/32x32',
+    }, {
+        age: 35,
+        company: 'EXTRAWEAR',
+        email: 'rochelleestes@extrawear.com',
+        gender: 'female',
+        id: '5a15b13c2340978ec3d2c0ea',
+        index: 3,
+        name: 'Rochelle Estes',
+        phone: '+1 (849) 408-2029',
+        picture: 'http://placehold.it/32x32'
+    }];
     textImport = 'import {CheInputModule} from \'@fidtech-sa/chemistry-ui\';\n';
     gettingStarter = '<che-input color=\'primary\' [(ngModel)]="input1" name="example" #example=\'ngModel\' \n' +
         ' label="name" desing="borderless" required="true"></che-input>';

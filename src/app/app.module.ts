@@ -22,6 +22,9 @@ import { GetStartedComponent } from './demo/get-started/get-started.component';
 import { CheIconComponent } from './atoms/icon/che-icon.component';
 import {CheIconModule} from './atoms/icon/che-icon.module';
 import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
+import {NgSelectModule} from '@ng-select/ng-select';
+import { CheSelectComponent } from './atoms/select/che-select.component';
+import {CheSelectModule} from './atoms/select/che-select.module';
 
 export function hljsLanguages() {
     return [
@@ -56,7 +59,8 @@ export function hljsLanguages() {
         HighlightModule.forRoot({
             languages: hljsLanguages
         }),
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        CheSelectModule
     ],
     providers: [],
     bootstrap: [AppComponent],

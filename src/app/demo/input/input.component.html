@@ -6,8 +6,8 @@
 <div class="row">
     <div class="col-12">
         <h5>Input borderless </h5>
-        <div class="mt-3" >
-            <che-input color='primary'  type="number" [(ngModel)]="input1" name="example" #example='ngModel'
+        <div class="mt-3">
+            <che-input color='primary' type="number" [(ngModel)]="input1" name="example" #example='ngModel'
                        label="name"
                        desing="borderless" required="true"></che-input>
             <che-validation-message messege="Value Required"
@@ -15,6 +15,9 @@
 
         </div>
         <br>
+        <che-select class="w-100" desing="borderless" disabled="true" label="label" [(ngModel)]="value" [items]="items"
+                    [searchable]="true" [multiple]="true"></che-select>
+        asdas{{value | json}}
         <form [formGroup]="userForm">
             <h5 class="mt-3">Input with border</h5>
             <che-input color='primary' name="ejemplo2" formControlName="name" minlength="10" label="Name"

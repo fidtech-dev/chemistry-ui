@@ -1,0 +1,74 @@
+
+che-select{
+  width: 100%;
+}
+
+
+
+::ng-deep .ng-select .ng-select-container.ng-appearance-outline {
+  padding: 0 0.5em;
+  height: 2.8rem;
+  min-height: unset !important;
+
+}
+
+
+::ng-deep .ng-select.ng-select-multiple .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
+  top: unset !important;}
+::ng-deep .ng-select.ng-select-multiple .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
+   top: unset !important;
+}
+
+::ng-deep .ng-select .ng-select-container .ng-value-container {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  padding: .1em 0;
+  border-top: .84375em solid transparent;
+}
+
+
+::ng-deep .ng-select .ng-select-container.ng-appearance-outline:hover:after {
+   border-color:  rgba(0,0,0,0.12);
+   border-width: 1px !important;
+}
+
+
+
+::ng-deep .ng-select.ng-select-focused .ng-select-container:after {
+  border-color: #3f51b5;
+  border-width: 2px
+}
+
+::ng-deep .ng-select.ng-select-focused.ng-invalid.ng-touched  .ng-select-container:after {
+  border-color: red;
+
+}
+
+::ng-deep .ng-select.ng-invalid.ng-touched  {
+  ::ng-deep .ng-select-container{
+    border-bottom: 1px solid red !important;
+  }
+
+}
+::ng-deep .ng-select.ng-select-focused .ng-select-container.ng-appearance-outline:after, .ng-select.ng-select-focused .ng-select-container.ng-appearance-outline:hover:after {
+  border-color: unset !important;
+  border-width: 1px !important;
+}
+
+::ng-deep .ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+  color: #3f51b5
+}
+
+::ng-deep .ng-select.ng-select-focused.ng-invalid.ng-touched .ng-select-container .ng-value-container .ng-placeholder {
+  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+  color: red;
+}
+
+::ng-deep .ng-select.ng-invalid.ng-touched .ng-select-container .ng-value-container .ng-placeholder {
+  color: red;
+}
+
+::ng-deep .ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+  color: #3f51b5
+}

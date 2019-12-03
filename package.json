@@ -17,8 +17,9 @@
   },
   "private": false,
   "dependencies": {
-    "bootstrap": "^4.3.1",
     "@fidtech-sa/ft-icons": "file:fidtech-sa-ft-icons-1.0.0.tgz",
+    "@ng-select/ng-select": "^3.6.2",
+    "bootstrap": "^4.3.1",
     "ngx-toastr": "^11.1.2"
   },
   "devDependencies": {
