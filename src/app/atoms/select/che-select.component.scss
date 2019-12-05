@@ -1,74 +1,286 @@
 
-che-select{
-  width: 100%;
-}
+.cheSelectContainer {
+  .cheSelect {
 
 
+    che-select {
+      width: 100%;
+    }
 
-::ng-deep .ng-select .ng-select-container.ng-appearance-outline {
-  padding: 0 0.5em;
-  height: 2.8rem;
-  min-height: unset !important;
+    ::ng-deep input {
+      background-color: transparent !important;
+    }
 
-}
+    ::ng-deep .ng-select .ng-select-container.ng-appearance-outline {
+      padding: 0 0.5em;
+      height: 2.8rem;
+      min-height: unset !important;
 
-
-::ng-deep .ng-select.ng-select-multiple .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
-  top: unset !important;}
-::ng-deep .ng-select.ng-select-multiple .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
-   top: unset !important;
-}
-
-::ng-deep .ng-select .ng-select-container .ng-value-container {
-  -webkit-box-align: stretch;
-  align-items: stretch;
-  padding: .1em 0;
-  border-top: .84375em solid transparent;
-}
+    }
 
 
-::ng-deep .ng-select .ng-select-container.ng-appearance-outline:hover:after {
-   border-color:  rgba(0,0,0,0.12);
-   border-width: 1px !important;
-}
+    ::ng-deep .ng-select.ng-select-multiple .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
+      top: unset !important;
+    }
+
+    ::ng-deep .ng-select.ng-select-multiple .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
+      top: unset !important;
+    }
+
+    ::ng-deep .ng-select .ng-select-container .ng-value-container {
+      -webkit-box-align: stretch;
+      align-items: stretch;
+      padding: .1em 0;
+      border-top: .84375em solid transparent;
+    }
 
 
+    ::ng-deep .ng-select .ng-select-container.ng-appearance-outline:hover:after {
+      border-color: unset !important;
+      border-width: 1px !important;
+    }
+    ::ng-deep .che-bg-dark.ng-select.ng-select-focused .ng-select-container.input-container-border .ng-value-container .ng-placeholder {
+      color: unset !important;
+    }
 
-::ng-deep .ng-select.ng-select-focused .ng-select-container:after {
-  border-color: #3f51b5;
-  border-width: 2px
-}
+    ::ng-deep .ng-select.ng-select-focused .ng-select-container:after {
+      border-color: #3f51b5;
+      border-width: 2px
+    }
 
-::ng-deep .ng-select.ng-select-focused.ng-invalid.ng-touched  .ng-select-container:after {
-  border-color: red;
+    ::ng-deep .ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--primary);
+      border-width: 2px
+    }
 
-}
+    ::ng-deep .ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--primary);
+    }
 
-::ng-deep .ng-select.ng-invalid.ng-touched  {
-  ::ng-deep .ng-select-container{
-    border-bottom: 1px solid red !important;
+
+    ::ng-deep .ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--primary);
+    }
+
+    /*primary*/
+    ::ng-deep .che-bg-primary.ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--primary);
+      border-width: 2px
+    }
+
+    ::ng-deep .che-bg-primary.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--primary);
+    }
+
+
+    ::ng-deep .che-bg-primary.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--primary);
+    }
+
+    /*end primary*/
+
+    /*secondary*/
+    ::ng-deep .che-bg-secondary.ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--secondary);
+      border-width: 2px
+    }
+
+    ::ng-deep .che-bg-secondary.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--secondary);
+    }
+
+
+    ::ng-deep .che-bg-secondary.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--secondary);
+    }
+
+    /*end secondary*/
+
+
+    /*success*/
+    ::ng-deep .che-bg-success.ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--success);
+      border-width: 2px
+    }
+
+    ::ng-deep .che-bg-success.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--success);
+    }
+
+
+    ::ng-deep .che-bg-success.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--success);
+    }
+
+    /*end success*/
+
+    /*info*/
+    ::ng-deep .che-bg-info.ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--info);
+      border-width: 2px
+    }
+
+    ::ng-deep .che-bg-info.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--info);
+    }
+
+
+    ::ng-deep .che-bg-info.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--info);
+    }
+
+    /*end info*/
+
+
+    /*warning*/
+    ::ng-deep .che-bg-warning.ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--warning);
+      border-width: 2px
+    }
+
+    ::ng-deep .che-bg-warning.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--warning);
+    }
+
+
+    ::ng-deep .che-bg-warning.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--warning);
+    }
+
+    /*end warning*/
+
+
+    /*warning*/
+    ::ng-deep .che-bg-danger.ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--danger);
+      border-width: 2px
+    }
+
+    ::ng-deep .che-bg-danger.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--danger);
+    }
+
+
+    ::ng-deep .che-bg-danger.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--danger);
+    }
+
+    /*end warning*/
+
+
+    /*light*/
+    ::ng-deep .che-bg-light.ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--light);
+      border-width: 2px
+    }
+
+    ::ng-deep .che-bg-light.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--light);
+    }
+
+
+    ::ng-deep .che-bg-light.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--light);
+    }
+
+    /*end light*/
+
+    /*dark*/
+    ::ng-deep .che-bg-dark.ng-select.ng-select-focused .ng-select-container:after {
+      border-color: var(--dark);
+      border-width: 2px
+    }
+
+    ::ng-deep .che-bg-dark.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      color: var(--dark);
+    }
+
+
+    ::ng-deep .che-bg-dark.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: var(--dark);
+    }
+
+    /*end dark*/
+
+    ::ng-deep .ng-select.ng-select-focused.ng-invalid.ng-touched .ng-select-container:after {
+      border-color: var(--danger);
+
+    }
+
+    ::ng-deep .ng-select.ng-invalid.ng-touched {
+      ::ng-deep .ng-select-container {
+        border-bottom: 1px solid var(--danger) !important;
+      }
+
+    }
+    .ng-invalid.ng-touched {
+      .cheSelectContainer {
+        .cheSelect{
+          label{
+            color: red;
+          }
+
+        }
+
+      }
+    }
+    ::ng-deep .ng-select.ng-invalid.ng-touched {
+      ::ng-deep .input-container-border {
+        border-bottom: transparent !important;
+      }
+
+    }
+
+    ::ng-deep .ng-select.ng-invalid.ng-touched {
+      ::ng-deep .input-container-border:after {
+        border: 1px solid var(--danger) !important;
+      }
+
+    }
+
+    ::ng-deep .ng-select.ng-select-focused .ng-select-container.ng-appearance-outline:after, .ng-select.ng-select-focused .ng-select-container.ng-appearance-outline:hover:after {
+      border-color: unset !important;
+      border-width: 1px !important;
+    }
+
+
+    ::ng-deep .ng-select.ng-select-focused.ng-invalid.ng-touched .ng-select-container .ng-value-container .ng-placeholder {
+      transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
+      color: red;
+    }
+
+    ::ng-deep .ng-select.ng-invalid.ng-touched .ng-select-container .ng-value-container .ng-placeholder {
+      color: red;
+    }
+
+  .label-invalid{
+    color: var(--danger);
   }
-
-}
-::ng-deep .ng-select.ng-select-focused .ng-select-container.ng-appearance-outline:after, .ng-select.ng-select-focused .ng-select-container.ng-appearance-outline:hover:after {
-  border-color: unset !important;
-  border-width: 1px !important;
+  }
 }
 
-::ng-deep .ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
-  color: #3f51b5
+::ng-deep .ng-select.ng-select-filtered .ng-placeholder {
+  display: none !important;
 }
 
-::ng-deep .ng-select.ng-select-focused.ng-invalid.ng-touched .ng-select-container .ng-value-container .ng-placeholder {
-  transform: translateY(-1.28125em) scale(0.75) perspective(100px) translateZ(0.001px);
-  color: red;
+::ng-deep .ng-select .ng-has-value .ng-placeholder {
+  display: none;
 }
 
-::ng-deep .ng-select.ng-invalid.ng-touched .ng-select-container .ng-value-container .ng-placeholder {
-  color: red;
+::ng-deep .ng-select .input-container-border .ng-value-container .ng-placeholder {
+  transform: unset !important;
+  color: unset !important;
 }
 
-::ng-deep .ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow {
-  color: #3f51b5
-}
+
+
+

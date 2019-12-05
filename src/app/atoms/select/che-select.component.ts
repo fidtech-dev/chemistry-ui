@@ -1,6 +1,7 @@
-import {Component, Input, OnInit,forwardRef} from '@angular/core';
+import {Component, Input, OnInit, forwardRef, ElementRef, ContentChild, AfterContentInit} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
 import {noop} from 'rxjs';
+
 @Component({
     selector: 'che-select',
     templateUrl: './che-select.component.html',
@@ -13,18 +14,23 @@ import {noop} from 'rxjs';
         }
     ],
 })
-export class CheSelectComponent implements ControlValueAccessor, OnInit {
+export class CheSelectComponent implements ControlValueAccessor, OnInit, AfterContentInit {
     @Input() items;
     @Input() loading;
-    @Input() searchable = false
-    @Input() multiple = false
-    @Input() desing = 'borderless'
+    @Input() searchable = false;
+    @Input() multiple = false;
+    @Input() desing = 'borderless';
     @Input() name;
     @Input() label;
-    @Input()  disabled
+    @Input() disabled;
+    @Input() required;
+    @Input() bindLabel;
+    @Input()  placeholder
+    @Input() color = 'primary';
+    @ContentChild(NgControl, {static: false}) public control: any;
     public appearance;
 
-    constructor() {
+    constructor(private elRef: ElementRef) {
     }
 
     ngOnInit() {
@@ -33,6 +39,20 @@ export class CheSelectComponent implements ControlValueAccessor, OnInit {
         } else {
             this.appearance = 'outline';
         }
+
+
+    }
+
+    ngAfterContentInit() { // or ngAfterContentChecked
+
+        setTimeout(function() {
+            let ifDesing = document.getElementsByClassName('input-border');
+
+            if (ifDesing.length > 0) {
+                let containerInput = document.getElementsByClassName('ng-select-container');
+                console.log(containerInput[0].classList.add('input-container-border'));
+            }
+        }, 0);
     }
 
 
@@ -64,6 +84,7 @@ export class CheSelectComponent implements ControlValueAccessor, OnInit {
 
             this.innerValue = v;
             this.onChangeCallback(v);
+            this.onTouchedCallback();
         }
     }
 
@@ -78,7 +99,7 @@ export class CheSelectComponent implements ControlValueAccessor, OnInit {
      */
     onBlur() {
         this.onTouchedCallback();
-
+        this.onTouchedCallback();
     }
 
     public onFocus() {
@@ -108,6 +129,7 @@ export class CheSelectComponent implements ControlValueAccessor, OnInit {
     registerOnTouched(fn: any) {
         this.onTouchedCallback = fn;
     }
+
 
 
 }
