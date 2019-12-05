@@ -1,0 +1,33 @@
+<div class="headerAtom">
+    <h3>Textarea </h3>
+    <hr>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h5>textarea borderless </h5>
+        <div class="mt-3">
+            <che-textarea desing="borderless" label="This label" maxlength="50" name="example" [(ngModel)]="value"
+                          required="true"></che-textarea>
+        </div>
+        <br>
+
+        <h5>textarea with border </h5>
+        <div class="mt-3">
+            <che-textarea desing="border" label="This label" maxlength="50" name="example2" [(ngModel)]="value2"
+                          required="true"></che-textarea>
+        </div>
+        <br>
+
+
+    </div>
+    <div class="col-12 sideRight mt-5">
+        <app-documentation [import]="textImport"
+                           [gettingStarter]="gettingStarter"
+                           [attribute]="attribute"
+                           [codeHtml]="codeHtml"
+                           [codeTs]="codeTs"
+                           [codeScss]="codeScss"
+        ></app-documentation>
+    </div>
+</div>
