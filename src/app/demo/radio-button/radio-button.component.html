@@ -1,0 +1,32 @@
+<div class="headerAtom">
+    <h3>Radio Button </h3>
+    <hr>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h5>Radio </h5>
+        <div class="mt-3" >
+            <che-radio-button color="primary" label='this is a label' name="grupo1"  [(ngModel)]="value" value="valor1"   ></che-radio-button>
+            <che-radio-button color="primary" label='this is a label' name="grupo1" [(ngModel)]="value" value="valor2" ></che-radio-button>
+        </div>
+        <br>
+
+        <div class="mt-3" >
+            <che-radio-button color="primary" label='this is a label disabled' name="grupo2"  disabled="true"  [(ngModel)]="value2" value="valor1"  ></che-radio-button>
+            <che-radio-button color="primary" label='this is a label disabled' name="grupo2" disabled="true"  [(ngModel)]="value2" value="value2" ></che-radio-button>
+        </div>
+        <br>
+
+
+    </div>
+    <div class="col-12 sideRight mt-5">
+        <app-documentation [import]="textImport"
+                           [gettingStarter]="gettingStarter"
+                           [attribute]="attribute"
+                           [codeHtml]="codeHtml"
+                           [codeTs]="codeTs"
+                           [codeScss]="codeScss"
+        ></app-documentation>
+    </div>
+</div>

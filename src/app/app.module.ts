@@ -24,6 +24,7 @@ import {CheIconModule} from './atoms/icon/che-icon.module';
 import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
 import { CheRadioButtonComponent } from './atoms/radio-button/che-radio-button.component';
 import {CheRadioButtonModule} from './atoms/radio-button/che-radio-button.module';
+import { RadioButtonComponent } from './demo/radio-button/radio-button.component';
 
 export function hljsLanguages() {
     return [
@@ -42,7 +43,8 @@ export function hljsLanguages() {
         CheckboxComponent,
         GetStartedComponent,
         IconComponent,
-        MyFilterPipe
+        MyFilterPipe,
+        RadioButtonComponent
     ],
     imports: [
         BrowserModule,

@@ -7,6 +7,6 @@
 
 
 <label  class="radio">
-    <input type="radio"  [value]="value" [name]="name"  (input)="onInput($event.target.value)" [ngClass]="{ 'che-radio-button-checked':  innerValue , 'che-focus': fucused }"  (click)="onClick()" (focus)='onFocus()'   (blur)="onBlur()" [disabled]="disabled"  class="hidden"/>
+    <input type="radio"  [value]="value" [name]="name"  [checked]="value === innerValue ? true : false" (input)="onInput($event.target.value)" [ngClass]="{ 'che-radio-button-checked':  innerValue , 'che-focus': fucused }"  (click)="onClick()" (focus)='onFocus()'   (blur)="onBlur()" [disabled]="disabled"  class="hidden"/>
     <span class="label che-bg-{{color}}"></span>{{label}}
 </label>
