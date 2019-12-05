@@ -25,7 +25,8 @@ export class CheSelectComponent implements ControlValueAccessor, OnInit, AfterCo
     @Input() disabled;
     @Input() required;
     @Input() bindLabel;
-    @Input()  placeholder
+    @Input() placeholder;
+    @Input() readonly;
     @Input() color = 'primary';
     @ContentChild(NgControl, {static: false}) public control: any;
     public appearance;
@@ -47,10 +48,10 @@ export class CheSelectComponent implements ControlValueAccessor, OnInit, AfterCo
 
         setTimeout(function() {
             let ifDesing = document.getElementsByClassName('input-border');
-
-            if (ifDesing.length > 0) {
-                let containerInput = document.getElementsByClassName('ng-select-container');
-                console.log(containerInput[0].classList.add('input-container-border'));
+            for (let i = 0; i < ifDesing.length; i++) {
+                const element = ifDesing[i];
+                const x = element.getElementsByClassName('ng-select-container');
+                x[0].classList.add('input-container-border');
             }
         }, 0);
     }
@@ -129,7 +130,6 @@ export class CheSelectComponent implements ControlValueAccessor, OnInit, AfterCo
     registerOnTouched(fn: any) {
         this.onTouchedCallback = fn;
     }
-
 
 
 }

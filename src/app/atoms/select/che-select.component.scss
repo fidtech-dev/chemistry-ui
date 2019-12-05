@@ -20,11 +20,11 @@
 
 
     ::ng-deep .ng-select.ng-select-multiple .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
-      top: unset !important;
+      top: 0 !important;
     }
 
     ::ng-deep .ng-select.ng-select-multiple .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
-      top: unset !important;
+      top: 0 !important;
     }
 
     ::ng-deep .ng-select .ng-select-container .ng-value-container {
@@ -281,6 +281,11 @@
   color: unset !important;
 }
 
+::ng-deep .ng-select.ng-select-single .ng-select-container.ng-appearance-outline .ng-arrow-wrapper {
+   bottom: 9px !important;
+}
 
-
+::ng-deep .ng-select.ng-select-single .ng-select-container.ng-appearance-outline .ng-clear-wrapper {
+  bottom: 6px;
+}
 

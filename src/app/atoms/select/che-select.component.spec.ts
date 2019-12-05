@@ -43,7 +43,7 @@ describe('che-select Component', () => {
 
     });
 
-
+    // test 3
     it('Clicking on the "X" will remove the values.', () => {
         // Arrange
         let select = fixture.debugElement.query(By.css('input'))!;
@@ -75,73 +75,9 @@ describe('che-select Component', () => {
         expect(hasValueAfter).toBeNull('Should exist a element with the class ".ng-has-value"');
     });
 
-
-    describe('If the textarea is disabled', () => {
-        beforeEach(async(() => {
-            // Arrange
-            fixture.destroy();
-            TestBed.resetTestingModule();
-            fixture = createComponent(CheSelectF3Component);
-            fixture.detectChanges();
-        }));
-        // test 15
-        it('Should not show as a disabled select', () => {
-            let select = fixture.debugElement.query(By.css('che-select'))!;
-            // Assert
-            expect(select.nativeElement.getAttribute('disabled')).toBeTruthy('should be a select with the attribute disabled in true');
-        });
-
-        // test 16
-        it('Should not to allow to make focus in select', () => { // NO pude testear focus
-            // Arrange
-            let select = fixture.debugElement.query(By.css('input'))!;
-
-            // // Act
-            select.nativeElement.dispatchEvent(new Event('focus'));
-            fixture.detectChanges();
-
-            // Assert
-            expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should not to have the class ng-select-focused');
-
-
-        });
-    });
-
-    describe('If the select is readOnly', () => {
-        beforeEach(async(() => {
-            // Arrange
-            fixture.destroy();
-            TestBed.resetTestingModule();
-            fixture = createComponent(CheSelectF4Component);
-            fixture.detectChanges();
-        }));
-        // test 17
-        it('Should not show as a readOnly select', () => {
-            // Arrange
-            let select = fixture.debugElement.query(By.css('che-select'))!;
-
-            // Assert
-            expect(select.nativeElement.getAttribute('readonly')).toBeTruthy('should be a select with the attribute readonly in true');
-        });
-
-        // test 18
-        it('Should not to allow to make focus', () => {
-            // Arrange
-            let select = fixture.debugElement.query(By.css('input'))!;
-            // Act
-            select.triggerEventHandler('focus', null);
-            fixture.detectChanges();
-
-            // Assert
-            expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have the class che-focus a');
-
-        });
-    });
-
-
     describe('If the select is  simple value', () => {
 
-        // test 1
+        // test 4
         it('Should have only a one value', () => {
             // Arrange
             let select = fixture.debugElement.query(By.css('input'))!;
@@ -179,7 +115,7 @@ describe('che-select Component', () => {
             component = fixture.componentInstance;
             fixture.detectChanges();
         });
-        // test 1
+        // test 5
         it('Should have one or more values', () => {
             // Arrange
             let select = fixture.debugElement.query(By.css('input'))!;
@@ -204,7 +140,72 @@ describe('che-select Component', () => {
             expect(values.length).toEqual(2);
         });
 
+        // test 6
 
+
+    });
+
+
+    describe('If the select is disabled', () => {
+        beforeEach(async(() => {
+            // Arrange
+            fixture.destroy();
+            TestBed.resetTestingModule();
+            fixture = createComponent(CheSelectF3Component);
+            fixture.detectChanges();
+        }));
+        // test 7
+        it('Should not show as a disabled select', () => {
+            let select = fixture.debugElement.query(By.css('che-select'))!;
+            // Assert
+            expect(select.nativeElement.getAttribute('disabled')).toBeTruthy('should be a select with the attribute disabled in true');
+        });
+
+        // test 8
+        it('Should not to allow to make focus in select', () => { // NO pude testear focus
+            // Arrange
+            let select = fixture.debugElement.query(By.css('input'))!;
+
+            // // Act
+            select.nativeElement.dispatchEvent(new Event('focus'));
+            fixture.detectChanges();
+
+            // Assert
+            expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should not to have the class ng-select-focused');
+
+
+        });
+    });
+
+    describe('If the select is readOnly', () => {
+        beforeEach(async(() => {
+            // Arrange
+            fixture.destroy();
+            TestBed.resetTestingModule();
+            fixture = createComponent(CheSelectF4Component);
+            fixture.detectChanges();
+        }));
+        // test 9
+        it('Should not show as a readOnly select', () => {
+            // Arrange
+            let select = fixture.debugElement.query(By.css('che-select'))!;
+
+            // Assert
+            expect(select.nativeElement.getAttribute('readonly')).toBeTruthy('should be a select with the attribute readonly in true');
+        });
+
+        // test 10
+        it('Should not to allow to make focus', () => {
+            // Arrange
+            let select = fixture.debugElement.query(By.css('input'))!;
+            // Act
+            select.triggerEventHandler('focus', null);
+            fixture.detectChanges();
+
+            // Assert
+            expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have the class che-focus a');
+
+        });
     });
 
     describe('If the design the select is borderless', () => {
@@ -216,6 +217,7 @@ describe('che-select Component', () => {
             component = fixture.componentInstance;
             fixture.detectChanges();
         });
+        //test 11
         it('Should have the desing borderless', () => {
             // Arrange
             const select = fixture.debugElement.query(By.css('che-select'))!;
@@ -225,7 +227,7 @@ describe('che-select Component', () => {
 
         });
         describe('If the select has a color', () => {
-            // test 7
+            // test 12
             it('Should be have the color in the select underline when is focused', () => {
                 // Arrange
                 const select = fixture.debugElement.query(By.css('ng-select'))!;
@@ -239,6 +241,11 @@ describe('che-select Component', () => {
                 // assert
                 expect(select.nativeElement.classList.contains('che-bg-warning')).toBeTruthy('Should have the class che-bg-primary');
 
+                inputSelect.triggerEventHandler('blur', null);
+                fixture.detectChanges();
+                // assert
+                expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have not the class ng-select-focused');
+
             });
         });
 
@@ -251,7 +258,7 @@ describe('che-select Component', () => {
                 component = fixture.componentInstance;
                 fixture.detectChanges();
             });
-            // test 7
+            // test 13
             it('Should have the color primary by default', () => {
                 // Arrange
                 const select = fixture.debugElement.query(By.css('ng-select'))!;
@@ -275,14 +282,14 @@ describe('che-select Component', () => {
                 fixture = createComponent(CheSelectF1Component);
                 fixture.detectChanges();
             }));
-            // test 11
-            it('Should to be not invalid to make the first click', () => {
+            // test 14
+            it('Should be not invalid to make the first click', () => {
                 // Arrange
                 let select = fixture.debugElement.query(By.css('ng-select'))!;
 
                 // Act
                 expect(select.nativeElement.classList.contains('ng-touched'))
-                    .toBe(false, 'should to be as untouched');
+                    .toBe(false, 'should be as untouched');
 
                 select.triggerEventHandler('click', null);
                 fixture.detectChanges();
@@ -292,7 +299,7 @@ describe('che-select Component', () => {
                     .toBe(false, 'should have not the class che-danger');
 
             });
-            // test 12
+            // test 15
             it('Should be invalid when not setting a value', () => {
                 // Arrange
                 let select = fixture.debugElement.query(By.css('ng-select'))!;
@@ -319,7 +326,7 @@ describe('che-select Component', () => {
                     .toBe(true, 'should have the class ng-touched');
             });
 
-            // test 13
+            // test 16
             it('Should  be valid when setting a value', () => {
                 // Arrange
                 let select = fixture.debugElement.query(By.css('ng-select'))!;
@@ -358,7 +365,7 @@ describe('che-select Component', () => {
                 fixture = createComponent(CheSelectF2Component);
                 fixture.detectChanges();
             }));
-
+            // test 17
             it('Should  be not invalid to make click or if have a value', () => {
                 // Arrange
                 let select = fixture.debugElement.query(By.css('input'))!;
@@ -392,7 +399,8 @@ describe('che-select Component', () => {
             component = fixture.componentInstance;
             fixture.detectChanges();
         });
-        it('Should have the desing borderless', () => {
+        // test 18
+        it('Should have the desing border or undefined', () => {
             // Arrange
             const select = fixture.debugElement.query(By.css('che-select'))!;
 
@@ -402,8 +410,8 @@ describe('che-select Component', () => {
         });
 
 
-        describe('If the textarea has a color', () => {
-            // test 18
+        describe('If the select has a color', () => {
+            // test 19
             it('should not reflect changes', () => {
                 // Arrange
                 let select = fixture.debugElement.query(By.css('ng-select'))!;
@@ -414,7 +422,7 @@ describe('che-select Component', () => {
                 select.triggerEventHandler('focus', null);
                 fixture.detectChanges();
 
-                expect(numberOfClass).toBe(select.nativeElement.classList.length, 'should not to change the number of classes');
+                expect(numberOfClass).toBe(select.nativeElement.classList.length, 'should not change the number of classes');
 
             });
 
@@ -422,16 +430,16 @@ describe('che-select Component', () => {
 
 
         describe('If the select has a label', () => {
-            // test 19
-            it('should be located above of the textarea', () => {
+            // test 20
+            it('should be located above of the select', () => {
                 // Arrange
                 let label = fixture.debugElement.query(By.css('label'))!;
                 // Act
                 // Assert
-                expect(label.nativeElement.classList.contains('label-input-border')).toBeTruthy('Should to have the class label-input-border');
+                expect(label.nativeElement.classList.contains('label-input-border')).toBeTruthy('Should have the class label-input-border');
             });
 
-            // test 20
+            // test 21
             it('Should have the label seted', () => {
                 // Arrange
                 let label = fixture.debugElement.query(By.css('label'))!;
@@ -439,114 +447,85 @@ describe('che-select Component', () => {
                 fixture.componentInstance.label = 'This label';
                 fixture.detectChanges();
                 // Assert
-                expect(label.nativeElement.textContent).toBe('This label', 'Should to be "This label"');
-            });
-
-            describe('If textarea is as required', () => {
-                beforeEach(async(() => {
-                    // Arrange
-                    fixture.destroy();
-                    TestBed.resetTestingModule();
-                    fixture = createComponent(CheSelectF6Component);
-                    fixture.detectChanges();
-                }));
-                // test 21
-                it('Should be valid to make the first click', () => {
-                    const select = fixture.debugElement.query(By.css('ng-select'))!;
-                    const inputSelect = fixture.debugElement.query(By.css('input'))!;
-                    const label = fixture.debugElement.query(By.css('label'))!;
-                    // Act
-                    inputSelect.triggerEventHandler('focus', null);
-                    fixture.detectChanges();
-                    // assert
-                    expect(select.nativeElement.classList.contains('ng-select-focused')).toBeTruthy('Should have the class ng-select-focused');
-                    expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
-
-                });
-
-                // test 22
-                it('Should be invalid when not setting a value', () => {
-                    const select = fixture.debugElement.query(By.css('ng-select'))!;
-                    const inputSelect = fixture.debugElement.query(By.css('input'))!;
-                    const label = fixture.debugElement.query(By.css('label'))!;
-                    // Act
-                    inputSelect.triggerEventHandler('focus', null);
-                    fixture.detectChanges();
-                    // assert
-                    expect(select.nativeElement.classList.contains('ng-select-focused')).toBeTruthy('Should have the class ng-select-focused');
-                    expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
-                    // Act
-                    inputSelect.triggerEventHandler('blur', null);
-                    fixture.detectChanges();
-                    expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have not the class ng-select-focused');
-                    expect(label.nativeElement.classList.contains('label-invalid')).toBeTruthy('Should have the class label-invalid');
-
-                });
-
-                // test 23
-                it('Should  be valid when setting a value', () => {
-                    const select = fixture.debugElement.query(By.css('ng-select'))!;
-                    const inputSelect = fixture.debugElement.query(By.css('input'))!;
-
-                    const label = fixture.debugElement.query(By.css('label'))!;
-                    inputSelect.nativeElement.dispatchEvent(new Event('input'));
-                    fixture.detectChanges();
-
-                    // Act
-                    inputSelect.triggerEventHandler('focus', null);
-                    fixture.detectChanges();
-
-                    // Arrange
-                    let options = fixture.debugElement.queryAll(By.css('.ng-option'))!;
-                    // Act
-                    options[0].nativeElement.dispatchEvent(new Event('click'));
-                    fixture.detectChanges();
-                    // assert
-                    expect(select.nativeElement.classList.contains('ng-select-focused')).toBeTruthy('Should have the class ng-select-focused');
-                    expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
-                    // Act
-                    inputSelect.triggerEventHandler('blur', null);
-                    fixture.detectChanges();
-                    expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have not the class ng-select-focused');
-                    expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
-
-
-                });
-
-            });
-
-            describe('If the select is as not required', () => {
-                beforeEach(async(() => {
-                    // Arrange
-                    fixture.destroy();
-                    TestBed.resetTestingModule();
-                    fixture = createComponent(CheSelectF7Component);
-                    fixture.detectChanges();
-                }));
-                // test 24
-                it('Should to be valid when not setting a value', () => {
-                    const select = fixture.debugElement.query(By.css('ng-select'))!;
-                    const inputSelect = fixture.debugElement.query(By.css('input'))!;
-                    const label = fixture.debugElement.query(By.css('label'))!;
-                    // Act
-                    inputSelect.triggerEventHandler('focus', null);
-                    fixture.detectChanges();
-                    // assert
-                    expect(select.nativeElement.classList.contains('ng-select-focused')).toBeTruthy('Should have the class ng-select-focused');
-                    expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
-                    // Act
-                    inputSelect.triggerEventHandler('blur', null);
-                    fixture.detectChanges();
-                    // assert
-                    expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have the class ng-select-focused');
-                    expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
-
-                });
+                expect(label.nativeElement.textContent).toBe('This label', 'Should  be "This label"');
             });
 
 
         });
-        describe('If it has a placeholder', () => {
+        describe('If the select is as required', () => {
+            beforeEach(async(() => {
+                // Arrange
+                fixture.destroy();
+                TestBed.resetTestingModule();
+                fixture = createComponent(CheSelectF6Component);
+                fixture.detectChanges();
+            }));
+            // test 23
+            it('Should be valid to make the first click', () => {
+                const select = fixture.debugElement.query(By.css('ng-select'))!;
+                const inputSelect = fixture.debugElement.query(By.css('input'))!;
+                const label = fixture.debugElement.query(By.css('label'))!;
+                // Act
+                inputSelect.triggerEventHandler('focus', null);
+                fixture.detectChanges();
+                // assert
+                expect(select.nativeElement.classList.contains('ng-select-focused')).toBeTruthy('Should have the class ng-select-focused');
+                expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
+
+            });
+
+            // test 24
+            it('Should be invalid when not setting a value', () => {
+                const select = fixture.debugElement.query(By.css('ng-select'))!;
+                const inputSelect = fixture.debugElement.query(By.css('input'))!;
+                const label = fixture.debugElement.query(By.css('label'))!;
+                // Act
+                inputSelect.triggerEventHandler('focus', null);
+                fixture.detectChanges();
+                // assert
+                expect(select.nativeElement.classList.contains('ng-select-focused')).toBeTruthy('Should have the class ng-select-focused');
+                expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
+                // Act
+                inputSelect.triggerEventHandler('blur', null);
+                fixture.detectChanges();
+                expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have not the class ng-select-focused');
+                expect(label.nativeElement.classList.contains('label-invalid')).toBeTruthy('Should have the class label-invalid');
+
+            });
+
+            // test 25
+            it('Should  be valid when setting a value', () => {
+                const select = fixture.debugElement.query(By.css('ng-select'))!;
+                const inputSelect = fixture.debugElement.query(By.css('input'))!;
+
+                const label = fixture.debugElement.query(By.css('label'))!;
+                inputSelect.nativeElement.dispatchEvent(new Event('input'));
+                fixture.detectChanges();
+
+                // Act
+                inputSelect.triggerEventHandler('focus', null);
+                fixture.detectChanges();
+
+                // Arrange
+                let options = fixture.debugElement.queryAll(By.css('.ng-option'))!;
+                // Act
+                options[0].nativeElement.dispatchEvent(new Event('click'));
+                fixture.detectChanges();
+                // assert
+                expect(select.nativeElement.classList.contains('ng-select-focused')).toBeTruthy('Should have the class ng-select-focused');
+                expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
+                // Act
+                inputSelect.triggerEventHandler('blur', null);
+                fixture.detectChanges();
+                expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have not the class ng-select-focused');
+                expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
+
+
+            });
+
+        });
+
+        describe('If the select is as not required', () => {
             beforeEach(async(() => {
                 // Arrange
                 fixture.destroy();
@@ -554,7 +533,35 @@ describe('che-select Component', () => {
                 fixture = createComponent(CheSelectF7Component);
                 fixture.detectChanges();
             }));
-            // test 25
+            // test 26
+            it('Should be valid when not setting a value', () => {
+                const select = fixture.debugElement.query(By.css('ng-select'))!;
+                const inputSelect = fixture.debugElement.query(By.css('input'))!;
+                const label = fixture.debugElement.query(By.css('label'))!;
+                // Act
+                inputSelect.triggerEventHandler('focus', null);
+                fixture.detectChanges();
+                // assert
+                expect(select.nativeElement.classList.contains('ng-select-focused')).toBeTruthy('Should have the class ng-select-focused');
+                expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
+                // Act
+                inputSelect.triggerEventHandler('blur', null);
+                fixture.detectChanges();
+                // assert
+                expect(select.nativeElement.classList.contains('ng-select-focused')).toBeFalsy('Should have the class ng-select-focused');
+                expect(label.nativeElement.classList.contains('label-invalid')).toBeFalsy('Should have not the class label-invalid');
+
+            });
+        });
+        describe('If the select has a placeholder', () => {
+            beforeEach(async(() => {
+                // Arrange
+                fixture.destroy();
+                TestBed.resetTestingModule();
+                fixture = createComponent(CheSelectF7Component);
+                fixture.detectChanges();
+            }));
+            // test 27
             it('Should  have the placeholder', () => {
                 // Arrange
                 let placeholder = fixture.debugElement.query(By.css('.ng-placeholder'))!;
@@ -789,7 +796,8 @@ class CheSelectF6Component {
 // fixture 7
 @Component({
     template: `
-        <che-select class="w-100" class="w-100" desing="border" [placeholder]="placeholder" [label]="label" [(ngModel)]="value" [items]="items"
+        <che-select class="w-100" class="w-100" desing="border" [placeholder]="placeholder" [label]="label" [(ngModel)]="value"
+                    [items]="items"
                     [searchable]="true" [multiple]="true"></che-select>`
 })
 class CheSelectF7Component {

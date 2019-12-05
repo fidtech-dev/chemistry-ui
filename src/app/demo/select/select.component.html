@@ -1,0 +1,49 @@
+<div class="headerAtom">
+    <h3>Select</h3>
+    <hr>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h5>Select Simple </h5>
+        <div class="mt-3">
+            <che-select class="w-100" class="w-100" desing="border" bindLabel="name" label="Select with border"
+                        [(ngModel)]="value" [items]="items"
+                        [searchable]="false" [multiple]="false"></che-select>
+            <che-select class="w-100" class="w-100" desing="borderless" bindLabel="name" label="Select borderless"
+                        [(ngModel)]="value" [items]="items"
+                        [searchable]="false" [multiple]="false"></che-select>
+            {{value | json}}
+        </div>
+        <br>
+        <h5>Select multiple </h5>
+        <div class="mt-3">
+            <che-select class="w-100" class="w-100" desing="border" bindLabel="name" label="Select with border"
+                        [(ngModel)]="valueMultiple" [items]="items"
+                        [searchable]="false" [multiple]="true"></che-select>
+            <che-select class="w-100" class="w-100" desing="borderless" bindLabel="name" label="Select borderless"
+                        [(ngModel)]="valueMultiple" [items]="items"
+                        [searchable]="false" [multiple]="true"></che-select>
+            {{valueMultiple | json}}
+
+        </div>
+        <br>
+        <h5>Select searchable </h5>
+        <div class="mt-3">
+            <che-select class="w-100" class="w-100" desing="border" bindLabel="name" label="Select with border"
+                        [(ngModel)]="valueSearch" [items]="items"
+                        [searchable]="true" [multiple]="true"></che-select>
+            <che-select class="w-100" class="w-100" desing="borderless" bindLabel="name" label="Select borderless"
+                        [(ngModel)]="valueSearch" [items]="items"
+                        [searchable]="true" [multiple]="true"></che-select>
+        </div>
+    </div>
+    <div class="col-12 sideRight mt-5">
+        <app-documentation [import]="textImport"
+                           [gettingStarter]="gettingStarter"
+                           [attribute]="attribute"
+                           [codeHtml]="codeHtml"
+                           [codeTs]="codeTs"
+                           [codeScss]="codeScss"
+        ></app-documentation>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import {InputComponent} from './demo/input/input.component';
 import {CheckboxComponent} from './demo/checkbox/checkbox.component';
 import {GetStartedComponent} from './demo/get-started/get-started.component';
 import {IconComponent} from './demo/icon/icon.component';
+import {SelectComponent} from './demo/select/select.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path: 'buttons', component: ButtonComponent},
     {path: 'input', component: InputComponent},
     {path: 'checkbox', component: CheckboxComponent},
+    {path: 'select', component: SelectComponent},
     {path: 'icon', component: IconComponent},
     {path: '', redirectTo: 'getStarted', pathMatch: 'full'}
 ];

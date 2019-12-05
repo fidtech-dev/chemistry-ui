@@ -25,6 +25,7 @@ import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { CheSelectComponent } from './atoms/select/che-select.component';
 import {CheSelectModule} from './atoms/select/che-select.module';
+import { SelectComponent } from './demo/select/select.component';
 
 export function hljsLanguages() {
     return [
@@ -43,7 +44,8 @@ export function hljsLanguages() {
         CheckboxComponent,
         GetStartedComponent,
         IconComponent,
-        MyFilterPipe
+        MyFilterPipe,
+        SelectComponent
     ],
     imports: [
         BrowserModule,
