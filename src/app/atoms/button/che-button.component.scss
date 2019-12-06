@@ -14,8 +14,17 @@
       height: 40px;
       border-radius: 5px;
     }
+
+    button:disabled{
+      background-color: #B9B9B9 !important;
+      border-color: #B9B9B9;
+      color: white;
+    }
     .btn-lg{
       height: 48px !important;
+    }
+    .btn-primary,.btn-secondary,.btn-secondary2,.btn-success,.btn-warning {
+      color: white;
     }
     .btn-primary:hover{
       background-color: var(--primary-dark-200);
