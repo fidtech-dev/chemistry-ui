@@ -1,5 +1,5 @@
-import {Component, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {Component, ContentChild, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
 
 const noop = () => {
 };
@@ -21,11 +21,13 @@ export class CheRadioButtonComponent implements ControlValueAccessor {
     @Input() label = '';
     @Input() disabled;
     @Input() name;
+    @Input() required;
     @Input() checked = false;
     @Output() focus = new EventEmitter();
     public clicked = false;
     public fucused = false;
-    @Input() value
+    @Input() value;
+    @ContentChild(NgControl, {static: false}) public control: any;
 
     /**
      * @description The internal data model
@@ -53,11 +55,10 @@ export class CheRadioButtonComponent implements ControlValueAccessor {
         this.value = value;
         this.innerValue = value;
         this.onTouchedCallback();
-        this.onChangeCallback( this.innerValue);
+        this.onChangeCallback(this.innerValue);
     }
 
     onClick() {
-        console.log(this.checked);
         if (this.clicked) {
             this.clicked = false;
         } else {
@@ -93,6 +94,11 @@ export class CheRadioButtonComponent implements ControlValueAccessor {
         this.onTouchedCallback = fn;
     }
 
+    hasDanger() {
+        if ((this.control as any)._parent) {
+            return (this.control as any)._parent.submitted && !this.control.dirty;
 
+        }
+    }
 }
 

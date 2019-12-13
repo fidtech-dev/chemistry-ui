@@ -128,3 +128,25 @@ input[type="radio"]:checked + .label:after {
 input:disabled + span{
     opacity: 0.5;
 }
+
+.has-danger {
+  span {
+    border-color: var(--danger) !important;
+    animation-name: flash_border;
+    animation-duration: 0.4s;
+
+  }
+  @keyframes flash_border {
+    0% {
+      border-color: #c8ccd4;
+    }
+    50% {
+      border-color: #c8ccd4;
+    }
+    100% {
+      border-color: red;
+    }
+  }
+
+
+}
