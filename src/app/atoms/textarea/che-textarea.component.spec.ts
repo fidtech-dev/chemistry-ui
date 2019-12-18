@@ -97,7 +97,7 @@ describe('che-textarea as a Atomic component', () => {
         });
 
         // test 6
-        it('Should not to allow to make focus or click', () => { // no funciona
+        it('Should not to allow to make focus or click', () => {
             // Arrange
             let textarea = fixture.debugElement.query(By.css('textarea'))!;
             // Act
@@ -383,7 +383,7 @@ describe('che-textarea as a Atomic component', () => {
                 let divGroup = fixture.debugElement.query(By.css('.form-group'))!;
                 // Act
                 expect(textarea.nativeElement.classList.contains('ng-touched'))
-                    .toBe(false, 'shouldbe as untouched');
+                    .toBe(false, 'should be as untouched');
                 textarea.triggerEventHandler('click', null);
                 fixture.detectChanges();
                 // Assert
@@ -559,7 +559,7 @@ class CheTextareaF4Component {
 class CheTextareaF5Component {
 }
 
-// fixture 5
+// fixture 6
 @Component({
     template: `
         <che-textarea label="This label" placeholder="placeholder" name="exampleName" [(ngModel)]="example"></che-textarea>`
@@ -567,7 +567,7 @@ class CheTextareaF5Component {
 class CheTextareaF6Component {
 }
 
-// fixture 5
+// fixture 7
 @Component({
     template: `
         <che-textarea label="This label" placeholder="placeholder" name="exampleName" [(ngModel)]="example" disabled="true"></che-textarea>`
@@ -576,7 +576,7 @@ class CheTextareaF7Component {
 }
 
 
-// fixture 5
+// fixture 8
 @Component({
     template: `
         <che-textarea label="This label" placeholder="placeholder" name="exampleName" [(ngModel)]="example" readonly="true"></che-textarea>`
