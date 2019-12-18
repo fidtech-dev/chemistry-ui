@@ -95,8 +95,9 @@ export class CheRadioButtonComponent implements ControlValueAccessor {
     }
 
     hasDanger() {
-        if ((this.control as any)._parent) {
-            return (this.control as any)._parent.submitted && !this.control.dirty;
+        if (this.control  && (this.control as any)._parent ) {
+            return (this.control as any)._parent.submitted
+                    && !this.control.dirty && !this.control.valid;
 
         }
     }
