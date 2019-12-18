@@ -49,6 +49,7 @@ describe('che-radio-button Component', () => {
         expect(radioButton.nativeElement.classList.contains('che-focus')).toBeFalsy('Should have not class "che-focus"');
     });
 
+
     // test 3
     describe('If the radio button has a color', () => {
 
@@ -61,7 +62,6 @@ describe('che-radio-button Component', () => {
             fixture.detectChanges();
         });
 
-        // test 1
         it('Should have a bg color attribute set ', () => {
             // Arrange
             let label = fixture.debugElement.query(By.css('span'))!;
@@ -70,13 +70,10 @@ describe('che-radio-button Component', () => {
             expect(label.nativeElement.classList.contains('che-bg-warning')).toBeTruthy('Should have the class che-bg-warning');
 
         });
-
-
     });
 
     // test 4
     describe('If the radio button has not color', () => {
-
 
         beforeEach(() => {
             // Arrange
@@ -87,7 +84,6 @@ describe('che-radio-button Component', () => {
             fixture.detectChanges();
         });
 
-
         it('Should have class "bg-primary" for default', () => {
             // Arrange
             const label = fixture.debugElement.query(By.css('span'))!;
@@ -96,9 +92,7 @@ describe('che-radio-button Component', () => {
 
             // Assert
             expect(label.nativeElement.classList.contains('che-bg-primary')).toBeTruthy('Should have class "che-bg-primary"');
-
         });
-
 
     });
 
@@ -131,7 +125,6 @@ describe('che-radio-button Component', () => {
     // test 6
     describe('If the radio button is disabled', () => {
 
-
         beforeEach(() => {
             // Arrange
             fixture.destroy();
@@ -140,7 +133,6 @@ describe('che-radio-button Component', () => {
             component = fixture.componentInstance;
             fixture.detectChanges();
         });
-
 
         it('Should have the attribute disabled', () => {
             // Arrange
