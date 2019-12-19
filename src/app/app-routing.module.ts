@@ -7,6 +7,7 @@ import {CheckboxComponent} from './demo/checkbox/checkbox.component';
 import {GetStartedComponent} from './demo/get-started/get-started.component';
 import {IconComponent} from './demo/icon/icon.component';
 import {RadioButtonComponent} from './demo/radio-button/radio-button.component';
+import {TextareaComponent} from './demo/textarea/textarea.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path: 'checkbox', component: CheckboxComponent},
     {path: 'icon', component: IconComponent},
     {path: 'radioButton', component: RadioButtonComponent},
+    {path: 'textarea', component: TextareaComponent},
     {path: '', redirectTo: 'getStarted', pathMatch: 'full'}
 ];
 

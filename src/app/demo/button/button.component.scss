@@ -1,5 +1,4 @@
 @import '~highlight.js/styles/dracula.css';
-
 textarea {
   resize: none;
   border: 1px solid transparent !important;
@@ -7,8 +6,8 @@ textarea {
 }
 
 
-h5{
-  span{
+h5 {
+  span {
     font-size: 12px !important;
     color: var(--primary);
     margin-left: 8px;
@@ -16,39 +15,41 @@ h5{
 }
 
 
-.documentationBtn{
+.documentationBtn {
   font-size: 1.2rem;
-  cursor:pointer;
-}
-.sourceBtn{
-  font-size: 1.2rem;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.sideRight{
-  hr{
+.sourceBtn {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.sideRight {
+  hr {
     margin-top: 0px !important;
   }
 }
 
-code{
+code {
   font-size: 0.8rem;
 }
 
 
-.buttonSelectLenguage{
+.buttonSelectLenguage {
   color: white;
   background: #282a36;
   /* width: 28%; */
   padding: 10px;
 }
 
-.btnLenguage{
+.btnLenguage {
   padding: 10px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 
-.sizeImportant{
+.sizeImportant {
   font-size: 0.8rem;
 }
+

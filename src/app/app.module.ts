@@ -25,6 +25,8 @@ import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
 import { CheRadioButtonComponent } from './atoms/radio-button/che-radio-button.component';
 import {CheRadioButtonModule} from './atoms/radio-button/che-radio-button.module';
 import { RadioButtonComponent } from './demo/radio-button/radio-button.component';
+import { TextareaComponent } from './demo/textarea/textarea.component';
+import {CheTextareaModule} from './atoms/textarea/che-textarea.module';
 
 export function hljsLanguages() {
     return [
@@ -44,7 +46,8 @@ export function hljsLanguages() {
         GetStartedComponent,
         IconComponent,
         MyFilterPipe,
-        RadioButtonComponent
+        RadioButtonComponent,
+        TextareaComponent
     ],
     imports: [
         BrowserModule,
@@ -61,7 +64,8 @@ export function hljsLanguages() {
         HighlightModule.forRoot({
             languages: hljsLanguages
         }),
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        CheTextareaModule
     ],
     providers: [],
     bootstrap: [AppComponent],

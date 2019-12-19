@@ -1,32 +1,27 @@
-.cheInputContainer {
-  .cheInput {
+
+.cheTextareaContainer {
+  .cheTextarea {
+
     .group {
       position: relative;
     }
 
-    .inputMaterial {
+    .che-textarea-element {
       font-size: 18px;
       padding: 10px 10px 10px 5px;
       display: block;
       width: 100%;
       border: none;
+      min-height: 114px;
       border-bottom: 1px solid #757575;
     }
 
-    input {
-      background-color: transparent !important;
-      border: 1px solid black;
-
-    }
-
-    .inputMaterial:focus {
+    .che-textarea-element:focus {
       outline: none;
-      background-color: transparent;
     }
-
 
     /* LABEL ======================================= */
-    .labelMaterial {
+    .che-label-textarea {
       color: #999;
       font-size: 18px;
       font-weight: normal;
@@ -50,7 +45,6 @@
     .bar {
       position: relative;
       display: block;
-      bottom: -1px;
       width: 100%;
     }
 
@@ -76,7 +70,7 @@
       right: 50%;
     }
 
-    input:focus ~ .bg-primary:before, input:focus ~ .bg-primary:after {
+    textarea:focus ~ .bg-primary:before, textarea:focus ~ .bg-primary:after {
       width: 50%;
     }
 
@@ -92,7 +86,7 @@
       right: 50%;
     }
 
-    input:focus ~ .bg-warning:before, input:focus ~ .bg-warning:after {
+    textarea:focus ~ .bg-warning:before, textarea:focus ~ .bg-warning:after {
       width: 50%;
     }
 
@@ -107,7 +101,7 @@
       right: 50%;
     }
 
-    input:focus ~ .bg-danger:before, input:focus ~ .bg-danger:after {
+    textarea:focus ~ .bg-danger:before, textarea:focus ~ .bg-danger:after {
       width: 50%;
     }
 
@@ -123,13 +117,13 @@
       right: 50%;
     }
 
-    input:focus ~ .bg-success:before, input:focus ~ .bg-success:after {
+    textarea:focus ~ .bg-success:before, textarea:focus ~ .bg-success:after {
       width: 50%;
     }
 
 
-    .has-danger {
-      input {
+    .che-danger {
+      textarea {
         border-bottom: 1px solid var(--danger);
       }
 
@@ -147,14 +141,14 @@
         right: 50%;
       }
 
-      input:focus ~ .bar:before, input:focus ~ .bar:after {
+      textarea:focus ~ .bar:before, textarea:focus ~ .bar:after {
         width: 50%;
       }
 
     }
 
-    .has-danger-wBorder {
-      input {
+    .che-danger-wBorder {
+      textarea {
         border: 1px solid var(--danger);
       }
 
@@ -164,7 +158,7 @@
     }
 
 
-    input:read-only ~ label {
+    textarea:read-only ~ label {
       top: -20px;
       font-size: 14px;
     }
@@ -177,8 +171,10 @@
       margin-left: 0.3rem;
     }
 
+    .messegeMaxlength {
+      float: right;
+      font-size: 0.8rem;
+    }
 
   }
-
-
 }
