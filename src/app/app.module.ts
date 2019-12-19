@@ -22,9 +22,11 @@ import { GetStartedComponent } from './demo/get-started/get-started.component';
 import { CheIconComponent } from './atoms/icon/che-icon.component';
 import {CheIconModule} from './atoms/icon/che-icon.module';
 import {IconComponent, MyFilterPipe} from './demo/icon/icon.component';
-import { CheTextareaComponent } from './atoms/textarea/che-textarea.component';
-import {CheTextareaModule} from './atoms/textarea/che-textarea.module';
+import { CheRadioButtonComponent } from './atoms/radio-button/che-radio-button.component';
+import {CheRadioButtonModule} from './atoms/radio-button/che-radio-button.module';
+import { RadioButtonComponent } from './demo/radio-button/radio-button.component';
 import { TextareaComponent } from './demo/textarea/textarea.component';
+import {CheTextareaModule} from './atoms/textarea/che-textarea.module';
 
 export function hljsLanguages() {
     return [
@@ -44,8 +46,8 @@ export function hljsLanguages() {
         GetStartedComponent,
         IconComponent,
         MyFilterPipe,
+        RadioButtonComponent,
         TextareaComponent
-
     ],
     imports: [
         BrowserModule,
@@ -57,6 +59,7 @@ export function hljsLanguages() {
         FormsModule,
         CheButtonModule,
         CheInputModule,
+        CheRadioButtonModule,
         CheValidationMessagesModule,
         HighlightModule.forRoot({
             languages: hljsLanguages
