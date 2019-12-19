@@ -1,10 +1,14 @@
-<ng-container *ngIf="desing === 'borderless'">
-    <div class="group" [ngClass]="{'has-danger': hasDanger() }">
-        <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'che-input-focus': fucused }" [readOnly]="readonly" (focus)="onFocus()" (blur)="onBlur()" class="inputMaterial"
-               [required]="true">
-        <span class="highlight"></span>
-        <span class="bar bg-{{color}}"></span>
-        <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
+<div class="cheInputContainer">
+    <div class="cheInput">
+        <ng-container *ngIf="desing === 'borderless'">
+            <div class="group" [ngClass]="{'has-danger': hasDanger() }">
+                <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'che-input-focus': fucused }"
+                       [readOnly]="readonly"
+                       (focus)="onFocus()" (blur)="onBlur()" class="inputMaterial"
+                       [required]="true">
+                <span class="highlight"></span>
+                <span class="bar bg-{{color}}"></span>
+                <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
 
     </div>
 </ng-container>
@@ -14,7 +18,4 @@
         <input type="text" [(ngModel)]="value" (blur)="onBlur()" class="form-control" [required]="true"
                [placeholder]="placeholder">
     </div>
-</ng-container>
-
-
-
+</div>

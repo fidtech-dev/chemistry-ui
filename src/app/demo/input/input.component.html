@@ -18,8 +18,8 @@
 
         <form [formGroup]="userForm">
             <h5 class="mt-3">Input with border</h5>
-            <che-input color='primary' name="ejemplo2" formControlName="name" minlength="10" label="Name"
-                       desing="border"></che-input>
+            <che-input color='primary' name="ejemplo2" formControlName="name" minlength="10" label="Name" type="number"
+                       design="border"></che-input>
             <che-validation-message messege="Value Required"
                                     *ngIf="userForm.get('name').touched && userForm.get('name').errors && userForm.get('name').errors.required"></che-validation-message>
             <che-validation-message

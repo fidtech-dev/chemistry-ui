@@ -18,7 +18,7 @@ export class ButtonComponent implements OnInit {
         {tittle: 'Size:', description: 'determine the text of the button, accept "lg,sm,block"'},
         {tittle: 'Disabled:', description: 'disable the button'}
     ];
-    codeHtml = '<!-- Severity Buttons -->\n' +
+    codeHtml = '<!-- Buttons -->\n' +
         '<che-button color=\'primary\' label="Primary"></che-button>\n' +
         '<che-button color=\'secondary\' label="Secondary"></che-button>\n' +
         '<che-button color=\'success\' label="Success"></che-button>\n' +
@@ -53,7 +53,7 @@ export class ButtonComponent implements OnInit {
         '     <che-icon type="ligth" icon="user"></che-icon>\n' +
         '</che-button>' +
         '\n' +
-        '<!-- Severity Buttons Outline-->\n' +
+        '<!-- Buttons Outline-->\n' +
         '<che-button color=\'primary\' [outline]="true" label="Primary"></che-button>\n' +
         '<che-button color=\'secondary\' [outline]="true" label="Secondary"></che-button>\n' +
         '<che-button color=\'success\' [outline]="true" label="Success"></che-button>\n' +

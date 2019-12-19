@@ -28,7 +28,7 @@ export class IconComponent implements OnInit {
     listIcon = icons;
     textFilter = '';
     import = 'import {CheIconModule} from \'./atoms/icon/che-icon.module\';';
-    gettingStarter = '<che-icon type="ligth" icon="user"></che-icon>';
+    gettingStarter = '<che-icon type="light" icon="user"></che-icon>';
     codeInstall = 'npm i @fidtech-sa/ft-icons';
     codeAngularJson = '  "styles": [\n' +
         '              "...",\n' +
@@ -39,7 +39,7 @@ export class IconComponent implements OnInit {
         '              "node_modules/@fidtech-sa/ft-icons/liga.js"\n' +
         '            ],';
     attribute = [
-        {tittle: 'Type:', description: 'Determine the type of icon, example: "ligth,bold,fill" '},
+        {tittle: 'Type:', description: 'Determine the type of icon, example: "light,bold,fill" '},
         {tittle: 'Icon:', description: 'Determine the icon, example: "user"'},
     ];
 

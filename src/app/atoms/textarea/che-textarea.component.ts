@@ -1,34 +1,33 @@
 import {Component, ContentChild, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
 import {noop} from 'rxjs';
-import {isUndefined} from 'util';
 
 @Component({
-    selector: 'che-input',
-    templateUrl: './che-input.component.html',
-    styleUrls: ['./che-input.component.scss'],
+    selector: 'che-textarea',
+    templateUrl: './che-textarea.component.html',
+    styleUrls: ['./che-textarea.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => CheInputComponent),
+            useExisting: forwardRef(() => CheTextareaComponent),
             multi: true
         }
     ],
 })
-export class CheInputComponent implements ControlValueAccessor, OnInit {
+export class CheTextareaComponent implements ControlValueAccessor, OnInit {
     @Input() color = 'primary';
     @Input() label;
-    @Input() design = 'border';
+    @Input() desing = 'border';
     @Input() disabled = false;
     @Input() placeholder = '';
+    @Input() maxlength;
+    @Input() name;
     @Input() required = false;
     @Input() readonly = false;
-    @Input() type = 'text';
     @Output() focus = new EventEmitter();
     public fucused = false;
     @Output() focusout = new EventEmitter();
     @Output() blur = new EventEmitter();
-    @Output() click = new EventEmitter();
     @ContentChild(NgControl, {static: false}) public control: any;
 
 
@@ -68,9 +67,16 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
      */
     set value(v: any) {
         if (v !== this.innerValue) {
+
             this.innerValue = v;
             this.onChangeCallback(v);
         }
+    }
+
+    onInput(value: string) {
+        this.innerValue = value;
+        this.onTouchedCallback();
+        this.onChangeCallback(this.innerValue);
     }
 
     /**
@@ -87,11 +93,8 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
         this.focus.emit();
     }
 
-    public onClick() {
-        if (!this.disabled) {
-            this.fucused = true;
-            this.click.emit();
-        }
+    public onFocusout() {
+        this.focusout.emit();
     }
 
     /**
@@ -99,7 +102,7 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
      */
     writeValue(value: any) {
         if (value !== this.innerValue) {
-            this.innerValue = value;
+            this.innerValue = value === undefined ? '' : value;
         }
     }
 
