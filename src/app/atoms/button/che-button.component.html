@@ -1,4 +1,9 @@
-<button type="button" class="btn btn{{ outline ? '-outline' : ''}}-{{color}} btn-{{size}} ml-1 mb-1"
-        [disabled]=disabled>
-    <ng-content></ng-content>
-    {{label}}</button>
+<div class="cheButtonContainer">
+    <div class="cheButton">
+    <button type="button" class="btn btn{{ outline ? '-outline' : ''}}-{{color}} btn-{{size}} ml-1 mb-1"
+            [disabled]=disabled>
+        <ng-content></ng-content>
+        {{label}}</button>
+    </div>
+</div>
+

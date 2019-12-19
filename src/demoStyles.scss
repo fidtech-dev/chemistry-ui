@@ -1,1 +1,138 @@
 @import '~highlight.js/styles/dracula.css';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@function tint($color, $percent) {
+  @return mix(white, $color, $percent);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+$theme-colors: (
+        "primary": #6564AD,
+        "secondary": #B82866,
+        "secondary2": #3BD2D3,
+        "success": #78BE20,
+        "info": $info,
+        "warning": #EBB843,
+        "danger": #E56A54,
+        "light": #F2F2F2,
+        "dark": #343A40,
+        "muted":#B9B9B9
+);
+
+$theme-colors: map-merge((
+        "primary-dark-100": shade(map_get($theme-colors, 'primary'), 10),//start primary
+        "primary-dark-200": shade(map_get($theme-colors, 'primary'), 20),
+        "primary-dark-300": shade(map_get($theme-colors, 'primary'), 30),
+        "primary-dark-400": shade(map_get($theme-colors, 'primary'), 40),
+        "primary-dark-500": shade(map_get($theme-colors, 'primary'), 50),
+        "primary-dark-600": shade(map_get($theme-colors, 'primary'), 60),
+        "primary-light-100": tint(map_get($theme-colors, 'primary'), 10),
+        "primary-light-200": tint(map_get($theme-colors, 'primary'), 20),
+        "primary-light-300": tint(map_get($theme-colors, 'primary'), 30),
+        "primary-light-400": tint(map_get($theme-colors, 'primary'), 40),
+        "primary-light-500": tint(map_get($theme-colors, 'primary'), 50),
+        "primary-light-600": tint(map_get($theme-colors, 'primary'), 60), //end primary
+        "secondary-dark-100": shade(map_get($theme-colors, 'secondary'), 10),//start secondary
+        "secondary-dark-200": shade(map_get($theme-colors, 'secondary'), 20),
+        "secondary-dark-300": shade(map_get($theme-colors, 'secondary'), 30),
+        "secondary-dark-400": shade(map_get($theme-colors, 'secondary'), 40),
+        "secondary-dark-500": shade(map_get($theme-colors, 'secondary'), 50),
+        "secondary-dark-600": shade(map_get($theme-colors, 'secondary'), 60),
+        "secondary-light-100": tint(map_get($theme-colors, 'secondary'), 10),
+        "secondary-light-200": tint(map_get($theme-colors, 'secondary'), 20),
+        "secondary-light-300": tint(map_get($theme-colors, 'secondary'), 30),
+        "secondary-light-400": tint(map_get($theme-colors, 'secondary'), 40),
+        "secondary-light-500": tint(map_get($theme-colors, 'secondary'), 50),
+        "secondary-light-600": tint(map_get($theme-colors, 'secondary'), 60), //end secondary
+        "secondary2-dark-100": shade(map_get($theme-colors, 'secondary2'), 10),//start secondary2
+        "secondary2-dark-200": shade(map_get($theme-colors, 'secondary2'), 20),
+        "secondary2-dark-300": shade(map_get($theme-colors, 'secondary2'), 30),
+        "secondary2-dark-400": shade(map_get($theme-colors, 'secondary2'), 40),
+        "secondary2-dark-500": shade(map_get($theme-colors, 'secondary2'), 50),
+        "secondary2-dark-600": shade(map_get($theme-colors, 'secondary2'), 60),
+        "secondary2-light-100": tint(map_get($theme-colors, 'secondary2'), 10),
+        "secondary2-light-200": tint(map_get($theme-colors, 'secondary2'), 20),
+        "secondary2-light-300": tint(map_get($theme-colors, 'secondary2'), 30),
+        "secondary2-light-400": tint(map_get($theme-colors, 'secondary2'), 40),
+        "secondary2-light-500": tint(map_get($theme-colors, 'secondary2'), 50),
+        "secondary2-light-600": tint(map_get($theme-colors, 'secondary2'), 60), //end secondary
+        "warning-dark-100": shade(map_get($theme-colors, 'warning'), 10),//start warning
+        "warning-dark-200": shade(map_get($theme-colors, 'warning'), 20),
+        "warning-dark-300": shade(map_get($theme-colors, 'warning'), 30),
+        "warning-dark-400": shade(map_get($theme-colors, 'warning'), 40),
+        "warning-dark-500": shade(map_get($theme-colors, 'warning'), 50),
+        "warning-dark-600": shade(map_get($theme-colors, 'warning'), 60),
+        "warning-light-100": tint(map_get($theme-colors, 'warning'), 10),
+        "warning-light-200": tint(map_get($theme-colors, 'warning'), 20),
+        "warning-light-300": tint(map_get($theme-colors, 'warning'), 30),
+        "warning-light-400": tint(map_get($theme-colors, 'warning'), 40),
+        "warning-light-500": tint(map_get($theme-colors, 'warning'), 50),
+        "warning-light-600": tint(map_get($theme-colors, 'warning'), 60), //end warning
+        "success-dark-100": shade(map_get($theme-colors, 'success'), 10),//start success
+        "success-dark-200": shade(map_get($theme-colors, 'success'), 20),
+        "success-dark-300": shade(map_get($theme-colors, 'success'), 30),
+        "success-dark-400": shade(map_get($theme-colors, 'success'), 40),
+        "success-dark-500": shade(map_get($theme-colors, 'success'), 50),
+        "success-dark-600": shade(map_get($theme-colors, 'success'), 60),
+        "success-light-100": tint(map_get($theme-colors, 'success'), 10),
+        "success-light-200": tint(map_get($theme-colors, 'success'), 20),
+        "success-light-300": tint(map_get($theme-colors, 'success'), 30),
+        "success-light-400": tint(map_get($theme-colors, 'success'), 40),
+        "success-light-500": tint(map_get($theme-colors, 'success'), 50),
+        "success-light-600": tint(map_get($theme-colors, 'success'), 60), //end success
+        "danger-dark-100": shade(map_get($theme-colors, 'danger'), 10),//start danger
+        "danger-dark-200": shade(map_get($theme-colors, 'danger'), 20),
+        "danger-dark-300": shade(map_get($theme-colors, 'danger'), 30),
+        "danger-dark-400": shade(map_get($theme-colors, 'danger'), 40),
+        "danger-dark-500": shade(map_get($theme-colors, 'danger'), 50),
+        "danger-dark-600": shade(map_get($theme-colors, 'danger'), 60),
+        "danger-light-100": tint(map_get($theme-colors, 'danger'), 10),
+        "danger-light-200": tint(map_get($theme-colors, 'danger'), 20),
+        "danger-light-300": tint(map_get($theme-colors, 'danger'), 30),
+        "danger-light-400": tint(map_get($theme-colors, 'danger'), 40),
+        "danger-light-500": tint(map_get($theme-colors, 'danger'), 50),
+        "danger-light-600": tint(map_get($theme-colors, 'danger'), 60), //end danger
+        "dark-dark-100": shade(map_get($theme-colors, 'dark'), 10),//start dark
+        "dark-dark-200": shade(map_get($theme-colors, 'dark'), 20),
+        "dark-dark-300": shade(map_get($theme-colors, 'dark'), 30),
+        "dark-dark-400": shade(map_get($theme-colors, 'dark'), 40),
+        "dark-dark-500": shade(map_get($theme-colors, 'dark'), 50),
+        "dark-dark-600": shade(map_get($theme-colors, 'dark'), 60),
+        "dark-light-100": tint(map_get($theme-colors, 'dark'), 10),
+        "dark-light-200": tint(map_get($theme-colors, 'dark'), 20),
+        "dark-light-300": tint(map_get($theme-colors, 'dark'), 30),
+        "dark-light-400": tint(map_get($theme-colors, 'dark'), 40),
+        "dark-light-500": tint(map_get($theme-colors, 'dark'), 50),
+        "dark-light-600": tint(map_get($theme-colors, 'dark'), 60), //end dark
+        "light-dark-100": shade(map_get($theme-colors, 'light'), 10),//start light
+        "light-dark-200": shade(map_get($theme-colors, 'light'), 20),
+        "light-dark-300": shade(map_get($theme-colors, 'light'), 30),
+        "light-dark-400": shade(map_get($theme-colors, 'light'), 40),
+        "light-dark-500": shade(map_get($theme-colors, 'light'), 50),
+        "light-dark-600": shade(map_get($theme-colors, 'light'), 60),
+        "light-light-100": tint(map_get($theme-colors, 'light'), 10),
+        "light-light-200": tint(map_get($theme-colors, 'light'), 20),
+        "light-light-300": tint(map_get($theme-colors, 'light'), 30),
+        "light-light-400": tint(map_get($theme-colors, 'light'), 40),
+        "light-light-500": tint(map_get($theme-colors, 'light'), 50),
+        "light-light-600": tint(map_get($theme-colors, 'light'), 60), //end light
+        "muted-dark-100": shade(map_get($theme-colors, 'muted'), 10),//start muted
+        "muted-dark-200": shade(map_get($theme-colors, 'muted'), 20),
+        "muted-dark-300": shade(map_get($theme-colors, 'muted'), 30),
+        "muted-dark-400": shade(map_get($theme-colors, 'muted'), 40),
+        "muted-dark-500": shade(map_get($theme-colors, 'muted'), 50),
+        "muted-dark-600": shade(map_get($theme-colors, 'muted'), 60),
+        "muted-light-100": tint(map_get($theme-colors, 'muted'), 10),
+        "muted-light-200": tint(map_get($theme-colors, 'muted'), 20),
+        "muted-light-300": tint(map_get($theme-colors, 'muted'), 30),
+        "muted-light-400": tint(map_get($theme-colors, 'muted'), 40),
+        "muted-light-500": tint(map_get($theme-colors, 'muted'), 50),
+        "muted-light-600": tint(map_get($theme-colors, 'muted'), 60), //end muted
+), $theme-colors);
+
+
+@import "~bootstrap/scss/bootstrap";
+
