@@ -1,6 +1,7 @@
 import {Component, ContentChild, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl} from '@angular/forms';
 import {noop} from 'rxjs';
+import {isUndefined} from 'util';
 
 @Component({
     selector: 'che-input',
@@ -17,8 +18,8 @@ import {noop} from 'rxjs';
 export class CheInputComponent implements ControlValueAccessor, OnInit {
     @Input() color = 'primary';
     @Input() label;
-    @Input() desing = 'border';
-    @Input() disabled;
+    @Input() design = 'border';
+    @Input() disabled = false;
     @Input() placeholder = '';
     @Input() required = false;
     @Input() readonly = false;
@@ -27,6 +28,7 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     public fucused = false;
     @Output() focusout = new EventEmitter();
     @Output() blur = new EventEmitter();
+    @Output() click = new EventEmitter();
     @ContentChild(NgControl, {static: false}) public control: any;
 
 
@@ -81,13 +83,15 @@ export class CheInputComponent implements ControlValueAccessor, OnInit {
     }
 
     public onFocus() {
-        console.log('Esta enfocando..');
         this.fucused = true;
         this.focus.emit();
     }
 
-    public onFocusout() {
-        this.focusout.emit();
+    public onClick() {
+        if (!this.disabled) {
+            this.fucused = true;
+            this.click.emit();
+        }
     }
 
     /**
