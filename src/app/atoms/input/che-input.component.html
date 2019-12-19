@@ -1,19 +1,22 @@
-<ng-container *ngIf="desing === 'borderless'">
+<ng-container *ngIf="design === 'borderless'">
     <div class="group" [ngClass]="{'has-danger': hasDanger() }">
-        <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'che-input-focus': fucused }" [readOnly]="readonly" (focus)="onFocus()" (blur)="onBlur()" class="inputMaterial"
-               [required]="true">
+        <input [type]='type' [(ngModel)]="value" [ngClass]="{ 'che-input-focus': fucused }" [readOnly]="readonly"
+               (focus)="onFocus()" (blur)="onBlur()"
+               class="inputMaterial" (click)="onClick()"
+               [required]="required" [disabled]="disabled" >
         <span class="highlight"></span>
-        <span class="bar bg-{{color}}"></span>
+        <span class="bar" [ngClass]=" fucused ? 'bg-' + color : ''"></span>
         <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
 
     </div>
 </ng-container>
 
-<ng-container *ngIf="desing === 'border'">
+<ng-container *ngIf="design === 'border'">
     <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
         <label>{{label}}</label>
-        <input type="text" [(ngModel)]="value" (blur)="onBlur()" class="form-control" [required]="true"
-               [placeholder]="placeholder">
+        <input [type]='type' [(ngModel)]="value" (blur)="onBlur()" (click)="onClick()" (focus)="onFocus()"
+               class="form-control" [required]="true"
+               [placeholder]="placeholder" [disabled]="disabled" [readOnly]="readonly">
     </div>
 </ng-container>
 
