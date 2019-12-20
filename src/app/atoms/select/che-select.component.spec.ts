@@ -141,6 +141,40 @@ describe('che-select Component', () => {
         });
 
         // test 6
+        it('Clicking on the "X" of an item will be deleted', () => {
+            // Arrange
+            let select = fixture.debugElement.query(By.css('input'))!;
+
+            // Act
+            select.nativeElement.dispatchEvent(new Event('input'));
+            fixture.detectChanges();
+            // Arrange
+            let dropdown = fixture.debugElement.query(By.css('ng-dropdown-panel'))!;
+            // Assert
+            expect(dropdown).toBeDefined('Should exist a dropdown');
+
+            // Arrange
+            let options = fixture.debugElement.queryAll(By.css('.ng-option'))!;
+            // Act
+            options[0].nativeElement.dispatchEvent(new Event('click'));
+            options[1].nativeElement.dispatchEvent(new Event('click'));
+            fixture.detectChanges();
+            // Arrange
+            let values = fixture.debugElement.queryAll(By.css('.ng-value'))!;
+            // Assert
+            expect(values.length).toEqual(2);
+
+            // Arrange
+            let deleteOptions = fixture.debugElement.queryAll(By.css('.ng-value-icon'))!;
+            // Act
+            deleteOptions[0].nativeElement.dispatchEvent(new Event('click'));
+            deleteOptions[1].nativeElement.dispatchEvent(new Event('click'));
+            fixture.detectChanges();
+            let deleteOptionsAfter = fixture.debugElement.queryAll(By.css('.ng-value-icon'))!;
+            expect(deleteOptionsAfter.length).toEqual(0);
+
+        });
+
 
 
     });
