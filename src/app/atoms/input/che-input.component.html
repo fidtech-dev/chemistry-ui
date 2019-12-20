@@ -10,16 +10,12 @@
                 <span class="bar bg-{{color}}"></span>
                 <label class="labelMaterial " [ngClass]="{ 'che-label-floating': fucused || value }">{{label}}</label>
 
-            </div>
-        </ng-container>
-
-        <ng-container *ngIf="desing === 'border'">
-            <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
-                <label>{{label}}</label>
-                <input type="text" [(ngModel)]="value" (blur)="onBlur()" class="form-control" [required]="true"
-                       [placeholder]="placeholder">
-            </div>
-        </ng-container>
-
+    </div>
+</ng-container>
+<ng-container *ngIf="desing === 'border'">
+    <div class="form-group" [ngClass]="{'has-danger-wBorder': hasDanger() }">
+        <label>{{label}}</label>
+        <input type="text" [(ngModel)]="value" (blur)="onBlur()" class="form-control" [required]="true"
+               [placeholder]="placeholder">
     </div>
 </div>

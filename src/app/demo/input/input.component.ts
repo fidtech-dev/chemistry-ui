@@ -10,6 +10,7 @@ import {FormBuilder} from '@angular/forms';
 export class InputComponent implements OnInit {
     input1;
     input2;
+    value;
     userForm;
     textImport = 'import {CheInputModule} from \'@fidtech-sa/chemistry-ui\';\n';
     gettingStarter = '<che-input color=\'primary\' [(ngModel)]="input1" name="example" #example=\'ngModel\' \n' +

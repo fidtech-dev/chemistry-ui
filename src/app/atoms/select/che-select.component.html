@@ -1,0 +1,16 @@
+<div class="cheSelectContainer">
+    <div class="cheSelect">
+    <label *ngIf="appearance !== 'underline'" class="label-input-border" [ngClass]="{'label-invalid': (control.dirty || control.touched) && !control.valid}">{{label}}</label>
+    <ng-select class=""  (blur)="onBlur()"  [ngClass]="{'che-bg-success': color === 'success','che-bg-primary': color === 'primary','che-bg-secondary': color === 'secondary','che-bg-info': color === 'info','che-bg-warning': color === 'warning','che-bg-danger': color === 'danger','che-bg-light': color === 'light','che-bg-dark': color === 'dark','input-border': desing === 'border'}" [(ngModel)]="value" (input)="onInput($event.target.value)"  [items]="items"
+               [bindLabel]="bindLabel"
+               placeholder="{{appearance !== 'underline' ?(placeholder ? placeholder : label) : label }}"
+               [multiple]="multiple"
+               [appearance]="appearance"
+               [searchable]="searchable"
+               [loading]="loading"
+               [readonly]="readonly"
+    [disabled]="disabled" [required]="required">
+
+    </ng-select>
+</div>
+</div>
