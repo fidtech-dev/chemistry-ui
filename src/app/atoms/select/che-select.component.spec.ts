@@ -78,7 +78,7 @@ describe('che-select Component', () => {
     describe('If the select is  simple value', () => {
 
         // test 4
-        it('Should have only a one value', () => {
+        it('Should have only one value', () => {
             // Arrange
             let select = fixture.debugElement.query(By.css('input'))!;
 
@@ -196,7 +196,7 @@ describe('che-select Component', () => {
         });
 
         // test 8
-        it('Should not to allow to make focus in select', () => { // NO pude testear focus
+        it('Should not to allow to make focus in select', () => {
             // Arrange
             let select = fixture.debugElement.query(By.css('input'))!;
 
@@ -378,7 +378,6 @@ describe('che-select Component', () => {
                 fixture.detectChanges();
 
                 // Act
-                // divGroup.triggerEventHandler('click', null);
                 inputSelect.triggerEventHandler('blur', null);
                 fixture.detectChanges();
 
@@ -434,7 +433,7 @@ describe('che-select Component', () => {
             fixture.detectChanges();
         });
         // test 18
-        it('Should have the desing border or undefined', () => {
+        it('Should have the desing border ', () => {
             // Arrange
             const select = fixture.debugElement.query(By.css('che-select'))!;
 
