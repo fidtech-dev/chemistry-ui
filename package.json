@@ -46,7 +46,7 @@
     "bootstrap": "^4.3.1",
     "codelyzer": "^5.0.0",
     "cpx": "^1.5.0",
-    "highlight.js": "^9.15.10",
+    "highlight.js": "^10.4.1",
     "jasmine-core": "~3.4.0",
     "jasmine-jquery-matchers": "^2.1.0",
     "jasmine-spec-reporter": "~4.2.1",
